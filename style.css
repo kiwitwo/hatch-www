@@ -105,7 +105,7 @@ h2 {
   padding-bottom: 5px;
 }
 .footer {
-  text-align: center;
+  float: center;
   background-color: #D2D2D2;
 .foot {
   td { padding-left: 50px;
