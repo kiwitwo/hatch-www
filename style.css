@@ -106,4 +106,9 @@ h2 {
 }
 #footer {
   background-color: #D2D2D2;
+.foot {
+  td { padding: 50px;
+       text-align: center;
+     }
+      }
 }
