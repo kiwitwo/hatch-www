@@ -1,8 +1,20 @@
+let x = document.querySelector("#userdrop");
+let y = document.querySelector("#userinfo");
+
+y.addEventListener("click", (e) => {
+  e.preventDefault();
+  dropToggle();
+});
+
 function dropToggle() {
-  var x = document.getElementById("userdrop");
-  if (x.style.display === "none") {
-    x.style.display = "block";
+  if (x.classList.contains("active")) {
+    x.blur();
   } else {
-    x.style.display = "none";
+    x.classList.add("active");
+    x.focus();
   }
 }
+
+x.addEventListener("blur", function(e) {
+  x.classList.remove("active");
+});
