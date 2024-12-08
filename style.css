@@ -164,6 +164,9 @@ table {
 #userdrop:focus {
   outline: none;
 }
+#userbox:has(#userdrop.active) #userinfo {
+  background-color: #f0b151 !important;
+}
 #lowest {
   border-style: solid;
   border-width: 1px 0 0 0;
