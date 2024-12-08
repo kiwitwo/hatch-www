@@ -156,6 +156,13 @@ table {
 #userdrop {
   background-color: #f0b151; 
   border-radius: 10px;
+  display: none;
+}
+#userdrop.active {
+  display: block !important;
+}
+#userdrop:focus {
+  outline: none;
 }
 #lowest {
   border-style: solid;
