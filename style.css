@@ -37,7 +37,7 @@ body, html {
   width: 98%;
   color: black;
   margin-top: 10px;
-  padding-left: 1.25%;
+  padding-left: 1%;
   padding-right: 1%;
   padding-top: 5px;
   padding-bottom: 0px;
@@ -130,6 +130,10 @@ table {
   float: right;
   display: flex;
   padding: 10px 20px 10px 20px;
+  /* below makes it so the dropdown text cannot accidentally be highlighted */
+  -webkit-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
 }
 #userinfo:hover {
   background-color: #f0b151;
@@ -173,6 +177,10 @@ table {
  -webkit-flex: auto;
  flex: auto;
  }
+#search {
+ -webkit-flex: auto;
+ flex: auto;
+}
 html {
   background-color: #ffbd59;
 }
@@ -182,4 +190,10 @@ html {
 }
 #dropdownimgcover {
   top-padding: 100px;
+}
+#logo {
+  background-color: #ffbd59;
+}
+#logo:hover {
+  background-color: #f0b151;
 }
