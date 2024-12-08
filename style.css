@@ -156,6 +156,16 @@ table {
 #userdrop {
   background-color: #f0b151; 
   border-radius: 10px;
+  display: none;
+}
+#userdrop.active {
+  display: block !important;
+}
+#userdrop:focus {
+  outline: none;
+}
+#userbox:has(#userdrop.active) #userinfo {
+  background-color: #f0b151 !important;
 }
 #lowest {
   border-style: solid;
