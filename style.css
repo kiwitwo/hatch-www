@@ -5,15 +5,20 @@ body, html {
 }
 .nav {
   background-color: #ffbd59;
-  width: 100%;
+  width: 80%;
   height: 50px;
   position: sticky;
   top: 0;
   z-index: 10000;
+  display: flex;
+  padding: 0 10% 0 10%;
+  max-width: 100%;
+  display: -webkit-flex;
+  display: flex;
 }
 .nav img {
   height: 46px;
-  margin: auto;
+  margin: none;
   display: flex;
 }
 #main {
@@ -119,6 +124,62 @@ table {
      }
       }
 }
-#id {
+#userinfo {
+  height: 30px;
+  background-color: #ffbd59;
   float: right;
+  display: flex;
+  padding: 10px 20px 10px 20px;
+}
+#userinfo:hover {
+  background-color: #f0b151;
+  cursor: pointer;
+}
+#pfpnav {
+  width: 30px;
+  height: 30px;
+  padding-right: 6px;
+}
+.dropdown-option {
+  background-color: #ffbd59;
+  padding-left: 20px;
+  padding-bottom: 7px;
+  padding-top: 7px;
+}
+.dropdown-option:hover {
+  background-color: #f0b151;
+}
+#userdrop {
+  background-color: #f0b151; 
+  border-radius: 10px;
+}
+#lowest {
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  border-color: #aaa000;
+  border-radius: 0px 0px 10px 10px;
+}
+.navitem {
+  height: 30px;
+  background-color: #ffbd59;
+  float: right;
+  display: flex;
+  padding: 10px 20px 10px 20px;
+}
+.navitem:hover {
+  background-color: #f0b151;
+}
+#searchdiv {
+ -webkit-flex: auto;
+ flex: auto;
+ }
+html {
+  background-color: #ffbd59;
+}
+#dropdownarrow {
+  width: 15px;
+  height: 15px;
+}
+#dropdownimgcover {
+  top-padding: 100px;
 }
