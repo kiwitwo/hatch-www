@@ -7,12 +7,7 @@ y.addEventListener("click", (e) => {
 });
 
 function dropToggle() {
-  if (x.classList.contains("active")) {
-    x.blur();
-  } else {
-    x.classList.add("active");
-    x.focus();
-  }
+  x.classList.toggle("active");
 }
 
 x.addEventListener("blur", function(e) {
