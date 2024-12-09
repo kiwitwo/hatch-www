@@ -18,3 +18,10 @@ function dropToggle() {
 x.addEventListener("blur", function(e) {
   x.classList.remove("active");
 });
+
+
+
+function searchMade(){
+    let searchTerm = document.getElementById('search').value.replace(/ /g,"_");
+    window.location.replace("https://hatch.lol/search/" + searchTerm);
+}
