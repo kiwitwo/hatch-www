@@ -10,9 +10,11 @@ function dropToggle() {
   x.classList.toggle("active");
 }
 
-x.addEventListener("blur", function(e) {
-  x.classList.remove("active");
-});
+document.onclick = (e) => {
+  if (!e.composedPath().includes(y)) {
+    x.classList.remove("active")
+  }
+})
 
 
 
