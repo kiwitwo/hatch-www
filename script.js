@@ -14,7 +14,7 @@ document.onclick = (e) => {
   if (!e.composedPath().includes(y)) {
     x.classList.remove("active")
   }
-})
+}
 
 
 
