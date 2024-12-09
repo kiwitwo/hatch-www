@@ -26,8 +26,9 @@ function searchMade(){
     window.location.href = "https://hatch.lol/search/" + searchTerm
 }
 
-document.getElementById("searchinp").onkeydown = (e) => {
-    if (e.key === "Enter") {
+const searchInp = document.getElementById("searchinp");
+searchInp.onkeydown = (e) => {
+    if (e.key === "Enter" && searchInp.value !== "") {
         searchMade()
     }
 }
