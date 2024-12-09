@@ -279,3 +279,18 @@ html {
   text-align: center;
   font-size: 15px;
 }
+#messagect {
+  background-color: var(--websiteBack);
+  height: 15px;
+  max-width: 50px;
+  border-radius: 35%;
+  font-size: 10px;
+  text-align: center;
+  padding-left: 5.5px;
+  padding-right: 5.5px;
+  float: right;
+  vertical-align: center;
+}
+#msgsym{
+  z-index: 10001;
+}
