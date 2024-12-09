@@ -1,10 +1,20 @@
+:root {
+  --navLight: #ffbd59;  /* navbar appearance */
+  --navDark: #f0b151; /* navbar on hover */
+  --signoutBorder: #aaa000; /* line in userinfo dropdown */
+  --searchBar: #d69d47; /* search bar background-color */
+  --websiteBack: #4d97ff; /* main background */
+  --blockBack: #d2d2d2; /* back of things; hatch news, featured projects, footer */
+  --innerBox: #eaeaea; /* inner box; news box, featured projects */
+  --footerDisc: #a9a9a9; /* very bottom, disclaimer */
+}
 body, html {
   margin: 0;
   padding: 0;
   font-family: "Comic Sans MS", "Comic Sans", sans-serif;
 }
 .nav {
-  background-color: #ffbd59;
+  background-color: var(--navLight);
   width: 80%;
   height: 50px;
   position: sticky;
@@ -22,7 +32,7 @@ body, html {
   display: flex;
 }
 #main {
-  background-color: #4d97ff;
+  background-color: var(--websiteBack);
   width: 80%;
   padding-left: 10%;
   padding-right: 10%;
@@ -33,7 +43,7 @@ body, html {
   font-size: 16pt;
 }
 #news {
-  background-color: #D2D2D2;
+  background-color: var(--blockBack);
   width: 98%;
   color: black;
   margin-top: 10px;
@@ -71,10 +81,10 @@ h2 {
   float: left;
   width: 30.8368%;
   height: 100%;
-  background-color: #EAEAEA;
+  background-color: var(--innerBox);
 }
 #featured {
-  background-color: #D2D2D2;
+  background-color: var(--blockBack);
   width: 98%;
   color: black;
   margin-top: 10px;
@@ -95,7 +105,7 @@ h2 {
   float: left;
   width: 98%;
   height: 100%;
-  background-color: #EAEAEA;
+  background-color: var(--innerBox);
 }
 .featuredbox img {
   margin: 0;
@@ -110,7 +120,7 @@ h2 {
   padding-bottom: 5px;
 }
 .footer {
-  background-color: #D2D2D2;
+  background-color: var(--blockBack);
 table {
   margin-left: auto;
   margin-right: auto;
@@ -126,7 +136,7 @@ table {
 }
 #userinfo {
   height: 30px;
-  background-color: #ffbd59;
+  background-color: var(--navLight);
   float: right;
   display: flex;
   padding: 10px 20px 10px 20px;
@@ -136,7 +146,7 @@ table {
   user-select: none; 
 }
 #userinfo:hover {
-  background-color: #f0b151;
+  background-color: var(--navDark);
   cursor: pointer;
 }
 #pfpnav {
@@ -145,7 +155,7 @@ table {
   padding-right: 6px;
 }
 .dropdown-option {
-  background-color: #ffbd59;
+  background-color: var(--navLight);
   padding-left: 20px;
   padding-bottom: 7px;
   padding-top: 7px;
@@ -155,10 +165,10 @@ table {
   cursor: pointer;
 }
 .dropdown-option:hover {
-  background-color: #f0b151;
+  background-color: var(--navDark);
 }
 #userdrop {
-  background-color: #f0b151; 
+  background-color: var(--navLight); 
   border-radius: 10px;
   display: none;
 }
@@ -169,17 +179,17 @@ table {
   outline: none;
 }
 #userbox:has(#userdrop.active) #userinfo {
-  background-color: #f0b151 !important;
+  background-color: var(--navDark) !important;
 }
 #lowest {
   border-style: solid;
   border-width: 1px 0 0 0;
-  border-color: #aaa000;
+  border-color: var(--signoutBorder);
   border-radius: 0px 0px 10px 10px;
 }
 .navitem {
   height: 30px;
-  background-color: #ffbd59;
+  background-color: var(--navLight);
   float: right;
   display: flex;
   padding: 10px 20px 10px 20px;
@@ -191,10 +201,10 @@ table {
 #searchimgnav {
     float: right;
     display: flex;
-    background-color: #ffbd59;
+    background-color: var(--navLight);
   }
 #searchimgnav:hover {
-  background-color: #f0b151;
+  background-color: var(--navDark);
 }
 #searchimghard {
   width: 25px;
@@ -204,11 +214,11 @@ table {
   cursor: pointer;
 }
 .navitem:hover {
-  background-color: #f0b151;
+  background-color: var(--navDark);
 }
 .searchnavitem {
   height: 30px;
-  background-color: #ffbd59;
+  background-color: var(--navLight);
   float: right;
   display: flex;
   padding: 10px 20px 10px 20px;
@@ -221,7 +231,7 @@ table {
 #search {
  -webkit-flex: auto;
  flex: auto;
-  background-color: #d69d47;
+  background-color: var(--searchBar);
   border-radius: 7px;.
   border: solid;
   border-width: 0px;
@@ -231,7 +241,7 @@ table {
 #searchinp {
   -webkit-flex: auto;
   flex: auto;
-  background-color: #d69d47;
+  background-color: var(--searchBar);
   border-radius: 7px;.
   border: solid;
   border-width: 0px;
@@ -239,7 +249,7 @@ table {
   margin: 0px;
 }
 html {
-  background-color: #ffbd59;
+  background-color: var(--navLight);
 }
 #dropdownarrow {
   width: 15px;
@@ -263,4 +273,9 @@ html {
   -ms-transform: scale(1.1); 
   -webkit-transform: scale(1.1); 
   transform: scale(1.1); 
+}
+#disc {
+  background-color: var(--footerDisc);
+  text-align: center;
+  font-size: 15px;
 }
