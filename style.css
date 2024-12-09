@@ -149,6 +149,10 @@ table {
   padding-left: 20px;
   padding-bottom: 7px;
   padding-top: 7px;
+  -webkit-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+  cursor: pointer;
 }
 .dropdown-option:hover {
   background-color: #f0b151;
@@ -179,17 +183,50 @@ table {
   float: right;
   display: flex;
   padding: 10px 20px 10px 20px;
+  -webkit-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+  cursor: pointer;
+}
+#searchimgnav {
+    float: right;
+    display: flex;
+    background-color: #ffbd59;
+  }
+#searchimgnav:hover {
+  background-color: #f0b151;
+}
+#searchimghard {
+  width: 25px;
+  height: 25px;
+  padding: 12.5px 0 12.5px 0;
+  transition: transform .2s;
+  cursor: pointer;
 }
 .navitem:hover {
   background-color: #f0b151;
 }
+.searchnavitem {
+  height: 30px;
+  background-color: #ffbd59;
+  float: right;
+  display: flex;
+  padding: 10px 20px 10px 20px;
+}
 #searchdiv {
  -webkit-flex: auto;
  flex: auto;
+ ! padding-left: none;
  }
 #search {
  -webkit-flex: auto;
  flex: auto;
+  background-color: #d69d47;
+  border-radius: 7px;.
+  border: solid;
+  border-width: 0px;
+  float: left;
+  margin: 0px;
 }
 html {
   background-color: #ffbd59;
@@ -197,13 +234,23 @@ html {
 #dropdownarrow {
   width: 15px;
   height: 15px;
+  padding-top: 6px;
+  padding-left: 5px;
 }
 #dropdownimgcover {
-  top-padding: 100px;
-}
-#logo {
-  background-color: #ffbd59;
+  height: 50px;
 }
 #logo:hover {
-  background-color: #f0b151;
+  -ms-transform: scale(1.1); 
+  -webkit-transform: scale(1.1); 
+  transform: scale(1.1); 
+}
+#logo {
+  transition: transform .2s;
+  cursor: pointer;
+}
+#searchimghard:hover {
+  -ms-transform: scale(1.1); 
+  -webkit-transform: scale(1.1); 
+  transform: scale(1.1); 
 }
