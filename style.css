@@ -228,6 +228,16 @@ table {
   float: left;
   margin: 0px;
 }
+#searchinp {
+  -webkit-flex: auto;
+  flex: auto;
+  background-color: #d69d47;
+  border-radius: 7px;.
+  border: solid;
+  border-width: 0px;
+  float: left;
+  margin: 0px;
+}
 html {
   background-color: #ffbd59;
 }
