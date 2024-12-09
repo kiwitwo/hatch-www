@@ -23,5 +23,5 @@ x.addEventListener("blur", function(e) {
 
 function searchMade(){
     let searchTerm = document.getElementById('search').value.replace(/ /g,"_");
-    window.location("https://hatch.lol/search/" + searchTerm);
+    console.log("https://hatch.lol/search/" + searchTerm);
 }
