@@ -7,7 +7,7 @@
   --blockBack: #d2d2d2; /* back of things; hatch news, featured projects, footer */
   --innerBox: #eaeaea; /* inner box; news box, featured projects */
   --footerDisc: #a9a9a9; /* very bottom, disclaimer */
-}
+} 
 body, html {
   margin: 0;
   padding: 0;
