@@ -2,6 +2,7 @@
   --navLight: #ffbd59;  /* navbar appearance */
   --navDark: #f0b151; /* navbar on hover */
   --signoutBorder: #aaa000; /* line in userinfo dropdown */
+  --lightOrange: #ffbd59; /* orange links around the site */
   --searchBar: #d69d47; /* search bar background-color */
   --websiteBack: #000000; /* main background */
   --univText: #ffffff; /* text color */
@@ -602,10 +603,10 @@ p.content {
   margin-top: 0;
 }
 p.content > a {
-  color: #ffbd59;
+  color: var(--lightOrange);
   font-weight: bold;
 }
 #wibditem > a {
-  color: #ffbd59;
+  color: var(--lightOrange);
   font-weight: bold;
 }
