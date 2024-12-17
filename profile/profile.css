@@ -15,6 +15,9 @@ body, html {
   margin: 0;
   padding: 0;
 }
+input {
+  outline: none;
+}
 .nav {
   background-color: var(--navLight);
   width: 80%;
