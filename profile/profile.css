@@ -335,6 +335,8 @@ html {
   font-size: 25px;
   display: flex;
   justify-content: space-between;
+  padding-bottom: 7px;
+  color: var(--lightOrange);
 }
 #bioinfo {
   display: flex;
