@@ -53,7 +53,7 @@ input {
   margin: none;
   display: flex;
 }
-userinfo {
+#userinfo {
   height: 30px;
   background-color: var(--navLight);
   float: right;
