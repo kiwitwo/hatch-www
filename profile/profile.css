@@ -354,7 +354,6 @@ html {
   background-color: var(--innerBlock);
   border-radius: 10px;
   padding: 10px;
-  overflow-x: scroll;
 }
 #projthumb {
   width: 180px;
@@ -366,6 +365,7 @@ html {
 #projcontain {
   display: flex;
   gap: 10px;
+  overflow-x: auto;
 }
 #projsecthead {
   display: flex;
