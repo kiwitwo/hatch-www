@@ -224,6 +224,10 @@ input {
   max-width: 45px;
   height: 40px;
 }
+#userdrop > a {
+  text-decoration: none;
+  color: #000000;
+}
 /* Footer */
 .footer {
   color: #ffbd59;
