@@ -34,6 +34,9 @@ input {
   height: 15px;
   background-color: var(--websiteBack);
 }
+a {
+display: block;
+}
 /* Nav Bar */
 .nav {
   background-color: var(--navLight);
