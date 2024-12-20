@@ -34,9 +34,6 @@ input {
   height: 15px;
   background-color: var(--websiteBack);
 }
-.navitem a {
-display: block;
-}
 /* Userinfo Bar */
 #pfp {
   height: 70px;
