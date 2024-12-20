@@ -191,3 +191,6 @@
   text-decoration: none;
   color: #000000;
 }
+.navitem a {
+display: block;
+}
