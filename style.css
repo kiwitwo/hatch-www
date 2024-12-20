@@ -2,34 +2,23 @@
   --navLight: #ffbd59;  /* navbar appearance */
   --navDark: #f0b151; /* navbar on hover */
   --signoutBorder: #aaa000; /* line in userinfo dropdown */
+  --lightOrange: #ffbd59; /* orange links around the site */
   --searchBar: #d69d47; /* search bar background-color */
-  --websiteBack: #4d97ff; /* main background */
-  --blockBack: #d2d2d2; /* back of things; hatch news, featured projects, footer */
-  --innerBox: #eaeaea; /* inner box; news box, featured projects */
-  --footerDisc: #a9a9a9; /* very bottom, disclaimer */
-} 
+  --websiteBack: #000000; /* main background */
+  --univText: #ffffff; /* text color */
+  --innerBlock: #2b2b2b; /* all inner boxes */
+  --blockBack: #2b2b2b; /* footer */
+  --footerDisc: #ffbd59; /* very bottom, disclaimer */
+}
+/* General Elements */
 body, html {
+  font-family: "Calibri", sans-serif;
   margin: 0;
   padding: 0;
-  font-family: "Comic Sans MS", "Comic Sans", sans-serif;
-}
-.nav {
   background-color: var(--navLight);
-  width: 80%;
-  height: 50px;
-  position: sticky;
-  top: 0;
-  z-index: 10000;
-  display: flex;
-  padding: 0 10% 0 10%;
-  max-width: 100%;
-  display: -webkit-flex;
-  display: flex;
 }
-.nav img {
-  height: 46px;
-  margin: none;
-  display: flex;
+input {
+  outline: none;
 }
 #main {
   background-color: var(--websiteBack);
@@ -38,269 +27,13 @@ body, html {
   padding-right: 10%;
   padding-top: 10px;
   padding-bottom: 10px;
-}
-#main p.welcome {
-  font-size: 16pt;
-}
-#news {
-  background-color: var(--blockBack);
-  width: 98%;
-  color: black;
-  margin-top: 10px;
-  padding-left: 1%;
-  padding-right: 1%;
-  padding-top: 5px;
-  padding-bottom: 0px;
-  height: 215px;
-  border-radius: 10px 10px 10px 10px;
-  display: flex;
   flex-direction: column;
 }
-#main .boxes {
-  display: flex;
-  height: 100%;
-}
-h2 {
-  margin: 0 auto;
-  text-align: center;
-  font-size: 16pt;
-}
-#news .newsviewall {
-  margin: 0 auto;
-  padding-bottom: 10px;
-  padding-top: 15px;
-}
-.newsbox {
-  *{ margin: 0; padding: 0; }
-  border-radius: 10px 10px 10px 10px;
-  margin-top: 5px;
-  margin-right: 5px;
-  padding-top: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  float: left;
-  width: 30.8368%;
-  height: 100%;
-  background-color: var(--innerBox);
-}
-#featured {
-  background-color: var(--blockBack);
-  width: 98%;
-  color: black;
-  margin-top: 10px;
-  padding-left: 1.25%;
-  padding-right: 1%;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  height: px;
-  border-radius: 10px 10px 10px 10px;
-  display: flex;
-  flex-direction: column;
-}
-.featuredbox {
-  *{ margin: 0; padding: 0; }
-  border-radius: 10px 10px 10px 10px;
-  margin-top: 5px;
-  margin-right: 5px;
-  float: left;
-  width: 98%;
-  height: 100%;
-  background-color: var(--innerBox);
-}
-.featuredbox img {
-  margin: 0;
+.spacer {
   width: 100%;
-  border-radius: 10px 10px 10px 10px;
-}
-.featuredtext {
-  color: black;
-  text-decoration: underline;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 5px;
-}
-.footer {
-  background-color: var(--blockBack);
-table {
-  margin-left: auto;
-  margin-right: auto;
-      }
-.foot {
-  td { padding-left: 50px;
-       padding-right: 50px;
-       padding-top: 10px;
-       padding-bottom: 10px;
-       text-align: center;
-     }
-      }
-}
-#userinfo {
-  height: 30px;
-  background-color: var(--navLight);
-  float: right;
-  display: flex;
-  padding: 10px 20px 10px 20px;
-  /* below makes it so the dropdown text cannot accidentally be highlighted */
-  -webkit-user-select: none; 
-  -ms-user-select: none; 
-  user-select: none; 
-}
-#userinfo:hover {
-  background-color: var(--navDark);
-  cursor: pointer;
-}
-#pfpnav {
-  width: 30px;
-  height: 30px;
-  padding-right: 6px;
-}
-.dropdown-option {
-  background-color: var(--navLight);
-  padding-left: 20px;
-  padding-bottom: 7px;
-  padding-top: 7px;
-  -webkit-user-select: none; 
-  -ms-user-select: none; 
-  user-select: none; 
-  cursor: pointer;
-}
-.dropdown-option:hover {
-  background-color: var(--navDark);
-}
-#userdrop {
-  background-color: var(--navLight); 
-  border-radius: 10px;
-  display: none;
-}
-#userdrop.active {
-  display: block !important;
-}
-#userdrop:focus {
-  outline: none;
-}
-#userbox:has(#userdrop.active) #userinfo {
-  background-color: var(--navDark) !important;
-}
-#lowest {
-  border-style: solid;
-  border-width: 1px 0 0 0;
-  border-color: var(--signoutBorder);
-  border-radius: 0px 0px 10px 10px;
-}
-.navitem {
-  height: 30px;
-  background-color: var(--navLight);
-  float: right;
-  display: flex;
-  padding: 10px 20px 10px 20px;
-  -webkit-user-select: none; 
-  -ms-user-select: none; 
-  user-select: none; 
-  cursor: pointer;
-}
-#searchimgnav {
-    float: right;
-    display: flex;
-    background-color: var(--navLight);
-  }
-#searchimgnav:hover {
-  background-color: var(--navDark);
-}
-#searchimghard {
-  width: 25px;
-  height: 25px;
-  padding: 12.5px 0 12.5px 0;
-  transition: transform .2s;
-  cursor: pointer;
-}
-.navitem:hover {
-  background-color: var(--navDark);
-}
-.searchnavitem {
-  height: 30px;
-  background-color: var(--navLight);
-  float: right;
-  display: flex;
-  padding: 10px 20px 10px 20px;
-}
-#searchdiv {
- -webkit-flex: auto;
- flex: auto;
- ! padding-left: none;
- }
-#search {
- -webkit-flex: auto;
- flex: auto;
-  background-color: var(--searchBar);
-  border-radius: 7px;.
-  border: solid;
-  border-width: 0px;
-  float: left;
-  margin: 0px;
-}
-#searchinp {
-  -webkit-flex: auto;
-  flex: auto;
-  background-color: var(--searchBar);
-  border-radius: 7px;.
-  border: solid;
-  border-width: 0px;
-  float: left;
-  margin: 0px;
-}
-html {
-  background-color: var(--navLight);
-}
-#dropdownarrow {
-  width: 15px;
   height: 15px;
-  padding-top: 6px;
-  padding-left: 5px;
-}
-#dropdownimgcover {
-  height: 50px;
-}
-#logo:hover {
-  -ms-transform: scale(1.1); 
-  -webkit-transform: scale(1.1); 
-  transform: scale(1.1); 
-}
-#logo {
-  transition: transform .2s;
-  cursor: pointer;
-}
-#searchimghard:hover {
-  -ms-transform: scale(1.1); 
-  -webkit-transform: scale(1.1); 
-  transform: scale(1.1); 
-}
-#disc {
-  background-color: var(--footerDisc);
-  text-align: center;
-  font-size: 15px;
-}
-#messagect {
   background-color: var(--websiteBack);
-  height: 15px;
-  border-radius: 35%;
-  font-size: 10px;
-  text-align: center;
-  padding-left: 5.5px;
-  padding-right: 5.5px;
-  float: right;
-  vertical-align: center;
-  margin-left: -7px;
-  z-index: 10002;
 }
-#msgsym{
-  z-index: 10001;
-  height: 30px;
-  padding: 0px;
-  padding-top: 4px !important;
-}
-#mail {
-  padding-top: 5px !important;
-  padding-right: 13.5px !important;
-  max-width: 45px;
-  height: 35px;
+.navitem a {
+display: block;
 }
