@@ -24,6 +24,7 @@
   padding: 10px 20px 10px 20px;
   min-width: 100px;
   justify-content: space-between;
+  gap: 10px;
   /* below makes it so the dropdown text cannot accidentally be highlighted */
   -webkit-user-select: none; 
   -ms-user-select: none; 
