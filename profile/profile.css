@@ -57,9 +57,6 @@ input {
     background-color: 
   }
 }
-#userinfo {
-gap: 5px;
-}
 #userdata {
   display: flex;
 }
