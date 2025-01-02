@@ -159,7 +159,7 @@ input {
   border-radius: 10px;
   color: var(--univText);
   background-color: var(--innerBlock);
-  height: 100%;
+  height: fit-content;
 }
 .eventname {
   font-size: 20px;
