@@ -14,9 +14,9 @@
     <body>
       <div class="navbg"></div>
         <div class="nav">
-          <div id="logo"><img class="logo" src="../navbar/img/logo.png" height:30px onclick="location.href='index.html'" /></div>
+          <div id="logo"><img class="logo" src="https://hatchdotlol.github.io/hatch-www/navbar/img/logo.png" height:30px onclick="location.href='index.html'" /></div>
           <div class="searchimgnav" onclick="searchMade()">
-            <img src="../navbar/img/search.png" id="searchimghard"/>
+            <img src="https://hatchdotlol.github.io/hatch-www/navbar/img/search.png" id="searchimghard"/>
           </div>
           <div class="searchnavitem" id="searchdiv">
             <input type="text" id="searchinp" name="search" placeholder=" Search...">
@@ -34,11 +34,11 @@
             Explore
           </a>
           <a class="navitem" id="mail" href="/messages.html">
-            <img src="../navbar/img/messages.svg" id="msgsym" /><div id="messagect"><b>1</b></div>
+            <img src="https://hatchdotlol.github.io/hatch-www/navbar/img/messages.svg" id="msgsym" /><div id="messagect"><b>1</b></div>
         
           </a>
           <div id="userbox">
-          <div id="userinfo"><img id="pfpnav" src="https://uploads.scratch.mit.edu/get_image/user/41022482_96x96.png"><div id="usernamenav">aaa</div><div id="dropdownimgcover"><img id="dropdownarrow" src="../navbar/img/downarrow.png" /></div></div>
+          <div id="userinfo"><img id="pfpnav" src="https://uploads.scratch.mit.edu/get_image/user/41022482_96x96.png"><div id="usernamenav">aaa</div><div id="dropdownimgcover"><img id="dropdownarrow" src="https://hatchdotlol.github.io/hatch-www/navbar/img/downarrow.png" /></div></div>
             <div id="userdrop" style="display: none" tabindex="0">
               <a class="dropdown-option" id="highest" href="/profile?id=yourUsername">
                 Your Profile
@@ -54,10 +54,33 @@
         </div>
     <!-- Main Page -->
 <div id="main">
-  
-<!--PAGE CONTENT-->     
-  
-</div><!--This ends #main - all content inside! Should stick to footer top!-->
+  <div id="content">
+    <div class="header">Account Settings</div>
+    <label for="display">Display Name:</label><input type="text" id="display" value="CurrentDisplayName">
+    <label for="bio">Biography:</label><textarea type="text" id="bio">This would be the current bio! uwu</textarea>
+    <label for="file">Avatar:</label>
+<input type="file" id="file" accept="image/*">
+    <label for="featproj">Featured Project ID or URL:</label>
+<input type="text" id="featproj">
+  <label for="toggle">Profile Comments:</label><br>
+<div class="toggle-switch">
+  <input class="toggle-input" id="toggle" type="checkbox">
+  <label class="toggle-label" for="toggle"> </label></div>
+  <hr>
+<div class="header">Change Your Password</div>
+    <label for="newpw">New Password:</label>
+<input type="text" id="newpw">
+        <label for="oldpw">Old Password:</label>
+<input type="text" id="oldpw">
+    <hr>
+<input type="button" id="submit" value="Save all Changes">
+<hr>
+    <a href="#null" id="delete">Delete this account</p>
+</div>
+    
+    
+  </div>
+  <div class="spacer"></div></div><!--This ends #main - all content inside! Should stick to footer top!-->
        <div class="footer">
             <table>
                 <tr class="foot">
