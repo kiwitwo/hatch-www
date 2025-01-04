@@ -376,3 +376,11 @@ p.content > a {
   font-weight: bold;
 }
 
+body.loading .loading-skeleton {
+  background-color: var(--blockBack);
+  color: var(--blockBack);
+  filter: brightness(1.5);
+  z-index: 2;
+  border-radius: 7px;
+  display: inline-block;
+}

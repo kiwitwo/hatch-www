@@ -12,10 +12,10 @@
         If you want this page temporarily down, add this tag in the <head>
         -->
     </head>
-    <body>
+    <body class="loading">
       <div class="navbg"></div>
         <div class="nav">
-          <div id="logo"><img class="logo" src="../navbar/img/logo.png" height:30px onclick="location.href='index.html'" /></div>
+          <div id="logo"><img class="logo" src="../navbar/img/logo.png" onclick="location.href='index.html'" /></div>
           <div class="searchimgnav" onclick="searchMade()">
             <img src="../navbar/img/search.png" id="searchimghard"/>
           </div>
@@ -58,10 +58,10 @@
       <!-- User Header -->
        <div id="userinfoarea">
          <div id="userbar">
-       <img id="pfp" src="https://cdn2.scratch.mit.edu/get_image/user/41022482_60x60.png"/>
+       <img id="pfp" src="https://api.hatch.lol/uploads/pfp/default.png">
          <div id="usernamecolumn">
-           <div id="username">han&nbsp;<div id="userat">@han614698</div></div>
-           <div id="userdata">United States | Joined 2 days ago (December 13, 2024)</div>
+           <div id="username"><span id="displayname" class="loading-skeleton">han</span>&nbsp;<div id="userat" class="loading-skeleton">@han614698</div></div>
+           <div id="userdata" class="loading-skeleton">United States | Joined 2 days ago (December 13, 2024)</div>
          </div>
         <!-- Follow Button -->
          <div id="followButton" onclick="followUser()"><i class="fa-solid fa-user"></i>&nbsp;Follow</div>
@@ -69,20 +69,20 @@
            <!-- Bio Container -->
            <div id="biocontainer">
            <!-- About Me -->
-            <div id="aboutme"><div class="biolabel">Bio</div><div class="bioinfo">
+            <div id="aboutme"><div class="biolabel">Bio</div><div class="bioinfo loading-skeleton" id="userbio">
              This is a bio!<br>It can be multiple lines and it wraps if you type a lot, like this. You can even scroll. Try it!<br>Scroll to this text!<br>Scroll to this text!<br>Scroll to this text!<br>Scroll to this text!<br>Scroll to this text!<br>Scroll to this text!<br>Scroll to this text!<br>Scroll to this text!<br>Scroll to this text!
             </div>
            </div>
            <!-- User Stats -->
              <div id="userstats">
               <div class="biolabel">User Stats</div>
-                <div class="bioinfo">
+                <div class="bioinfo loading-skeleton" id="userstatstext">
                 26 projects shared<br>15 galleries joined<br> 
                 </div>
              </div>
             <!-- What I've Been Doing -->
            <div id="wibd"><div class="biolabel">What I've Been Doing</div>
-             <div id="wibdinfo">
+             <div id="wibdinfo" class="loading-skeleton">
                <span class="wibditem">han upvoted&nbsp;<a href="#null">project</a></span>
                <span class="wibditem">han is now following&nbsp;<a href="#null">user</a></span>
                <span class="wibditem">han added&nbsp;<a href="#null">project</a>&nbsp;to&nbsp;<a href="#null">gallery</a></span>
@@ -101,20 +101,21 @@
                <div class="biolabel">
                    <span>Badges</span> <span id="whatarebadges">What are badges?</span>
                </div>
-               <div id="badgecontain">
-                   <div class="badge">Beta Tester</div><div class="badge">Hatch Moderator</div>
+               <div id="badgecontain" class="loading-skeleton">
+                   Coming soon...
+<!--                   <div class="badge">Beta Tester</div><div class="badge">Hatch Moderator</div>-->
                </div>
            </div>
            <div class="lightspacer"></div>
            <!--Connections-->
        <div id="connectionsblock">
            <div id="followblock">
-             <span class="followers">Followers (2)</span>
-             <span class="followers">Following (1223)</span>
+             <span class="followers loading-skeleton" id="followers">Followers (2)</span>
+             <span class="followers loading-skeleton" id="following">Following (1223)</span>
            </div>
            <div id="connections">
                <div id="connectionslabel">Connections</div>
-             <div id="connectionscontain">
+             <div id="connectionscontain" class="loading-skeleton">
                  <div id="connection">han614698&nbsp;(scratch)</div><div id="connection">han614698&nbsp;<i class="fa-brands fa-github"></i></div><div id="connection">han614698&nbsp;<i class="fa-brands fa-discord"></i></div><div id="connection">han614698&nbsp;<i class="fa-brands fa-youtube"></i></div><div id="connection">han614698&nbsp;<i class="fa-brands fa-twitter"></i></div><div id="connection">han614698&nbsp;(wasteof)</div><div id="connection">han614698&nbsp;(darflen)</div>
              </div>
        </div>    </div>
@@ -195,7 +196,7 @@
 </div>
 </div>
 <div class="spacer"></div>
-  <div id="projects">
+  <div id="projects" class="loading-skeleton">
     <div id="projsecthead"><div id="projhead">Galleries I Curate</div><div id="seeallproj"><span>See All&nbsp;<i class="fa-solid fa-arrow-right"></i></span></div></div>
     <div id="projcontain">
     <div id="project">
@@ -229,7 +230,7 @@
 </div>
 </div>
 <div class="spacer"></div>
-  <div id="projects">
+  <div id="projects" class="loading-skeleton">
     <div id="projsecthead"><div id="projhead">Galleries I Follow</div><div id="seeallproj"><span>See All&nbsp;<i class="fa-solid fa-arrow-right"></i></span></div></div>
     <div id="projcontain">
     <div id="project">
@@ -272,77 +273,79 @@
             <input type="submit" value="Submit">
           </form>
         </div>
-        <div class="comment">
-          <div class="comment-top">
-            <img src="https://rdr.lol/u/KRV1KZ.png" class="comment-pfp">
-            <a href="https://hatch.lol/users/-gr/" class="comment-username">user68</a>
-            <p class="comment-time">10s</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png"></a>
-          </div>
-          <p class="content">this is a comment lol <a href="https://hatch.lol/users/user8">@user8</a> i tagged someone</p>
-          <div class="reply">
-            <div class="reply-top">
-              <img src="https://rdr.lol/u/KRV1KZ.png" class="comment-pfp">
-              <a href="https://hatch.lol/users/-gr/" class="comment-username">user8</a>
-              <p class="comment-time">100y</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png"></a>
+        <div id="comments">
+            <div class="comment">
+              <div class="comment-top">
+                <img src="https://rdr.lol/u/KRV1KZ.png" class="comment-pfp">
+                <a href="https://hatch.lol/users/-gr/" class="comment-username">user68</a>
+                <p class="comment-time">10s</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png"></a>
+              </div>
+              <p class="content">this is a comment lol <a href="https://hatch.lol/users/user8">@user8</a> i tagged someone</p>
+              <div class="reply">
+                <div class="reply-top">
+                  <img src="https://rdr.lol/u/KRV1KZ.png" class="comment-pfp">
+                  <a href="https://hatch.lol/users/-gr/" class="comment-username">user8</a>
+                  <p class="comment-time">100y</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png"></a>
+                </div>
+                <p class="content"><a href="https://hatch.lol/users/user68/">↪ @user68</a>: this is a reply to your comment! yay! look it can wrap to the next line so easy without any issues.</p>
+              </div>
+              <div class="reply">
+                <div class="reply-top">
+                  <img src="https://rdr.lol/u/KRV1KZ.png" class="comment-pfp">
+                  <a href="https://hatch.lol/users/-gr/" class="comment-username">user74441</a>
+                  <p class="comment-time">100y</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png"></a>
+                </div>
+                <p class="content"><a href="https://hatch.lol/users/user68/">↪ @user8</a>: and this is how a reply to a reply looks.</p>
+              </div>
             </div>
-            <p class="content"><a href="https://hatch.lol/users/user68/">↪ @user68</a>: this is a reply to your comment! yay! look it can wrap to the next line so easy without any issues.</p>
-          </div>
-          <div class="reply">
-            <div class="reply-top">
-              <img src="https://rdr.lol/u/KRV1KZ.png" class="comment-pfp">
-              <a href="https://hatch.lol/users/-gr/" class="comment-username">user74441</a>
-              <p class="comment-time">100y</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png"></a>
+            <div class="comment">
+              <div class="comment-top">
+                <img src="https://rdr.lol/u/KRV1KZ.png" class="comment-pfp">
+                <a href="https://hatch.lol/users/-gr/" class="comment-username">user47</a>
+                <p class="comment-time">7h</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png"></a>
+              </div>
+              <p class="content">this is another comment lol</p>
             </div>
-            <p class="content"><a href="https://hatch.lol/users/user68/">↪ @user8</a>: and this is how a reply to a reply looks.</p>
-          </div>
-        </div>
-        <div class="comment">
-          <div class="comment-top">
-            <img src="https://rdr.lol/u/KRV1KZ.png" class="comment-pfp">
-            <a href="https://hatch.lol/users/-gr/" class="comment-username">user47</a>
-            <p class="comment-time">7h</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png"></a>
-          </div>
-          <p class="content">this is another comment lol</p>
-        </div>
-        <div class="comment">
-          <div class="comment-top">
-            <img src="https://rdr.lol/u/KRV1KZ.png" class="comment-pfp">
-            <a href="https://hatch.lol/users/-gr/" class="comment-username">user77</a>
-            <p class="comment-time">2d</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png"></a>
-          </div>
-          <p class="content">this is a third comment lol</p>
-        </div>
-        <div class="comment">
-          <div class="comment-top">
-            <img src="https://rdr.lol/u/KRV1KZ.png" class="comment-pfp">
-            <a href="https://hatch.lol/users/-gr/" class="comment-username">user1</a>
-            <p class="comment-time">100y</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png"></a>
-          </div>
-          <p class="content">wow so many comments!</p>
-        </div>
-        <div class="comment">
-          <div class="comment-top">
-            <img src="https://rdr.lol/u/KRV1KZ.png" class="comment-pfp">
-            <a href="https://hatch.lol/users/-gr/" class="comment-username">user43</a>
-            <p class="comment-time">100y</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png"></a>
-          </div>
-          <p class="content">wow so many comments!</p>
-        </div>
-        <div class="comment">
-          <div class="comment-top">
-            <img src="https://rdr.lol/u/KRV1KZ.png" class="comment-pfp">
-            <a href="https://hatch.lol/users/-gr/" class="comment-username">user8</a>
-            <p class="comment-time">100y</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png"></a>
-          </div>
-          <p class="content">wow so many comments!</p>
-        </div>
-        <div class="comment">
-          <div class="comment-top">
-            <img src="https://rdr.lol/u/KRV1KZ.png" class="comment-pfp">
-            <a href="https://hatch.lol/users/-gr/" class="comment-username">user8</a>
-            <p class="comment-time">100y</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png"></a>
-          </div>
-          <p class="content">wow so many comments!</p>
+            <div class="comment">
+              <div class="comment-top">
+                <img src="https://rdr.lol/u/KRV1KZ.png" class="comment-pfp">
+                <a href="https://hatch.lol/users/-gr/" class="comment-username">user77</a>
+                <p class="comment-time">2d</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png"></a>
+              </div>
+              <p class="content">this is a third comment lol</p>
+            </div>
+            <div class="comment">
+              <div class="comment-top">
+                <img src="https://rdr.lol/u/KRV1KZ.png" class="comment-pfp">
+                <a href="https://hatch.lol/users/-gr/" class="comment-username">user1</a>
+                <p class="comment-time">100y</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png"></a>
+              </div>
+              <p class="content">wow so many comments!</p>
+            </div>
+            <div class="comment">
+              <div class="comment-top">
+                <img src="https://rdr.lol/u/KRV1KZ.png" class="comment-pfp">
+                <a href="https://hatch.lol/users/-gr/" class="comment-username">user43</a>
+                <p class="comment-time">100y</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png"></a>
+              </div>
+              <p class="content">wow so many comments!</p>
+            </div>
+            <div class="comment">
+              <div class="comment-top">
+                <img src="https://rdr.lol/u/KRV1KZ.png" class="comment-pfp">
+                <a href="https://hatch.lol/users/-gr/" class="comment-username">user8</a>
+                <p class="comment-time">100y</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png"></a>
+              </div>
+              <p class="content">wow so many comments!</p>
+            </div>
+            <div class="comment">
+              <div class="comment-top">
+                <img src="https://rdr.lol/u/KRV1KZ.png" class="comment-pfp">
+                <a href="https://hatch.lol/users/-gr/" class="comment-username">user8</a>
+                <p class="comment-time">100y</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png"></a>
+              </div>
+              <p class="content">wow so many comments!</p>
+            </div>
         </div>
       </div>
     </div>
@@ -386,5 +389,6 @@
         </div>
       <div id="disc">Hatch is not affiliated with Scratch, the Scratch Team, the Scratch Foundation, or Turbowarp.</div>
       <script src="../navbar/navbar.js"></script>
+      <script src="data.js"></script>
     </body>
 </html>
