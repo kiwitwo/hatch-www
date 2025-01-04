@@ -4,7 +4,7 @@
   height: 50px;
   position: sticky;
   top: 0;
-  z-index: 10000;
+  z-index: 1;
   display: flex;
   padding: 0 10% 0 10%;
   max-width: 100%;
@@ -117,13 +117,13 @@
 #searchdiv {
  -webkit-flex: auto;
  flex: auto;
- ! padding-left: none;
+ padding-left: none;
  }
 #search {
  -webkit-flex: auto;
  flex: auto;
   background-color: var(--searchBar);
-  border-radius: 7px;.
+  border-radius: 7px;
   border: solid;
   border-width: 0px;
   float: left;
@@ -133,7 +133,7 @@
   -webkit-flex: auto;
   flex: auto;
   background-color: var(--searchBar);
-  border-radius: 7px;.
+  border-radius: 7px;
   border: solid;
   border-width: 0px;
   float: left;
