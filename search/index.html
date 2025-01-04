@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hatch</title>
+        <link rel="stylesheet" href="basicpage.css">
+        <link rel="stylesheet" href="/hatch-www/navbar/navbar.css">
+        <link rel="stylesheet" href="/hatch-www/footer/footer.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!--
+        <meta http-equiv="refresh" content="0; url=404.html" />
+        If you want this page temporarily down, add this tag in the <head>
+        -->
+    </head>
+    <body>
+      <div class="navbg"></div>
+        <div class="nav">
+          <div id="logo"><img class="logo" src="https://hatchdotlol.github.io/hatch-www/navbar/img/logo.png" height:30px onclick="location.href='index.html'" /></div>
+          <div class="searchimgnav" onclick="searchMade()">
+            <img src="https://hatchdotlol.github.io/hatch-www/navbar/img/search.png" id="searchimghard"/>
+          </div>
+          <div class="searchnavitem" id="searchdiv">
+            <input type="text" id="searchinp" name="search" placeholder=" Search...">
+          </div>
+          <a class="navitem" href="/wiki.html">
+            Wiki
+          </a>
+          <a class="navitem" href="/discuss.html">
+            Discuss
+          </a>
+          <a class="navitem" href="/about.html">
+            About
+          </a>
+          <a class="navitem" href="/explore.html">
+            Explore
+          </a>
+          <a class="navitem" id="mail" href="/messages.html">
+            <img src="https://hatchdotlol.github.io/hatch-www/navbar/img/messages.svg" id="msgsym" /><div id="messagect"><b>1</b></div>
+        
+          </a>
+          <div id="userbox">
+          <div id="userinfo"><img id="pfpnav" src="https://uploads.scratch.mit.edu/get_image/user/41022482_96x96.png"><div id="usernamenav">aaa</div><div id="dropdownimgcover"><img id="dropdownarrow" src="https://hatchdotlol.github.io/hatch-www/navbar/img/downarrow.png" /></div></div>
+            <div id="userdrop" style="display: none" tabindex="0">
+              <a class="dropdown-option" id="highest" href="/profile?id=yourUsername">
+                Your Profile
+              </a>
+              <a class="dropdown-option" href="/settings">
+                Account Settings
+              </a>
+              <div onclick="alert('this will probably do something eventually')" class="dropdown-option" id="lowest">
+                Sign Out
+              </div>
+            </div>
+          </div>
+        </div>
+    <!-- Main Page -->
+<div id="main">
+   <div id="content">
+     <div id="banner"><div id="searchbanner">Search</div>
+     <div id="queryinfo"><span id="resultnum">[number]</span> results shown for "<span id="searchterm">[query]</span>"</div>
+       </div>
+     <div class="spacer"></div>
+     <div id="resulttype">
+       <div class="resulttypebutton" id="selected">Projects</div>
+       <a href="/galleries" class="resulttypebutton">Galleries</a>
+       <a href="../user/?u=[searchquery]" class="resulttypebutton">User (@[searchquery])</a>
+</div>
+     <div class="spacer"></div>
+     <div id="projcontainer">
+<div class="project">
+      <img src="https://rdr.lol/u/Ra9tJI.png
+" class="projthumb"></o>
+      <div class="projname">Project Title</div>
+      <div class="author">User</div>
+    </div>
+<div class="project">
+      <img src="https://rdr.lol/u/Ra9tJI.png
+" class="projthumb"></o>
+      <div class="projname">Project Title</div>
+      <div class="author">User</div>
+    </div>
+
+
+
+     </div>
+      <div class="spacer"></div>
+      <div id="loadmore">Load More</div>
+     
+     
+     
+       </div>
+  
+  
+  
+  <div class="spacer"></div></div><!--This ends #main - all content inside! Should stick to footer top!-->
+       <div class="footer">
+            <table>
+                <tr class="foot">
+                    <th>Us</th>
+                    <th>Community</th>
+                    <th>Foobarbaz</th>
+                </tr>
+                <tr class="foot">
+                    <td><a href="contributors.html">Contributors</a></td>
+                    <td><a href="rules.html">Hatch Guidelines</a></td>
+                    <td>Foobarbaz Item #1</td>
+                </tr>
+                <tr class="foot">
+                    <td><a href="socials.html">Social Media</a></td>
+                    <td>Community Item #2</td>
+                    <td>Foobarbaz Item #3</td>
+                </tr>
+                <tr class="foot">
+                    <td><a href="https://github.com/hatchdotlol">Source Code</a></td>
+                    <td>Community Item #3</td>
+                    <td>Foobarbaz Item #3</td>
+                </tr>
+            </table>
+        </div>
+      <div id="disc">Hatch is not affiliated with Scratch, the Scratch Team, the Scratch Foundation, or TurboWarp.</div>
+      <script src="/hatch-www/navbar/navbar.js"></script>
+    </body>
+</html>
