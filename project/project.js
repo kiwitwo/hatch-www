@@ -6,6 +6,7 @@ fetch(`https://api.hatch.lol/projects/${id}`).then(res => {
         res.json().then(data => {
             document.querySelector("#author-logo").src = `https://api.hatch.lol/${data.author.profile_picture}`;
             document.querySelector("#author-username").innerText = data.author.username;
+            document.querySelector("#author-username").href = `/user/?u=${data.author.username}`;
 
             document.querySelector("#project-title").innerText = data.title;
             document.querySelector("#project-publish-date").innerText = `${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][new Date(data.upload_ts*1000).getMonth()]} ${new Date(data.upload_ts*1000).getDate()}, ${new Date(data.upload_ts*1000).getFullYear()}`;
