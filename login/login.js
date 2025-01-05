@@ -1,7 +1,6 @@
 document.getElementById('submit').addEventListener('click', function (event) {
     const username = document.getElementById('signup-username').value;
     const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirm_password').value;
     const email = document.getElementById('email').value;
     const admin = document.getElementById('admin').value;
     const country = document.getElementById('country-select').value;
