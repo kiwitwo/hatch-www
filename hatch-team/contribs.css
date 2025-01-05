@@ -57,12 +57,11 @@ display: block;
   width: 75%;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
   gap: 20px;
 }
 .person {
-  display: flex;
-  flex-direction: column;
   display: block;
   background-color: var(--websiteBack);
   padding: 10px;
