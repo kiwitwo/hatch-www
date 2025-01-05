@@ -2,11 +2,6 @@ document.getElementById('submit').addEventListener('click', function (event) {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    if (!tou || !age) {
-        alert("You must agree to the terms and confirm your age.");
-        return;
-    }
-
     if (password !== confirmPassword) {
         alert("Passwords do not match.");
         return;
