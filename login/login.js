@@ -1,11 +1,6 @@
 document.getElementById('submit').addEventListener('click', function (event) {
-    const username = document.getElementById('signup-username').value;
+    const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-    const email = document.getElementById('email').value;
-    const admin = document.getElementById('admin').value;
-    const country = document.getElementById('country-select').value;
-    const tou = document.getElementById('tou').checked;
-    const age = document.getElementById('age').checked;
 
     if (!tou || !age) {
         alert("You must agree to the terms and confirm your age.");
