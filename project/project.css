@@ -112,7 +112,7 @@ display: block;
   background-color: #1b1b1b;
   border-radius: 10px;
 }
-.interactions { 
+.interactions {
   display: flex;
   gap: 5px;
 }
@@ -321,7 +321,7 @@ p.content > a {
   font-weight: bold;
 }
 .author-info {
-  
+
 }
 .author-info a {
   color: var(--navLight);
