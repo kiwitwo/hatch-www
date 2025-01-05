@@ -69,49 +69,13 @@
                 <input type="text" id="signup-username">
                 <label for="password">Password:</label>
                 <input type="password" id="password">
+                <label for="confirm_password">Password:</label>
+                <input type="password" id="confirm_password">
                 <input type="button" value="Submit" id="submit">
             </form>
         </div>
         <script>
-          document.getElementById('submit').addEventListener('click', function(event) {
-              var username = document.getElementById('signup-username').value;
-              var password = document.getElementById('password').value;
-              var email = document.getElementById('email').value;
-              var admin = document.getElementById('admin').value;
-              var country = document.getElementById('country-select').value;
-              var tou = document.getElementById('tou').checked;
-              var age = document.getElementById('age').checked;
-
-              if (!tou || !age) {
-                  alert("You must agree to the terms and confirm your age.");
-                  return;
-              }
-
-              fetch("https://api.hatch.lol/auth/register", {
-                      method: "POST",
-                      headers: {
-                          "Content-Type": "application/json",
-                          "Admin-Key": admin
-                      },
-                      body: JSON.stringify({
-                          username: username,
-                          password: password,
-                          email: email,
-                          country: country
-                      })
-                  })
-                  .then(response => response.json())
-                  .then(data => {
-                      if (data.success) {
-                          alert('Registration successful!');
-                      } else {
-                          alert('Error: ' + data.message);
-                      }
-                  })
-                  .catch((error) => {
-                      alert('An error occurred: ' + error.message);
-                  });
-          });
+          
         </script>
 
     </div>
@@ -142,5 +106,6 @@
 </div>
 <div id="disc">Hatch is not affiliated with Scratch, the Scratch Team, the Scratch Foundation, or TurboWarp.</div>
 <script src="/navbar/navbar.js"></script>
+<script src="./login.js"></script>
 </body>
 </html>
