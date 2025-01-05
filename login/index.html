@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Hatch</title>
-    <link rel="stylesheet" href="basicpage.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="/navbar/navbar.css">
     <link rel="stylesheet" href="/footer/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -12,50 +12,7 @@
     -->
 </head>
 <body>
-<div class="navbg"></div>
-<div class="nav">
-    <div id="logo"><img class="logo" src="/navbar/img/logo.png" height:30px onclick="location.href='index.html'" /></div>
-    <div class="searchimgnav" onclick="searchMade()">
-        <img src="../navbar/img/search.png" id="searchimghard" />
-    </div>
-    <div class="searchnavitem" id="searchdiv">
-        <input type="text" id="searchinp" name="search" placeholder=" Search...">
-    </div>
-    <a class="navitem" href="/wiki.html">
-        Wiki
-    </a>
-    <a class="navitem" href="/discuss.html">
-        Discuss
-    </a>
-    <a class="navitem" href="/about.html">
-        About
-    </a>
-    <a class="navitem" href="/explore.html">
-        Explore
-    </a>
-    <a class="navitem" id="mail" href="/messages.html">
-        <img src="/navbar/img/messages.svg" id="msgsym" />
-        <div id="messagect"><b>1</b></div>
-
-    </a>
-    <div id="userbox">
-        <div id="userinfo"><img id="pfpnav" src="https://uploads.scratch.mit.edu/get_image/user/41022482_96x96.png">
-            <div id="usernamenav">aaa</div>
-            <div id="dropdownimgcover"><img id="dropdownarrow" src="../navbar/img/downarrow.png" /></div>
-        </div>
-        <div id="userdrop" style="display: none" tabindex="0">
-            <a class="dropdown-option" id="highest" href="/profile?id=yourUsername">
-                Your Profile
-            </a>
-            <a class="dropdown-option" href="/settings">
-                Account Settings
-            </a>
-            <div onclick="alert('this will probably do something eventually')" class="dropdown-option" id="lowest">
-                Sign Out
-            </div>
-        </div>
-    </div>
-</div>
+<div id="navarea"></div>
 <div id="main">
     <div class="full">
         <div class="welcome">
@@ -73,74 +30,15 @@
             </form>
         </div>
         <script>
-          document.getElementById('submit').addEventListener('click', function(event) {
-              var username = document.getElementById('signup-username').value;
-              var password = document.getElementById('password').value;
-              var email = document.getElementById('email').value;
-              var admin = document.getElementById('admin').value;
-              var country = document.getElementById('country-select').value;
-              var tou = document.getElementById('tou').checked;
-              var age = document.getElementById('age').checked;
-
-              if (!tou || !age) {
-                  alert("You must agree to the terms and confirm your age.");
-                  return;
-              }
-
-              fetch("https://api.hatch.lol/auth/register", {
-                      method: "POST",
-                      headers: {
-                          "Content-Type": "application/json",
-                          "Admin-Key": admin
-                      },
-                      body: JSON.stringify({
-                          username: username,
-                          password: password,
-                          email: email,
-                          country: country
-                      })
-                  })
-                  .then(response => response.json())
-                  .then(data => {
-                      if (data.success) {
-                          alert('Registration successful!');
-                      } else {
-                          alert('Error: ' + data.message);
-                      }
-                  })
-                  .catch((error) => {
-                      alert('An error occurred: ' + error.message);
-                  });
-          });
+          
         </script>
 
     </div>
 </div>
-<div class="footer">
-    <table>
-        <tr class="foot">
-            <th>Us</th>
-            <th>Community</th>
-            <th>Foobarbaz</th>
-        </tr>
-        <tr class="foot">
-            <td><a href="contributors.html">Contributors</a></td>
-            <td><a href="rules.html">Hatch Guidelines</a></td>
-            <td>Foobarbaz Item #1</td>
-        </tr>
-        <tr class="foot">
-            <td><a href="socials.html">Social Media</a></td>
-            <td>Community Item #2</td>
-            <td>Foobarbaz Item #3</td>
-        </tr>
-        <tr class="foot">
-            <td><a href="https://github.com/hatchdotlol">Source Code</a></td>
-            <td>Community Item #3</td>
-            <td>Foobarbaz Item #3</td>
-        </tr>
-    </table>
-</div>
+<div id="footercontainer"><</div>
 <div id="disc">Hatch is not affiliated with Scratch, the Scratch Team, the Scratch Foundation, or TurboWarp.</div>
 <script src="/navbar/navbar.js"></script>
+    <script src="/footer/navbar.js"></script>
+<script src="./login.js"></script>
 </body>
 </html>
