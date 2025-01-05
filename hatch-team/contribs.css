@@ -32,8 +32,58 @@ input {
 .spacer {
   width: 100%;
   height: 15px;
-  background-color: var(--websiteBack);
 }
 .navitem a {
 display: block;
+}
+#content {
+  background-color: var(--innerBlock);
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--univText);
+}
+#banner {
+  background-color: var(--websiteBack);
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 35px;
+  text-align: center;
+}
+.sectiontitle {
+  font-size: 27.5px;
+  text-align: center;
+}
+.container {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  gap: 20px;
+}
+.person {
+  display: flex;
+  flex-direction: column;
+  display: block;
+  background-color: var(--websiteBack);
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.person:hover .username {
+  text-decoration: underline;
+}
+.person > .pfp {
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+}
+.person > .username {
+  color: var(--navLight);
+  font-size: 22.5px;
+  text-align: center;
+}
+.role {
+  color: var(--univText);
+  font-size: 15px;
+  text-align: center;
 }
