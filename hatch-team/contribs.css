@@ -67,14 +67,15 @@ display: block;
   padding: 10px;
   border-radius: 10px;
   text-decoration: none;
+  width: 160px;
 }
 .person:hover .username {
   text-decoration: underline;
 }
 .person > .pfp {
   border-radius: 10px;
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
 }
 .person > .username {
   color: var(--navLight);
