@@ -396,3 +396,16 @@ body.loading .loading-skeleton {
   border-radius: 7px;
   display: inline-block;
 }
+
+@media (max-width: 1100px) {
+  .project {
+    display: block;
+  }
+  .project .main-area {
+    width: unset;
+    margin-bottom: 10px;
+  }
+  .project .comments {
+    width: unset;
+  }
+}
