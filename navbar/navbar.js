@@ -1,37 +1,4 @@
-let x = document.querySelector("#userdrop");
-let y = document.querySelector("#userinfo");
-
-y.addEventListener("click", (e) => {
-  e.preventDefault();
-  dropToggle();
-});
-
-function dropToggle() {
-  x.classList.toggle("active");
-}
-
-document.onclick = (e) => {
-  if (!e.composedPath().includes(y)) {
-    x.classList.remove("active")
-  }
-}
-
-
-
-function searchMade(){
-    let searchTerm = document.getElementById('searchinp').value.replace(/ /g,"_");
-    window.location.href = "https://hatch.lol/search/" + searchTerm
-}
-
-const searchInp = document.getElementById("searchinp");
-searchInp.onkeydown = (e) => {
-    if (e.key === "Enter" && searchInp.value !== "") {
-        searchMade()
-    }
-}
-
-
- document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
+document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
         <div class="nav">
           <div id="logo"><img class="logo" src="https://hatchdotlol.github.io/hatch-www/navbar/img/logo.png" height:30px onclick="location.href='index.html'" /></div>
           <div class="searchimgnav" onclick="searchMade()">
@@ -71,3 +38,38 @@ searchInp.onkeydown = (e) => {
             </div>
           </div>
         </div>`;
+
+let x = document.querySelector("#userdrop");
+let y = document.querySelector("#userinfo");
+
+y.addEventListener("click", (e) => {
+  e.preventDefault();
+  dropToggle();
+});
+
+function dropToggle() {
+  x.classList.toggle("active");
+}
+
+document.onclick = (e) => {
+  if (!e.composedPath().includes(y)) {
+    x.classList.remove("active")
+  }
+}
+
+
+
+function searchMade(){
+    let searchTerm = document.getElementById('searchinp').value.replace(/ /g,"_");
+    window.location.href = "https://hatch.lol/search/" + searchTerm
+}
+
+const searchInp = document.getElementById("searchinp");
+searchInp.onkeydown = (e) => {
+    if (e.key === "Enter" && searchInp.value !== "") {
+        searchMade()
+    }
+}
+
+
+ 
