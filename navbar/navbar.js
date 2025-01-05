@@ -31,7 +31,7 @@ searchInp.onkeydown = (e) => {
 }
 
 
- document.getElementById("footer").innerHTML = `<div class="navbg"></div>
+ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
         <div class="nav">
           <div id="logo"><img class="logo" src="https://hatchdotlol.github.io/hatch-www/navbar/img/logo.png" height:30px onclick="location.href='index.html'" /></div>
           <div class="searchimgnav" onclick="searchMade()">
