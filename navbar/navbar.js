@@ -7,26 +7,28 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
           <div class="searchnavitem" id="searchdiv">
             <input type="text" id="searchinp" name="search" placeholder=" Search...">
           </div>
-          <a class="navitem" href="/wiki.html">
+          <!--
+          <a class="navitem" href="#null>
             Wiki
           </a>
-          <a class="navitem" href="/discuss.html">
+          <a class="navitem" href="#null">
             Discuss
           </a>
-          <a class="navitem" href="/about.html">
+          -->
+          <a class="navitem" href="/about">
             About
           </a>
-          <a class="navitem" href="/explore.html">
+          <a class="navitem" href="/explore">
             Explore
           </a>
-          <a class="navitem" id="mail" href="/messages.html">
+          <a class="navitem" id="mail" href="/messages">
             <img src="/navbar/img/messages.svg" id="msgsym" /><div id="messagect"><b>1</b></div>
         
           </a>
           <div id="userbox">
           <div id="userinfo"><img id="pfpnav" src="https://uploads.scratch.mit.edu/get_image/user/41022482_96x96.png"><div id="usernamenav">han614698</div><div id="dropdownimgcover"><img id="dropdownarrow" src="/navbar/img/downarrow.png" /></div></div>
             <div id="userdrop" style="display: none" tabindex="0">
-              <a class="dropdown-option" id="highest" href="/profile?id=yourUsername">
+              <a class="dropdown-option" id="highest" href="/user?u=yourUsername">
                 Your Profile
               </a>
               <a class="dropdown-option" href="/settings">
