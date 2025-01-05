@@ -68,25 +68,25 @@ body {
   width: auto;
 }
 
-.signup {
+.signin {
   padding: 10px;
   margin-top: 10px;
   background-color: #1b1b1b;
   border-radius: 10px;
 }
 
-#signupform {
+#signinform {
   display: flex;
   flex-direction: column;
   padding-right: 16px;
 }
 
-#signupform a {
+#signinform a {
   color: #ffbd59;
   font-weight: bold;
 }
 
-#signup-username {
+#username {
   width: 100%;
   padding: 5px;
   margin-right: 16px;
@@ -98,13 +98,13 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#signup-username:focus {
+#username:focus {
   border: 3px solid #ffbd59;
   background-color: #ffbd59;
   color: black;
 }
 
-#signupform label {
+#signinform label {
   font-size: 18px;
 }
 
