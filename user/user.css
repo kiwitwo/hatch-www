@@ -92,7 +92,7 @@ input {
   padding: 5px;
   gap: 5px;
   flex-direction: column;
-  overflow: scroll;
+  overflow-y: auto;
 }
 #wibd {
   display: flex;
@@ -135,7 +135,7 @@ input {
   padding: 5px;
   gap: 5px;
   flex-direction: column;
-  overflow: scroll;
+  overflow-y: auto;
   font-size: 20px;
 }
 .wibditem > a {
