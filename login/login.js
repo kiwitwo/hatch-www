@@ -11,13 +11,10 @@ document.getElementById('submit').addEventListener('click', function (event) {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Admin-Key": admin
         },
         body: JSON.stringify({
             username: username,
             password: password,
-            email: email,
-            country: country
         })
     })
         .then(response => response.json())
