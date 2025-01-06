@@ -2,8 +2,8 @@ document.getElementById('submit').addEventListener('click', function (event) {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    if (password !== confirmPassword) {
-        alert("Passwords do not match.");
+    if (username === "" || password === "") {
+        alert("Username and password is required.");
         return;
     }
 
