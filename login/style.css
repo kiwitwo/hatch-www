@@ -125,6 +125,10 @@ body {
   color: black;
 }
 
+#username:disabled, #password:disabled {
+  opacity: 0.5;
+}
+
 #submit {
   width: calc(100% + 16px);
   padding: 5px;
