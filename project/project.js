@@ -13,6 +13,8 @@ fetch(`https://api.hatch.lol/projects/${id}`).then(res => {
             document.querySelector("#project-embed").src = `https://turbowarp.org/embed?project_url=https://api.hatch.lol/projects/${id}/content`;
             document.querySelector("#project-description").innerText = data.description;
 
+            document.querySelector("#download").href = `https://api.hatch.lol/projects/${id}/content`;
+
             document.querySelector("#comments").innerText = "Coming soon...";
             document.querySelector("#upvote-count").innerText = "Coming soon...";
             document.querySelector("#downvote-count").innerText = "Coming soon...";

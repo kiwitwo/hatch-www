@@ -153,6 +153,9 @@ display: block;
   gap: 5px;
   margin-left: auto;
 }
+.actions a {
+  cursor: pointer;
+}
 .report {
   background-color: var(--report);
   text-decoration: none;
