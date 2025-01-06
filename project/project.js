@@ -4,6 +4,8 @@ const id = params.get("id");
 fetch(`https://api.hatch.lol/projects/${id}`).then(res => {
     if (res.status === 200) {
         res.json().then(data => {
+            document.title = `${data.title} on Hatch`;
+
             document.querySelector("#author-logo").src = `https://api.hatch.lol/${data.author.profile_picture}`;
             document.querySelector("#author-username").innerText = data.author.username;
             document.querySelector("#author-username").href = `/user/?u=${data.author.username}`;
