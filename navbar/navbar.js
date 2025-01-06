@@ -73,14 +73,16 @@ searchInp.onkeydown = (e) => {
     }
 }
 
-fetch("https://api.hatch.lol/auth/me", {
-  headers: {
-    "Token": localStorage.getItem("token")
-  }
-}).then(res => {
-  res.json().then(json => {
-    document.getElementById("pfpnav").src = `https://api.hatch.lol/${json.profilePicture}`;
-    document.getElementById("usernamenav").innerText = json.displayName;
-    document.getElementsByClassName("nav-your-profile")[0].href = `/user/?u=${json.name}`;
-  })
-});
+if (localStorage.getItem("token") !== null) {
+  fetch("https://api.hatch.lol/auth/me", {
+    headers: {
+      "Token": localStorage.getItem("token")
+    }
+  }).then(res => {
+    res.json().then(json => {
+      document.getElementById("pfpnav").src = `https://api.hatch.lol/${json.profilePicture}`;
+      document.getElementById("usernamenav").innerText = json.displayName;
+      document.getElementsByClassName("nav-your-profile")[0].href = `/user/?u=${json.name}`;
+    })
+  });
+}
