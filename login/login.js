@@ -7,7 +7,7 @@ document.getElementById('submit').addEventListener('click', async () => {
         return;
     }
 
-    const resp = fetch("https://api.hatch.lol/auth/login", {
+    const resp = await fetch("https://api.hatch.lol/auth/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -16,7 +16,15 @@ document.getElementById('submit').addEventListener('click', async () => {
             username: username,
             password: password,
         })
-    })
-    localStorage.setItem("token", (await resp.json())["token"]);
+    });
+
+    const json = await resp.json();
+
+    if (json.message) {
+        alert("Error: " + json.message);
+        return;
+    }
+
+    localStorage.setItem("token", json.token);
     window.location.href = "/"
 });
