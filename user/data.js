@@ -4,6 +4,8 @@ const username = params.get("u");
 fetch(`https://api.hatch.lol/users/${username}`).then(res => {
     if (res.status === 200) {
         res.json().then(data => {
+            document.title = `${data.displayName} (@${data.name}) on Hatch`;
+
             document.querySelector("#displayname").innerText = data.displayName;
             document.querySelector("#userat").innerText = `@${data.name}`;
             document.querySelector("#userbio").innerText = data.bio;
