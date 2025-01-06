@@ -26,9 +26,9 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
         
           </a>
           <div id="userbox">
-          <div id="userinfo"><img id="pfpnav" src="https://uploads.scratch.mit.edu/get_image/user/41022482_96x96.png"><div id="usernamenav">han614698</div><div id="dropdownimgcover"><img id="dropdownarrow" src="/navbar/img/downarrow.png" /></div></div>
+          <div id="userinfo"><img id="pfpnav" src="https://api.hatch.lol/uploads/pfp/default.png"><div id="usernamenav">...</div><div id="dropdownimgcover"><img id="dropdownarrow" src="/navbar/img/downarrow.png" /></div></div>
             <div id="userdrop" style="display: none" tabindex="0">
-              <a class="dropdown-option" id="highest" href="/user?u=yourUsername">
+              <a class="dropdown-option nav-your-profile" id="highest">
                 Your Profile
               </a>
               <a class="dropdown-option" href="/settings">
@@ -73,5 +73,12 @@ searchInp.onkeydown = (e) => {
     }
 }
 
-
- 
+fetch("https://api.hatch.lol/auth/me", {
+  headers: {
+    "Token": localStorage.getItem("token")
+  }
+}).then(res => {
+  document.getElementById("pfpnav").src = `https://api.hatch.lol/${res.profilePicture}`;
+  document.getElementById("usernamenav").innerText = res.displayName;
+  document.getElementsByClassName("nav-your-profile")[0].href = `/user/?u=${res.name}`;
+});
