@@ -73,6 +73,7 @@ searchInp.onkeydown = (e) => {
     }
 }
 
+/*
 fetch("https://api.hatch.lol/auth/me", {
   headers: {
     "Token": localStorage.getItem("token")
@@ -82,3 +83,4 @@ fetch("https://api.hatch.lol/auth/me", {
   document.getElementById("usernamenav").innerText = res.displayName;
   document.getElementsByClassName("nav-your-profile")[0].href = `/user/?u=${res.name}`;
 });
+*/
