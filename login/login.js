@@ -1,4 +1,4 @@
-document.getElementById('submit').addEventListener('click', function (event) {
+document.getElementById('submit').addEventListener('click', async () => {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
@@ -7,7 +7,7 @@ document.getElementById('submit').addEventListener('click', function (event) {
         return;
     }
 
-    fetch("https://api.hatch.lol/auth/register", {
+    const resp = fetch("https://api.hatch.lol/auth/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -17,26 +17,6 @@ document.getElementById('submit').addEventListener('click', function (event) {
             password: password,
         })
     })
-        .then(response => response.json())
-        .then(async (data) => {
-            if (data.success) {
-                const resp = fetch("https://api.hatch.lol/auth/login", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        username: username,
-                        password: password,
-                    })
-                })
-                localStorage.setItem("token", (await resp.json())["token"]);
-                window.location.href = "/"
-            } else {
-                alert('Failed to register: ' + data.message);
-            }
-        })
-        .catch((error) => {
-            alert('Failed to register: ' + error.message);
-        });
+    localStorage.setItem("token", (await resp.json())["token"]);
+    window.location.href = "/"
 });
