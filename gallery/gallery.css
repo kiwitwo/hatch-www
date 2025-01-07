@@ -155,13 +155,19 @@ body {
   padding: 10px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  border-radius: 10px;
+}
+#description-title {
+  padding: 0;
+  margin: 0;
 }
 #description-content {
   padding: 10px;
   background-color: #2b2b2b;
   margin: 10px 0 0 0;
 }
-#description-content.a {
+#description-content a {
   color: #ffbd59;
   font-weight: bold;
 }
@@ -170,5 +176,9 @@ body {
 }
 .gallery-disclaimer {
   margin: 0;
+  font-weight: bold;
+}
+.gallery-disclaimer a {
+  color: #ffbd59;
   font-weight: bold;
 }
