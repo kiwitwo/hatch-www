@@ -3,6 +3,25 @@ const id = params.get("id");
 
 fetch(`https://api.hatch.lol/projects/${id}`).then(res => {
     if (res.status === 200) {
+        document.querySelector("#project-comment-form").addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            fetch(`https://api.hatch.lol/projects/${id}/comments`, {
+                method: "POST",
+                headers: {
+                    "Token": localStorage.getItem("token")
+                },
+                body: {
+                    "content": document.querySelector("#project-comment-form-input").value
+                }
+            }).then(res => {
+                if (res.status === 200) {
+                    document.querySelector("#project-comment-form-input").value = "";
+                    document.querySelector("#project-comment-form-input").placeholder = "Comment posted!";
+                }
+            });
+        });
+
         res.json().then(data => {
             document.title = `${data.title} on Hatch`;
 
@@ -45,3 +64,4 @@ fetch(`https://api.hatch.lol/projects/${id}`).then(res => {
         window.location.assign("/404/");
     }
 });
+
