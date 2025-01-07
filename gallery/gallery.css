@@ -157,7 +157,7 @@ body {
   flex-direction: column;
   gap: 10px;
   border-radius: 10px;
-  height: 260px;
+  height: 200px;
   overflow-y: auto;
 }
 .description-title {
@@ -182,6 +182,14 @@ body {
   font-weight: bold;
 }
 .gallery-disclaimer > a {
+  color: #ffbd59;
+  font-weight: bold;
+}
+.gallery-guidelines {
+  margin: 0;
+  font-weight: bold;
+}
+.gallery-guidelines > a {
   color: #ffbd59;
   font-weight: bold;
 }
