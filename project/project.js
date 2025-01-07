@@ -17,7 +17,22 @@ fetch(`https://api.hatch.lol/projects/${id}`).then(res => {
 
             document.querySelector("#download").href = `https://api.hatch.lol/projects/${id}/content`;
 
-            document.querySelector("#comments").innerText = "Coming soon...";
+            fetch(`https://api.hatch.lol/projects/${id}/comments`).then(res => {
+                res.json().then(data => {
+                    data.comments.forEach(comment => {
+                        document.querySelector("#comments").innerHTML += `
+        <div class="comment">
+          <div class="comment-top">
+            <img src="https://api.hatch.lol/${comment.author.profile_picture}" class="comment-pfp">
+            <a href="/user/?u=${comment.author.username}" class="comment-username">${comment.author.display_name}</a>
+            <p class="comment-time">${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][new Date(comment.postDate*1000).getMonth()]} ${new Date(comment.postDate*1000).getDate()}, ${new Date(comment.postDate*1000).getFullYear()}</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png"></a>
+          </div>
+          <p class="content">${comment.replyTo === null ? "" : `<a href="/user/?u=${comment.replyTo}">@${comment.replyTo}</a> `}${comment.content}</p>
+        </div>`
+                    });
+                });
+            });
+
             document.querySelector("#upvote-count").innerText = "Coming soon...";
             document.querySelector("#downvote-count").innerText = "Coming soon...";
             document.querySelector("#vote-percent").innerText = "Coming soon...";
