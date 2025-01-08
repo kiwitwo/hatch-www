@@ -31,7 +31,7 @@ fetch(`https://api.hatch.lol/projects/${id}`).then(res => {
 
             document.querySelector("#project-title").innerText = data.title;
             document.querySelector("#project-publish-date").innerText = `${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][new Date(data.upload_ts * 1000).getMonth()]} ${new Date(data.upload_ts * 1000).getDate()}, ${new Date(data.upload_ts * 1000).getFullYear()}`;
-            document.querySelector("#project-embed").src = `https://turbowarp.org/embed?project_url=https://api.hatch.lol/projects/${id}/content`;
+            document.querySelector("#project-embed").src = `https://warp.algebrahelp.org/embed.html?project_url=https://api.hatch.lol/projects/${id}/content`;
             document.querySelector("#project-description").innerText = data.description;
 
             document.querySelector("#download").href = `https://api.hatch.lol/projects/${id}/content`;
