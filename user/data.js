@@ -12,7 +12,7 @@ fetch(`https://api.hatch.lol/users/${username}`).then(res => {
             document.querySelector("#pfp").src = data.profilePicture.startsWith("data:image") ? data.profilePicture : `https://api.hatch.lol/${data.profilePicture}`;
             document.querySelector("#followers").innerText = `Followers (${data.followerCount})`;
             document.querySelector("#following").innerText = `Following (${data.followingCount})`;
-            document.querySelector("#userdata").innerText = `${data.country} | Joined ${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][new Date(data.joinDate).getMonth()]} ${new Date(data.joinDate).getDate()}, ${new Date(data.joinDate).getFullYear()}`;
+            document.querySelector("#userdata").innerText = `${data.hatchTeam ? "Hatch Team" : "Hatchling"} | ${data.country} | Joined ${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][new Date(data.joinDate).getMonth()]} ${new Date(data.joinDate).getDate()}, ${new Date(data.joinDate).getFullYear()}`;
 
             document.querySelector("#userstatstext").innerText = "Coming soon...";
             document.querySelector("#wibdinfo").innerText = "Coming soon...";
