@@ -258,7 +258,7 @@ input {
   font-size: 10px;
 }
 /* Comments */
-.comments {
+#comments {
   color: var(--univText);
   width: 100%;
   background-color: #2b2b2b;
@@ -268,16 +268,16 @@ input {
   flex-direction: column;
   gap: 10px;
 }
-.comments h2 {
+#comments h2 {
   margin-top: 0;
   margin-bottom: 0;
 }
-.comment-input {
+#comment-input {
   display: flex;
   gap: 10px;
   width: 25%;
 }
-.comment-input img {
+#comment-input img {
   height: 34px;
   border-radius: 6px;
 }
