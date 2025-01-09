@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hatch</title>
+        <link rel="stylesheet" href="mystuff.css">
+        <link rel="stylesheet" href="/navbar/navbar.css">
+        <link rel="stylesheet" href="/footer/footer.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <div id="navarea"></div>
+        <div id="main">
+            <div id="content">
+                <h1>My Stuff</h1>
+                <div id="statistics">
+                    <h2>My Statistics</h2>
+                    <p id="stats">
+                        931 followers | 12,345 following<br>
+                        12,345 projects: <i class="fa-solid fa-square-caret-up"></i> 51,999 | <i class="fa-solid fa-eye"></i> 94,419,931 | <i class="fa-regular fa-message"></i> 31,021<br>
+                        61 galleries: <i class="fa-solid fa-users-rectangle"></i> 21,392 | <i class="fa-regular fa-file-code"></i> 841,912 | <i class="fa-regular fa-message"></i> 29,912 | <i class="fa-solid fa-user-plus"></i> 11,344
+                    </p>
+                </div>
+                <div id="stuff-items">
+                    <div id="create-row">
+                        <h3 id="create-title">Create New</h3>
+                        <div id="create-items">
+                            <button id="upload-project">Upload Project</button>
+                            <button id="create-gallery">Create Gallery</button>
+                        </div>
+                        <div id="upload-project-section"> <!--hi pls show this when the upload project button is clicked-->
+                            <h3 id="upload-project-title">Upload Project</h3>
+                            <form id="uploadform">
+                                <label for="upload-title">Project Title:</label>
+                                <input type="text" id="upload-title">
+                                <label for="upload-description">Project Description:</label>
+                                <textarea id="upload-description"></textarea>
+                                <label for="file">Upload Project File (.sb3, .sb2, .sb)</label>
+                                <input type="file" id="file" accept=".sb3, .sb2, .sb">
+                                <div class="checkboxes">
+                                    <input type="checkbox" id="tou" name="" value="tou">
+                                    <label for="tou"> I agree that this project does not violate Hatch's <a href="/terms">Platform Guidelines</a></label>
+                                </div>
+                                <input type="button" value="Submit" id="submit">
+                            </form>
+                            <script>
+                                // this is template code someone pls fix :agony: (i know zero js i just need something here for testing, but this code probably sucks)
+                                document.getElementById('submit').addEventListener('click', function() {
+                                const title = document.getElementById('upload-title').value;
+                                const description = document.getElementById('upload-description').value;
+                                const fileInput = document.getElementById('file');
+                                const file = fileInput.files[0];
+                            
+                                const touChecked = document.getElementById('tou').checked;
+                                if (!touChecked) {
+                                    alert('You must agree to the terms of use.');
+                                    return;
+                                }
+                            
+                                const token = localStorage.getItem('token');
+                                if (!token) {
+                                    alert('No token found. Please log in first.');
+                                    return;
+                                }
+                            
+                                const fileBlob = new Blob([file], { type: 'application/zip' });
+
+                                const formData = new FormData();
+                                formData.append('title', title);
+                                formData.append('description', description);
+                                formData.append('file', fileBlob, file.name);
+                            
+                                fetch('https://api.hatch.lol/projects', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Token': token
+                                    },
+                                    body: formData
+                                })
+                                .then(response => {
+                                    return response.text().then(text => {
+                                        console.log('Response status:', response.status);
+                                        console.log('Response body:', text);
+                                        if (response.ok) {
+                                            alert(text);
+                                            alert('Project uploaded successfully!');
+                                        } else {
+                                            alert('Error: ' + text);
+                                        }
+                                    });
+                                })
+                                .catch(error => {
+                                    console.error('Error:', error);
+                                    alert('There was an error uploading the project.');
+                                });
+                            });
+                            </script>
+                        </div>
+                    </div>
+                    <div id="my-projects">
+                        <h3>My Projects</h3>
+                        <div id="projects">
+                            <div class="project">
+                                <img src="https://rdr.lol/u/Ra9tJI.png" class="project-thumbnail">
+                                <h3 class="project-title">Project 1 Title</h3>
+                                <p class="project-stats"><i class="fa-solid fa-square-caret-up"></i> 929&emsp;<i class="fa-regular fa-message"></i> 312&emsp;<i class="fa-solid fa-eye"></i> 1.8k<br><i class="fa-regular fa-calendar"></i> 8 January 2025</p>
+                                <form class="project-actions">
+                                    <select name="share-status" class="share-status">
+                                        <option value="shared">Shared</option>
+                                        <option value="unshared">Unshared</option>
+                                    </select>
+                                    <button class="delete-project">Delete</button>
+                                </form>
+                            </div>
+                            <div class="project">
+                                <img src="https://rdr.lol/u/Ra9tJI.png" class="project-thumbnail">
+                                <h3 class="project-title">Project 2 Title</h3>
+                                <p class="project-stats"><i class="fa-solid fa-square-caret-up"></i> 929&emsp;<i class="fa-regular fa-message"></i> 312&emsp;<i class="fa-solid fa-eye"></i> 1.8k<br><i class="fa-regular fa-calendar"></i> 8 January 2025</p>
+                                <form class="project-actions">
+                                    <select name="share-status" class="share-status">
+                                        <option value="shared">Shared</option>
+                                        <option value="unshared">Unshared</option>
+                                    </select>
+                                    <button class="delete-project">Delete</button>
+                                </form>
+                            </div>
+                            <div class="project">
+                                <img src="https://rdr.lol/u/Ra9tJI.png" class="project-thumbnail">
+                                <h3 class="project-title">Project 3 Title</h3>
+                                <p class="project-stats"><i class="fa-solid fa-square-caret-up"></i> 929&emsp;<i class="fa-regular fa-message"></i> 312&emsp;<i class="fa-solid fa-eye"></i> 1.8k<br><i class="fa-regular fa-calendar"></i> 8 January 2025</p>
+                                <form class="project-actions">
+                                    <select name="share-status" class="share-status">
+                                        <option value="shared">Shared</option>
+                                        <option value="unshared">Unshared</option>
+                                    </select>
+                                    <button class="delete-project">Delete</button>
+                                </form>
+                            </div>
+                            <div class="project">
+                                <img src="https://rdr.lol/u/Ra9tJI.png" class="project-thumbnail">
+                                <h3 class="project-title">Project 4 Title</h3>
+                                <p class="project-stats"><i class="fa-solid fa-square-caret-up"></i> 929&emsp;<i class="fa-regular fa-message"></i> 312&emsp;<i class="fa-solid fa-eye"></i> 1.8k<br><i class="fa-regular fa-calendar"></i> 8 January 2025</p>
+                                <form class="project-actions">
+                                    <select name="share-status" class="share-status">
+                                        <option value="shared">Shared</option>
+                                        <option value="unshared">Unshared</option>
+                                    </select>
+                                    <button class="delete-project">Delete</button>
+                                </form>
+                            </div>
+                            <div class="project">
+                                <img src="https://rdr.lol/u/Ra9tJI.png" class="project-thumbnail">
+                                <h3 class="project-title">Project 5 Title</h3>
+                                <p class="project-stats"><i class="fa-solid fa-square-caret-up"></i> 929&emsp;<i class="fa-regular fa-message"></i> 312&emsp;<i class="fa-solid fa-eye"></i> 1.8k<br><i class="fa-regular fa-calendar"></i> 8 January 2025</p>
+                                <form class="project-actions">
+                                    <select name="share-status" class="share-status">
+                                        <option value="shared">Shared</option>
+                                        <option value="unshared">Unshared</option>
+                                    </select>
+                                    <button class="delete-project">Delete</button>
+                                </form>
+                            </div>
+                            <div class="project">
+                                <img src="https://rdr.lol/u/Ra9tJI.png" class="project-thumbnail">
+                                <h3 class="project-title">Project 6 Title</h3>
+                                <p class="project-stats"><i class="fa-solid fa-square-caret-up"></i> 929&emsp;<i class="fa-regular fa-message"></i> 312&emsp;<i class="fa-solid fa-eye"></i> 1.8k<br><i class="fa-regular fa-calendar"></i> 8 January 2025</p>
+                                <form class="project-actions">
+                                    <select name="share-status" class="share-status">
+                                        <option value="shared">Shared</option>
+                                        <option value="unshared">Unshared</option>
+                                    </select>
+                                    <button class="delete-project">Delete</button>
+                                </form>
+                            </div>
+                            <div class="project">
+                                <img src="https://rdr.lol/u/Ra9tJI.png" class="project-thumbnail">
+                                <h3 class="project-title">Project 7 Title</h3>
+                                <p class="project-stats"><i class="fa-solid fa-square-caret-up"></i> 929&emsp;<i class="fa-regular fa-message"></i> 312&emsp;<i class="fa-solid fa-eye"></i> 1.8k<br><i class="fa-regular fa-calendar"></i> 8 January 2025</p>
+                                <form class="project-actions">
+                                    <select name="share-status" class="share-status">
+                                        <option value="shared">Shared</option>
+                                        <option value="unshared">Unshared</option>
+                                    </select>
+                                    <button class="delete-project">Delete</button>
+                                </form>
+                            </div>
+                            <div class="project">
+                                <img src="https://rdr.lol/u/Ra9tJI.png" class="project-thumbnail">
+                                <h3 class="project-title">Project 8 Title</h3>
+                                <p class="project-stats"><i class="fa-solid fa-square-caret-up"></i> 929&emsp;<i class="fa-regular fa-message"></i> 312&emsp;<i class="fa-solid fa-eye"></i> 1.8k<br><i class="fa-regular fa-calendar"></i> 8 January 2025</p>
+                                <form class="project-actions">
+                                    <select name="share-status" class="share-status">
+                                        <option value="shared">Shared</option>
+                                        <option value="unshared">Unshared</option>
+                                    </select>
+                                    <button class="delete-project">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footercontainer"></div>
+        <script src="/navbar/navbar.js"></script>
+        <script src="/footer/footer.js"></script>
+    </body>
+</html>
