@@ -1,6 +1,6 @@
 document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
         <div class="nav">
-          <div id="logo"><img class="logo" src="/navbar/img/logo.png" height:30px onclick="location.href='index.html'" /></div>
+          <div id="logo"><a href="/"><img class="logo" src="/navbar/img/logo.png"></a></div>
           <div class="searchimgnav" onclick="searchMade()">
             <img src="/navbar/img/search.png" id="searchimghard"/>
           </div>
