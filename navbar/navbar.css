@@ -188,6 +188,9 @@
   max-width: 45px;
   height: 40px;
 }
+#mystuff {
+  padding-top: 8.5px !important;
+}
 #userdrop > a {
   text-decoration: none;
   color: #000000;
