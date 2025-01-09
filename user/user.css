@@ -383,3 +383,7 @@ body.loading .loading-skeleton {
   border-radius: 7px;
   display: inline-block;
 }
+#verified {
+  padding-top: 2px;
+  padding-left: 8px;
+}
