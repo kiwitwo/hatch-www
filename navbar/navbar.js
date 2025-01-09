@@ -25,12 +25,9 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
             <img src="/navbar/img/messages.svg" id="msgsym" /><div id="messagect"><b>1</b></div>
         
           </a>
-<<<<<<< HEAD
-=======
           <a class="navitem" href="/mystuff">
           <i class="fa-regular fa-folder-open fa-2xl" id="mystuff"></i> 
           </a>
->>>>>>> 5802ed1ba4d2ff5d1205654f96b458384626aaf1
           <div id="userbox">
           <div id="userinfo"><img id="pfpnav" src="https://api.hatch.lol/uploads/pfp/default.png"><div id="usernamenav">...</div><div id="dropdownimgcover"><img id="dropdownarrow" src="/navbar/img/downarrow.png" /></div></div>
             <div id="userdrop" style="display: none" tabindex="0">

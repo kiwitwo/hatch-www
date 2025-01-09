@@ -26,9 +26,9 @@
   justify-content: space-between;
   gap: 10px;
   /* below makes it so the dropdown text cannot accidentally be highlighted */
-  -webkit-user-select: none; 
-  -ms-user-select: none; 
-  user-select: none; 
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 #userinfo:hover {
   background-color: var(--navDark);
@@ -48,16 +48,16 @@
   padding-left: 20px;
   padding-bottom: 7px;
   padding-top: 7px;
-  -webkit-user-select: none; 
-  -ms-user-select: none; 
-  user-select: none; 
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   cursor: pointer;
 }
 .dropdown-option:hover {
   background-color: var(--navDark);
 }
 #userdrop {
-  background-color: var(--navLight); 
+  background-color: var(--navLight);
   border-radius: 10px;
   display: none;
 }
@@ -82,9 +82,9 @@
   float: right;
   display: flex;
   padding: 15px 20px 5px 20px;
-  -webkit-user-select: none; 
-  -ms-user-select: none; 
-  user-select: none; 
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   cursor: pointer;
   color: var(--univColor);
   text-decoration: none;
@@ -149,18 +149,18 @@
   align-items: center;
 }
 #logo:hover {
-  -ms-transform: scale(1.1); 
-  -webkit-transform: scale(1.1); 
-  transform: scale(1.1); 
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 #logo {
   transition: transform .2s;
   cursor: pointer;
 }
 #searchimghard:hover {
-  -ms-transform: scale(1.1); 
-  -webkit-transform: scale(1.1); 
-  transform: scale(1.1); 
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 #messagect {
   background-color: var(--websiteBack);
@@ -188,12 +188,9 @@
   max-width: 45px;
   height: 40px;
 }
-<<<<<<< HEAD
-=======
 #mystuff {
   padding-top: 8.5px !important;
 }
->>>>>>> 5802ed1ba4d2ff5d1205654f96b458384626aaf1
 #userdrop > a {
   text-decoration: none;
   color: #000000;
