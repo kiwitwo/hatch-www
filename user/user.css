@@ -277,7 +277,7 @@ input {
   gap: 10px;
   width: 25%;
 }
-#comment-input img {
+.comment-input img {
   height: 34px;
   border-radius: 6px;
 }
