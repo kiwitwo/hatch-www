@@ -46,7 +46,7 @@ display: block;
   padding-bottom: 20px;
   display: flex;
   flex-direction: column;
-  background-color: var(--);
+  background-color: var(--websiteBack);
 }
 .area {
   width: 100%;
