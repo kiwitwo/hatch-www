@@ -258,11 +258,7 @@ input {
   font-size: 10px;
 }
 /* Comments */
-<<<<<<< HEAD
 .comments {
-=======
-#comments {
->>>>>>> 5802ed1ba4d2ff5d1205654f96b458384626aaf1
   color: var(--univText);
   width: 100%;
   background-color: #2b2b2b;
@@ -272,19 +268,11 @@ input {
   flex-direction: column;
   gap: 10px;
 }
-<<<<<<< HEAD
 .comments h2 {
   margin-top: 0;
   margin-bottom: 0;
 }
 .comment-input {
-=======
-#comments h2 {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-#comment-input {
->>>>>>> 5802ed1ba4d2ff5d1205654f96b458384626aaf1
   display: flex;
   gap: 10px;
   width: 25%;
@@ -394,12 +382,8 @@ body.loading .loading-skeleton {
   z-index: 2;
   border-radius: 7px;
   display: inline-block;
-<<<<<<< HEAD
-}
-=======
 }
 #verified {
   padding-top: 2px;
   padding-left: 8px;
 }
->>>>>>> 5802ed1ba4d2ff5d1205654f96b458384626aaf1
