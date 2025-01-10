@@ -7,9 +7,9 @@
     --websiteBack: #000000; /* main background */
     --univText: #ffffff; /* text color */
     --innerBlock: #2b2b2b; /* all inner boxes */
+    --innerBlock2: #1b1b1b;
     --blockBack: #2b2b2b; /* footer */
     --footerDisc: #ffbd59; /* very bottom, disclaimer */
-    --innerBlock2: #1b1b1b; /* very far inner block */
     --lightinnerBlock: #3d3d3d; /* mainly for messages */
     --alert: #5e0c0c; /* alert message */
   }
@@ -89,7 +89,7 @@
     text-decoration: underline;
   }
   .commentmsg {
-    background-color: var(--lightinnerBlock);
+    background-color: var(--innerBlock2);
     width: fit-content;
     padding: 10px;
     border-radius: 10px;

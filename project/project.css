@@ -7,10 +7,7 @@
   --websiteBack: #000000; /* main background */
   --univText: #ffffff; /* text color */
   --innerBlock: #2b2b2b; /* all inner boxes */
-<<<<<<< HEAD
-=======
   --innerBlock2: #1b1b1b; /* use in combination with --innerBlock for nested sections */
->>>>>>> 5802ed1ba4d2ff5d1205654f96b458384626aaf1
   --footerDisc: #ffbd59; /* very bottom, disclaimer */
   --upvote: #7ed957; /* Upvote Button */
   --downvote: #ff5757; /* downvote button */
@@ -36,10 +33,6 @@ input {
 .spacer {
   width: 100%;
   height: 15px;
-<<<<<<< HEAD
-  background-color: var(--websiteBack);
-=======
->>>>>>> 5802ed1ba4d2ff5d1205654f96b458384626aaf1
 }
 .navitem a {
 display: block;
@@ -237,24 +230,14 @@ form.comment-submit > input[type=text]:focus {
 form.comment-submit > input[type=submit] {
   cursor: pointer;
   color: white;
-<<<<<<< HEAD
-  background-color: var(--websiteBack);
-  border: 3px solid var(--websiteBack);
-  border-radius: 10px;
-}
-form.comment-submit > input[type=submit]:hover {
-  color: #ffbd59;
-  background-color: var(--websiteBack);
-=======
   background-color: var(--innerBlock2);
   border: 3px solid var(--innerBlock2);
   border-radius: 10px;
-  transition: background-color 0.3s ease, color 0.3s ease, border: 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 form.comment-submit > input[type=submit]:hover {
   color: #ffbd59;
   background-color: var(--innerBlock2);
->>>>>>> 5802ed1ba4d2ff5d1205654f96b458384626aaf1
   border: 3px solid var(--navLight);
   border-radius: 10px;
 }
@@ -263,11 +246,7 @@ form.comment-submit > input[type=submit]:hover {
   gap: 10px;
 }
 .comment {
-<<<<<<< HEAD
-  background-color: var(--websiteBack);
-=======
   background-color: var(--innerBlock2);
->>>>>>> 5802ed1ba4d2ff5d1205654f96b458384626aaf1
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 10px;
@@ -348,20 +327,13 @@ p.content > a {
   color: var(--navLight);
   font-weight: bold;
 }
-.author-info {
-
-}
 .author-info a {
   color: var(--navLight);
   font-weight: bold;
   text-decoration: none;
 }
 .description {
-<<<<<<< HEAD
-  background-color: var(--websiteBack);
-=======
   background-color: var(--innerBlock2);
->>>>>>> 5802ed1ba4d2ff5d1205654f96b458384626aaf1
   border-radius: 10px;
   padding: 10px;
 }
@@ -397,11 +369,7 @@ p.content > a {
   overflow-x: auto;
 }
 .gallery {
-<<<<<<< HEAD
-  background-color: var(--websiteBack);
-=======
   background-color: var(--innerBlock2);
->>>>>>> 5802ed1ba4d2ff5d1205654f96b458384626aaf1
   width: 180px;
   border-radius: 10px;
   display: flex;
