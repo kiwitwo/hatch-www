@@ -52,12 +52,13 @@ input {
   text-align: center;
 }
 .container {
-  width: 75%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 20px;
+  justify-items: center;
 }
 .person {
   display: block;
