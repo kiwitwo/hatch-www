@@ -68,15 +68,24 @@ input {
   text-decoration: none;
   width: 160px;
 }
-.person:hover .username {
-  text-decoration: underline;
+.pfp, .username, .role {
+  transition: ease 0.3s all;
 }
-.person > .pfp {
+.person:hover .username {
+  color: var(--searchBar)
+}
+.person:hover .pfp {
+  filter: brightness(80%);
+}
+.person:hover .role {
+  color: #c4c4c4;
+}
+.pfp {
   border-radius: 10px;
   width: 100%;
   aspect-ratio: 1 / 1;
 }
-.person > .username {
+.username {
   color: var(--navLight);
   font-size: 22.5px;
   text-align: center;
