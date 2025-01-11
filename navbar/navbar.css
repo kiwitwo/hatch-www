@@ -86,7 +86,7 @@
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;
-  color: var(--univColor);
+  color: black !important;
   text-decoration: none;
 }
 #searchimgnav {
@@ -193,7 +193,7 @@
 }
 #userdrop > a {
   text-decoration: none;
-  color: #000000;
+  color: #000000 !important;
   display: block;
 }
 .navitem a {
