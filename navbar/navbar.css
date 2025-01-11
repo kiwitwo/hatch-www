@@ -156,6 +156,7 @@
 #logo {
   transition: transform .2s;
   cursor: pointer;
+  filter: brightness(0);
 }
 #searchimghard:hover {
   -ms-transform: scale(1.1);
