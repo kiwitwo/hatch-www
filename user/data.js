@@ -18,7 +18,7 @@ fetch(`https://api.hatch.lol/users/${username}`).then(res => {
             document.querySelector("#wibdinfo").innerText = "Coming soon...";
             document.querySelector("#badgecontain").innerText = "Coming soon...";
             document.querySelector("#connectionscontain").innerText = "Coming soon...";
-            document.querySelector("#comments").innerText = "Coming soon...";
+            // document.querySelector("#comments").innerText = "Coming soon...";
             document.body.classList.remove("loading");
         });
     } else if (res.status === 404) {
