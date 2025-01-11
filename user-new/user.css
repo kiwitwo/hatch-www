@@ -26,6 +26,16 @@ a {
 a:hover {
     color: var(--searchBar);
 }
+#bio a, #recent-activity a, #connections-list a {
+    color: var(--lightOrange);
+    font-weight: bold;
+    transition: ease 0.3s;
+    text-decoration: none;
+}
+
+#bio a:hover, #recent-activity a:hover, #connections-list a:hover {
+    color: var(--searchBar);
+}
 input {
     outline: none;
 }
@@ -251,7 +261,7 @@ h1, h2, h3, h4, p {
 .project {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     background-color: var(--innerBlock2);
     padding: 10px;
     border-radius: 10px;
@@ -266,6 +276,11 @@ h1, h2, h3, h4, p {
 .project-thumbnail {
     height: 100px;
     border-radius: 10px;
+    transition: filter 0.3s ease;
+}
+
+.project-thumbnail:hover {
+    filter: brightness(80%);
 }
 .project-date {
     color: #C4C4C4;
@@ -297,4 +312,13 @@ h1, h2, h3, h4, p {
     gap: 10px;
     overflow-x: auto;
     flex-wrap: nowrap;
+}
+.project-title a {
+    color: var(--univText) !important;
+    text-decoration: none !important;
+    transition: ease 0.3s all !important;
+}
+
+.project-title a:hover {
+    color: #c4c4c4 !important;
 }
