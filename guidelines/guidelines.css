@@ -1,0 +1,71 @@
+:root {
+    --navLight: #ffbd59;  /* navbar appearance */
+    --navDark: #f0b151; /* navbar on hover */
+    --signoutBorder: #aaa000; /* line in userinfo dropdown */
+    --lightOrange: #ffbd59; /* orange links around the site */
+    --searchBar: #d69d47; /* search bar background-color */
+    --websiteBack: #000000; /* main background */
+    --univText: #ffffff; /* text color */
+    --innerBlock: #2b2b2b; /* all inner boxes */
+    --innerBlock2: #1b1b1b; /* use this in combination with --innerBlock for nested sections */
+    --blockBack: #2b2b2b; /* footer */
+    --footerDisc: #ffbd59; /* very bottom, disclaimer */
+  }
+  /* General Elements */
+  body, html {
+    font-family: "Calibri", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--navLight);
+  }
+  input {
+    outline: none;
+  }
+  #main {
+    background-color: var(--websiteBack);
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-direction: column;
+  }
+  .spacer {
+    width: 100%;
+    height: 15px;
+    background-color: var(--websiteBack);
+  }
+  .navitem a {
+  display: block;
+  }
+  #content {
+    background-color: var(--innerBlock);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  #banner {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--innerBlock2);
+    font-size: 35px;
+    color: var(--univText);
+    text-align: center;
+  }
+  .rule {
+    color: var(--univText);
+    margin-top: 8px;
+    background-color: var(--innerBlock2);
+    padding: 10px;
+    border-radius: 10px;
+  }
+  #explain {
+    color: var(--univText);
+    margin-top: 8px;
+    background-color: var(--innerBlock2);
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  #explain > a {
+    color: var(--navLight);
+  }
