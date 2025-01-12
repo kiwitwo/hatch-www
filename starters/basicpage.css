@@ -35,6 +35,3 @@ input {
   height: 15px;
   background-color: var(--websiteBack);
 }
-.navitem a {
-display: block;
-}
