@@ -34,7 +34,7 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
               <a class="dropdown-option" href="/settings">
                 Account Settings
               </a>
-              <div onclick="alert('this will probably do something eventually')" class="dropdown-option" id="lowest">
+              <div class="dropdown-option lowest" id="nav-sign-out">
                 Sign Out
               </div>
             </div>
@@ -43,6 +43,11 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
 
 let x = document.querySelector("#userdrop");
 let y = document.querySelector("#userinfo");
+
+document.querySelector("#nav-sign-out").addEventListener("click", () => {
+    localStorage.removeItem("token");
+    location.reload();
+})
 
 y.addEventListener("click", (e) => {
   e.preventDefault();
