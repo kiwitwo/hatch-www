@@ -68,7 +68,7 @@ document.onclick = (e) => {
 
 function searchMade(){
     let searchTerm = document.getElementById('searchinp').value.replace(/ /g,"_");
-    window.location.href = "https://hatch.lol/search/" + searchTerm
+    window.location.href = "https://dev.hatch.lol/search/?id=" + searchTerm
 }
 
 const searchInp = document.getElementById("searchinp");
