@@ -1,8 +1,9 @@
 document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
         <div class="nav">
           <div id="logo"><a href="/"><img class="logo" src="/navbar/img/logo.png"></a></div>
-          <div class="searchnavitem" id="searchdiv">
-            <input type="text" id="searchinp" name="search" placeholder=" Search...">
+          <div id="search">
+            <i class="fa-solid fa-magnifying-glass" onclick="searchMade()"></i>
+            <input type="text" id="searchinp" name="search" placeholder="Search...">
           </div>
           <!--
           <a class="navitem" href="#null>
@@ -34,9 +35,9 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
               <a class="dropdown-option" href="/settings">
                 Account Settings
               </a>
-              <div class="dropdown-option lowest" id="nav-sign-out">
+              <a class="dropdown-option lowest" id="nav-sign-out">
                 Sign Out
-              </div>
+              </a>
             </div>
           </div>
         </div>`;
