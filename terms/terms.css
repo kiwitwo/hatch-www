@@ -76,3 +76,6 @@
     text-decoration: underline;
     font-weight: bold;
   }
+  h1 {
+    margin: 0;
+  }
