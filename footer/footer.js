@@ -18,7 +18,7 @@
                 <tr class="foot">
                     <td><a href="https://github.com/hatchdotlol">Source Code</a></td>
                     <td><a href="https://social.hatch.lol">Social Media</a></td>
-                    <td><a href="/terms-of-use">Terms of Use</a></td>
+                    <td><a href="/terms">Terms of Use</a></td>
                 </tr>
             </table>
         </div>
