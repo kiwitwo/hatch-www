@@ -43,7 +43,7 @@ a {
     color: var(--searchBar);
   }
   #main {
-    height: calc(100vh - 164px);
+    min-height: calc(100vh - 164px);
     background-color: var(--websiteBack);
     width: 80%;
     padding-left: 10%;
