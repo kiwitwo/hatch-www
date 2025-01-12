@@ -34,7 +34,7 @@ fetch(`https://api.hatch.lol/users/${username}/following`).then(res => {
         res.json().then(data => {
             const currentUsername = document.querySelector("#usernamenav");
             if (localStorage["token"] && currentUsername) {
-                if (!data.following.includes(currentUsername)) {
+                if (!data.following.includes(currentUsername.innerText)) {
                     document.querySelector("#followstatus").style.display = "block";
                 }
             }
