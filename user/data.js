@@ -6,19 +6,19 @@ fetch(`https://api.hatch.lol/users/${username}`).then(res => {
         res.json().then(data => {
             document.title = `${data.displayName} (@${data.name}) on Hatch`;
 
+            document.querySelector("#banner-image").src = data.bannerImage === null ? "https://rdr.lol/u/GBc7y6.png" : data.bannerImage;
             document.querySelector("#displayname").innerText = data.displayName;
-            document.querySelector("#userat").innerText = `@${data.name}`;
-            document.querySelector("#userbio").innerText = data.bio;
+            document.querySelector("#username").innerText = `@${data.name}`;
+            document.querySelector("#bio").innerText = data.bio;
             document.querySelector("#pfp").src = data.profilePicture.startsWith("data:image") ? data.profilePicture : `https://api.hatch.lol/${data.profilePicture}`;
-            document.querySelector("#followers").innerText = `Followers (${data.followerCount})`;
-            document.querySelector("#following").innerText = `Following (${data.followingCount})`;
-            document.querySelector("#userdata").innerText = `${data.hatchTeam ? "Hatch Team" : "Hatchling"} | ${data.country} | Joined ${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][new Date(data.joinDate).getMonth()]} ${new Date(data.joinDate).getDate()}, ${new Date(data.joinDate).getFullYear()}`;
+            document.querySelector("#followers-count").innerText = data.followerCount;
+            document.querySelector("#following-count").innerText = data.followingCount;
+            document.querySelector("#posts-count").innerText = data.projectCount;
+            document.querySelector("#status").innerHTML = data.hatchTeam ? "<i class=\"fa-solid fa-shield-halved\"></i> Hatch Team" : "Hatchling";
+            document.querySelector("#joindate").innerText = `Joined ${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][new Date(data.joinDate).getMonth()]} ${new Date(data.joinDate).getDate()}, ${new Date(data.joinDate).getFullYear()}`;
 
-            document.querySelector("#userstatstext").innerText = "Coming soon...";
-            document.querySelector("#wibdinfo").innerText = "Coming soon...";
-            document.querySelector("#badgecontain").innerText = "Coming soon...";
-            document.querySelector("#connectionscontain").innerText = "Coming soon...";
-            // document.querySelector("#comments").innerText = "Coming soon...";
+            document.querySelector("#recent-activity").innerText = "Coming soon...";
+            document.querySelector("#connections-list").innerText = "Coming soon...";
             document.body.classList.remove("loading");
         });
     } else if (res.status === 404) {

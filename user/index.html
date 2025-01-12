@@ -1,315 +1,267 @@
-<!-- LINE 94 -->
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Hatch</title>
-        <link rel="stylesheet" href="user.css">
-        <link rel="stylesheet" href="../navbar/navbar.css">
-        <link rel="stylesheet" href="../footer/footer.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!--
-        <meta http-equiv="refresh" content="0; url=404.html" />
-        If you want this page temporarily down, add this tag in the <head>
-        -->
-    </head>
-    <body class="loading">
-      <div class="navbg"></div>
-        <div id="navarea"></div>
-    <!-- Main Page -->
-     <div id="main">
-      <!-- User Header -->
-       <div id="userinfoarea">
-         <div id="userbar">
-       <img id="pfp" src="https://api.hatch.lol/uploads/pfp/default.png">
-         <div id="usernamecolumn">
-           <div id="username"><span id="displayname" class="loading-skeleton">han</span>&nbsp;<div id="userat" class="loading-skeleton"></div><div id="verified"><i class="fa-solid fa-square-check fa-xs"></i></div></div>
-           <div id="userdata" class="loading-skeleton">Hatch Team | United States | Joined 2 days ago (December 13, 2024)</div>
-         </div>
-        <!-- Follow Button -->
-         <div id="followButton" onclick="followUser()"><i class="fa-solid fa-user"></i>&nbsp;Follow</div>
-         </div>
-           <!-- Bio Container -->
-           <div id="biocontainer">
-           <!-- About Me -->
-            <div id="aboutme"><div class="biolabel">Bio</div><div class="bioinfo loading-skeleton" id="userbio">
-             This is a bio!<br>It can be multiple lines and it wraps if you type a lot, like this. You can even scroll. Try it!<br>Scroll to this text!<br>Scroll to this text!<br>Scroll to this text!<br>Scroll to this text!<br>Scroll to this text!<br>Scroll to this text!<br>Scroll to this text!<br>Scroll to this text!<br>Scroll to this text!
-            </div>
-           </div>
-           <!-- User Stats -->
-             <div id="userstats">
-              <div class="biolabel">User Stats</div>
-                <div class="bioinfo loading-skeleton" id="userstatstext">
-                26 projects shared<br>15 galleries joined<br>
-                </div>
-             </div>
-            <!-- What I've Been Doing -->
-           <div id="wibd"><div class="biolabel">What I've Been Doing</div>
-             <div id="wibdinfo" class="loading-skeleton">
-               <span class="wibditem">han upvoted&nbsp;<a href="#null">project</a></span>
-               <span class="wibditem">han is now following&nbsp;<a href="#null">user</a></span>
-               <span class="wibditem">han added&nbsp;<a href="#null">project</a>&nbsp;to&nbsp;<a href="#null">gallery</a></span>
-               <span class="wibditem">han added&nbsp;<a href="#null">project</a>&nbsp;to&nbsp;<a href="#null">gallery</a></span>
-               <span class="wibditem">han added&nbsp;<a href="#null">project</a>&nbsp;to&nbsp;<a href="#null">gallery</a></span>
-               <span class="wibditem">han added&nbsp;<a href="#null">project</a>&nbsp;to&nbsp;<a href="#null">gallery</a></span>
-               <span class="wibditem">han added&nbsp;<a href="#null">project</a>&nbsp;to&nbsp;<a href="#null">gallery</a></span>
-               <span class="wibditem">han added&nbsp;<a href="#null">project</a>&nbsp;to&nbsp;<a href="#null">gallery</a></span>
-               <span class="wibditem">this is an overflow item you shouldn't see</span>
-             </div>
-           </div>
+<head>
+    <title>Hatch</title>
+    <link rel="stylesheet" href="user.css">
+    <link rel="stylesheet" href="/navbar/navbar.css">
+    <link rel="stylesheet" href="/footer/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<div id="navarea"></div>
+<div id="main">
+    <div id="user-head">
+        <div id="banner">
+            <img src="https://rdr.lol/u/GBc7y6.png" alt="user provided banner" id="banner-image">
         </div>
-           <div class="lightspacer"></div>
-           <!--Badges-->
-           <div id="badges">
-               <div class="biolabel">
-                   <span>Badges</span> <span id="whatarebadges">What are badges?</span>
-               </div>
-               <div id="badgecontain" class="loading-skeleton">
-                   Coming soon...
-<!--                   <div class="badge">Beta Tester</div><div class="badge">Hatch Moderator</div>-->
-               </div>
-           </div>
-           <div class="lightspacer"></div>
-           <!--Connections-->
-       <div id="connectionsblock">
-           <div id="followblock">
-             <span class="followers loading-skeleton" id="followers">Followers (2)</span>
-             <span class="followers loading-skeleton" id="following">Following (1223)</span>
-           </div>
-           <div id="connections">
-               <div id="connectionslabel">Connections</div>
-             <div id="connectionscontain" class="loading-skeleton">
-                 <div id="connection">han614698&nbsp;(scratch)</div><div id="connection">han614698&nbsp;<i class="fa-brands fa-github"></i></div><div id="connection">han614698&nbsp;<i class="fa-brands fa-discord"></i></div><div id="connection">han614698&nbsp;<i class="fa-brands fa-youtube"></i></div><div id="connection">han614698&nbsp;<i class="fa-brands fa-twitter"></i></div><div id="connection">han614698&nbsp;(wasteof)</div><div id="connection">han614698&nbsp;(darflen)</div>
-             </div>
-       </div>    </div>
-       </div>
-       <div class="spacer"></div>
-  <div id="projects">
-    <div id="projsecthead"><div id="projhead">Projects</div><div id="seeallproj"><span>See All&nbsp;<i class="fa-solid fa-arrow-right"></i></span></div></div>
-    <div id="projcontain">
-    <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Project Title</div>
+        <div id="user-info">
+            <div id="user-info-top">
+                <img src="https://rdr.lol/u/xDIyqB.png" alt="user provided profile picture" id="pfp">
+                <div id="names">
+                    <div id="names-top">
+                        <h1 id="displayname">Hatch</h1> <i class="fa-solid fa-square-check fa-xl"></i> <i class="fa-solid fa-shield-halved fa-xl"></i>
+                    </div>
+                    <div id="names-bottom">
+                        <p id="username">@hatch</p><p id="status"><i class="fa-solid fa-shield-halved"></i> Hatch Team</p><p id="followstatus">Follows you</p>
+                    </div>
+                </div>
+                <div id="stats">
+                    <div class="stat">
+                        <p class="stat-number" id="followers-count">1,000</p>
+                        <p class="stat-name">Followers</p>
+                    </div>
+                    <div class="stat">
+                        <p class="stat-number" id="following-count">1,000</p>
+                        <p class="stat-name">Following</p>
+                    </div>
+                    <div class="stat">
+                        <p class="stat-number" id="posts-count">1,000</p>
+                        <p class="stat-name">Projects</p>
+                    </div>
+                </div>
+                <button id="follow-button"><i class="fa-solid fa-circle-plus"></i>&ensp;Follow</button>
+            </div>
+            <div id="user-info-middle">
+                <div id="bio-section">
+                    <p id="bio">Welcome to Hatch!<br>This is a bio - it is a section where you can tell the community about you, yourself, and your interests.<br>For more cool stuff, check out <a href="#">@hatchteam</a>.</p>
+                </div>
+                <div id="activity">
+                    <h2>Recent Activity</h2>
+                    <ul id="recent-activity">
+                        <li>Upvoted <a href="#">Cheez Puff Invasion</a> <span class="activity-time">yesterday</span></li>
+                        <li>Followed <a href="#">@han</a> <span class="activity-time">yesterday</span></li>
+                        <li>Followed <a href="#">@-gr</a> <span class="activity-time">yesterday</span></li>
+                        <li>Became a member of <a href="#">Hatchers</a> <span class="activity-time">yesterday</span></li>
+                        <li>Followed the gallery <a href="#">Hatchers</a> <span class="activity-time">yesterday</span></li>
+                        <li>Created the gallery <a href="#">Awesome People</a> <span class="activity-time">yesterday</span></li>
+                        <li>Upvoted <a href="#">Cheez Puff Invasion</a> <span class="activity-time">yesterday</span></li>
+                        <li>Followed <a href="#">@han</a> <span class="activity-time">yesterday</span></li>
+                        <li>Followed <a href="#">@-gr</a> <span class="activity-time">yesterday</span></li>
+                        <li>Became a member of <a href="#">Hatchers</a> <span class="activity-time">yesterday</span></li>
+                        <li>Followed the gallery <a href="#">Hatchers</a> <span class="activity-time">yesterday</span></li>
+                        <li>Created the gallery <a href="#">Awesome People</a> <span class="activity-time">yesterday</span></li>
+                    </ul>
+                </div>
+                <div id="connections">
+                    <h2>Connections</h2>
+                    <ul id="connections-list">
+                        <li><i class="fa-brands fa-youtube"></i>&ensp;YouTube&ensp;<a href="https://youtube.com/@hatch_lol">@hatch_lol</a></li>
+                        <li><i class="fa-brands fa-discord"></i>&ensp;Discord Profile&ensp;<a href="https://discord.com/users/964614935298588692">@jab11n</a></li>
+                        <li><i class="fa-brands fa-discord"></i>&ensp;Discord Server&ensp;<a href="https://discord.gg/ENTDZdaGnD">Join</a></li>
+                        <li><i class="fa-solid fa-cat"></i>&ensp;Scratch&ensp;<a href="https://scratch.mit.edu/users/-gr">@-gr</a></li>
+                        <li><i class="fa-brands fa-github"></i>&ensp;GitHub&ensp;<a href="https://github.com/hatchdotlol">@hatchdotlol</a></li>
+                        <li><i class="fa-solid fa-comment-dollar"></i>&ensp;Wasteof&ensp;<a href="https://wasteof.money/users/hatch">@hatch</a></li>
+                        <li><i class="fa-brands fa-x-twitter"></i>&ensp;X (Twitter)&ensp;<a href="https://x.com/hatch_lol">@hatch_lol</a></li>
+                        <li><i class="fa-brands fa-instagram"></i>&ensp;Instagram&ensp;<a href="https://instagram.com/">@jab11n.ig</a></li>
+                        <li><i class="fa-brands fa-codepen"></i>&ensp;Codepen&ensp;<a href="https://codepen.com">@-gr</a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="user-info-bottom">
+                <div id="badges">
+                    <i class="fa-solid fa-worm"></i>
+                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-hammer"></i>
+                    <i class="fa-solid fa-image"></i>
+                    <i class="fa-solid fa-user-tie"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-square-check"></i>
+                    <i class="fa-solid fa-file-pen"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-code-pull-request"></i>
+                </div>
+                <div id="joindate">Joined January 10, 2025</div>
+                <div id="report"><a id="report" href="#report"><img src="https://rdr.lol/u/JRHxiZ.png"> Report User</a></div>
+            </div>
+        </div>
     </div>
-    <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Project Title</div>
-    </div>
-      <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Project Title</div>
-    </div>
-  <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Project Title</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Project Title</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Project Title</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Project Title</div>
-    </div>
-    <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Project Title</div>
-    </div>
-      <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Project Title</div>
-    </div>
-  <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Project Title</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Project Title</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Project Title</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Project Title</div>
+    <div id="user-items">
+        <div id="featured-projects">
+            <h2>Featured Projects&ensp;<a href="javascript:alert('this is a row where users can highlight their favorite projects that they made!')"><i class="fa-regular fa-circle-question fa-xs"></i></a></h2>
+            <div id="featured-projects-row">
+                <div class="project">
+                    <div class="project-top">
+                        <a href="#"><img src="https://rdr.lol/u/Ra9tJI.png" alt="project thumbnail" class="project-thumbnail"></a>
+                        <p class="project-stats">
+                            <i class="fa-solid fa-square-caret-up"></i>&ensp;395<br>
+                            <i class="fa-solid fa-eye"></i>&ensp;1,000<br>
+                            <i class="fa-solid fa-message"></i>&ensp;100<br>
+                            <span class="project-date">3d</span>
+                        </p>
+                    </div>
+                    <div class="project-bottom">
+                        <h3 class="project-title"><a href="#">Project Name</a></h3>
+                        <p class="project-author">By <a href="#">Hatch (@hatch)</a></p>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-top">
+                        <a href="#"><img src="https://rdr.lol/u/Ra9tJI.png" alt="project thumbnail" class="project-thumbnail"></a>
+                        <p class="project-stats">
+                            <i class="fa-solid fa-square-caret-up"></i>&ensp;395<br>
+                            <i class="fa-solid fa-eye"></i>&ensp;1,000<br>
+                            <i class="fa-solid fa-message"></i>&ensp;100<br>
+                            <span class="project-date">3d</span>
+                        </p>
+                    </div>
+                    <div class="project-bottom">
+                        <h3 class="project-title"><a href="#">Project Name</a></h3>
+                        <p class="project-author">By <a href="#">Hatch (@hatch)</a></p>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-top">
+                        <a href="#"><img src="https://rdr.lol/u/Ra9tJI.png" alt="project thumbnail" class="project-thumbnail"></a>
+                        <p class="project-stats">
+                            <i class="fa-solid fa-square-caret-up"></i>&ensp;395<br>
+                            <i class="fa-solid fa-eye"></i>&ensp;1,000<br>
+                            <i class="fa-solid fa-message"></i>&ensp;100<br>
+                            <span class="project-date">3d</span>
+                        </p>
+                    </div>
+                    <div class="project-bottom">
+                        <h3 class="project-title"><a href="#">Project Name</a></h3>
+                        <p class="project-author">By <a href="#">Hatch (@hatch)</a></p>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-top">
+                        <a href="#"><img src="https://rdr.lol/u/Ra9tJI.png" alt="project thumbnail" class="project-thumbnail"></a>
+                        <p class="project-stats">
+                            <i class="fa-solid fa-square-caret-up"></i>&ensp;395<br>
+                            <i class="fa-solid fa-eye"></i>&ensp;1,000<br>
+                            <i class="fa-solid fa-message"></i>&ensp;100<br>
+                            <span class="project-date">3d</span>
+                        </p>
+                    </div>
+                    <div class="project-bottom">
+                        <h3 class="project-title"><a href="#">Project Name</a></h3>
+                        <p class="project-author">By <a href="#">Hatch (@hatch)</a></p>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-top">
+                        <a href="#"><img src="https://rdr.lol/u/Ra9tJI.png" alt="project thumbnail" class="project-thumbnail"></a>
+                        <p class="project-stats">
+                            <i class="fa-solid fa-square-caret-up"></i>&ensp;395<br>
+                            <i class="fa-solid fa-eye"></i>&ensp;1,000<br>
+                            <i class="fa-solid fa-message"></i>&ensp;100<br>
+                            <span class="project-date">3d</span>
+                        </p>
+                    </div>
+                    <div class="project-bottom">
+                        <h3 class="project-title"><a href="#">Project Name</a></h3>
+                        <p class="project-author">By <a href="#">Hatch (@hatch)</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="shared-projects">
+            <div id=shared-projects-section-head><h2>Shared Projects</h2><a href="#">See All&ensp;<i class="fa-solid fa-square-arrow-up-right"></i></a></div>
+            <div id="shared-projects-row">
+                <div class="project">
+                    <div class="project-top">
+                        <a href="#"><img src="https://rdr.lol/u/Ra9tJI.png" alt="project thumbnail" class="project-thumbnail"></a>
+                        <p class="project-stats">
+                            <i class="fa-solid fa-square-caret-up"></i>&ensp;395<br>
+                            <i class="fa-solid fa-eye"></i>&ensp;1,000<br>
+                            <i class="fa-solid fa-message"></i>&ensp;100<br>
+                            <span class="project-date">3d</span>
+                        </p>
+                    </div>
+                    <div class="project-bottom">
+                        <h3 class="project-title"><a href="#">Project Name</a></h3>
+                        <p class="project-author">By <a href="#">Hatch (@hatch)</a></p>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-top">
+                        <a href="#"><img src="https://rdr.lol/u/Ra9tJI.png" alt="project thumbnail" class="project-thumbnail"></a>
+                        <p class="project-stats">
+                            <i class="fa-solid fa-square-caret-up"></i>&ensp;395<br>
+                            <i class="fa-solid fa-eye"></i>&ensp;1,000<br>
+                            <i class="fa-solid fa-message"></i>&ensp;100<br>
+                            <span class="project-date">3d</span>
+                        </p>
+                    </div>
+                    <div class="project-bottom">
+                        <h3 class="project-title"><a href="#">Project Name</a></h3>
+                        <p class="project-author">By <a href="#">Hatch (@hatch)</a></p>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-top">
+                        <a href="#"><img src="https://rdr.lol/u/Ra9tJI.png" alt="project thumbnail" class="project-thumbnail"></a>
+                        <p class="project-stats">
+                            <i class="fa-solid fa-square-caret-up"></i>&ensp;395<br>
+                            <i class="fa-solid fa-eye"></i>&ensp;1,000<br>
+                            <i class="fa-solid fa-message"></i>&ensp;100<br>
+                            <span class="project-date">3d</span>
+                        </p>
+                    </div>
+                    <div class="project-bottom">
+                        <h3 class="project-title"><a href="#">Project Name</a></h3>
+                        <p class="project-author">By <a href="#">Hatch (@hatch)</a></p>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-top">
+                        <a href="#"><img src="https://rdr.lol/u/Ra9tJI.png" alt="project thumbnail" class="project-thumbnail"></a>
+                        <p class="project-stats">
+                            <i class="fa-solid fa-square-caret-up"></i>&ensp;395<br>
+                            <i class="fa-solid fa-eye"></i>&ensp;1,000<br>
+                            <i class="fa-solid fa-message"></i>&ensp;100<br>
+                            <span class="project-date">3d</span>
+                        </p>
+                    </div>
+                    <div class="project-bottom">
+                        <h3 class="project-title"><a href="#">Project Name</a></h3>
+                        <p class="project-author">By <a href="#">Hatch (@hatch)</a></p>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-top">
+                        <a href="#"><img src="https://rdr.lol/u/Ra9tJI.png" alt="project thumbnail" class="project-thumbnail"></a>
+                        <p class="project-stats">
+                            <i class="fa-solid fa-square-caret-up"></i>&ensp;395<br>
+                            <i class="fa-solid fa-eye"></i>&ensp;1,000<br>
+                            <i class="fa-solid fa-message"></i>&ensp;100<br>
+                            <span class="project-date">3d</span>
+                        </p>
+                    </div>
+                    <div class="project-bottom">
+                        <h3 class="project-title"><a href="#">Project Name</a></h3>
+                        <p class="project-author">By <a href="#">Hatch (@hatch)</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-</div>
-<div class="spacer"></div>
-  <div id="projects">
-    <div id="projsecthead"><div id="projhead">Favorite Projects</div><div id="seeallproj"><span>See All&nbsp;<i class="fa-solid fa-arrow-right"></i></span></div></div>
-    <div id="projcontain">
-    <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Project Title</div>
-      <div id="author">User</div>
-    </div>
-    <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Project Title</div>
-    <div id="author">User</div>
-    </div>
-      <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Project Title</div>
-<div id="author">User</div>
-    </div>
-  <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Project Title</div>
-<div id="author">User</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Project Title</div>
-<div id="author">User</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Project Title</div>
-<div id="author">User</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Project Title</div>
-<div id="author">User</div>
-    </div>
-</div>
-</div>
-<div class="spacer"></div>
-  <div id="projects" class="loading-skeleton">
-    <div id="projsecthead"><div id="projhead">Galleries I'm A Member Of</div><div id="seeallproj"><span>See All&nbsp;<i class="fa-solid fa-arrow-right"></i></span></div></div>
-    <div id="projcontain">
-    <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-    <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-      <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-  <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-    <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-      <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-  <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-</div>
-</div>
-<div class="spacer"></div>
-  <div id="projects" class="loading-skeleton">
-    <div id="projsecthead"><div id="projhead">Galleries I Follow</div><div id="seeallproj"><span>See All&nbsp;<i class="fa-solid fa-arrow-right"></i></span></div></div>
-    <div id="projcontain">
-    <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-    <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-      <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-  <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-    <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-      <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-  <div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-<div id="project">
-      <img src="https://rdr.lol/u/s5m1y4.png" id="projthumb">
-      <div id="projname">Gallery Title</div>
-    </div>
-</div>
-</div>
-<div class="comments-section">
-  <h2>Comments</h2>
-  <div class="comment-input">
-    <img src="https://rdr.lol/u/KRV1KZ.png">
-    <form class="comment-submit">
-      <input type="text" autocomplete="false">
-      <input type="submit" value="Submit">
-    </form>
-  </div>
-  </div><!--This ends #main - all content inside! Should stick to footer top!-->
-       <div id="footercontainer"></div>
-      <script src="../navbar/navbar.js"></script>
-        <script src="/footer/footer.js"></script>
-      <script src="data.js"></script>
-    </body>
+<div id="footercontainer"></div>
+<script src="/navbar/navbar.js"></script>
+<script src="/footer/footer.js"></script>
+<script src="data.js"></script>
+</body>
 </html>
