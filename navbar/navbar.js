@@ -1,9 +1,6 @@
 document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
         <div class="nav">
           <div id="logo"><a href="/"><img class="logo" src="/navbar/img/logo.png"></a></div>
-          <div class="searchimgnav" onclick="searchMade()">
-            <img src="/navbar/img/search.png" id="searchimghard"/>
-          </div>
           <div class="searchnavitem" id="searchdiv">
             <input type="text" id="searchinp" name="search" placeholder=" Search...">
           </div>
@@ -11,10 +8,10 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
           <a class="navitem" href="#null>
             Wiki
           </a>
-          <a class="navitem" href="#null">
-            Discuss
-          </a>
           -->
+          <a class="navitem" href="https://forums.hatch.lol/">
+            Forums
+          </a>
           <a class="navitem" href="/about">
             About
           </a>
