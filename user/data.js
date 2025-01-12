@@ -28,3 +28,16 @@ fetch(`https://api.hatch.lol/users/${username}`).then(res => {
         window.location.assign("/404/");
     }
 });
+
+fetch(`https://api.hatch.lol/users/${username}/following`).then(res => {
+    if (res.status === 200) {
+        res.json().then(data => {
+            const currentUsername = document.querySelector("#usernamenav");
+            if (localStorage["token"] && currentUsername) {
+                if (!data.following.includes(currentUsername)) {
+                    document.querySelector("#followstatus").style.display = "block";
+                }
+            }
+        })
+    }
+});

@@ -222,6 +222,7 @@ h1, h2, h3, h4, p {
   background-color: var(--innerBlock2);
   padding: 10px;
   border-radius: 10px;
+  justify-content: space-between;
 }
 #badges {
   color: #ffbd59;
