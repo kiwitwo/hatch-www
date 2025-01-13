@@ -12,13 +12,14 @@
     --upvote: #7ed957; /* Upvote Button */
     --downvote: #ff5757; /* downvote button */
     --rating: #808080; /* rating text */
-    --report: #5E0000; /* report button */
+    --report: #5e0000; /* report button */
     --download: #0c4c7d; /* download */
     --share: #ffbd59; /* share */
     --reportText: #f8312f; /* report text */
     --downloadText: #38b6ff; /* download text */
     --shareText: #7f5e2c; /* share text */
     --blockBack: #2b2b2b; /* footer */
+    --alert: #5e0000; /* alert */
   }
   .spacer {
     width: 100%;
