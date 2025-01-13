@@ -5,11 +5,9 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
             <i class="fa-solid fa-magnifying-glass" onclick="searchMade()"></i>
             <input type="text" id="searchinp" name="search" placeholder="Search...">
           </div>
-          <!--
-          <a class="navitem" href="#null>
+          <a class="navitem" href="https://wiki.hatch.lol">
             Wiki
           </a>
-          -->
           <a class="navitem" href="https://forums.hatch.lol/">
             Forums
           </a>
