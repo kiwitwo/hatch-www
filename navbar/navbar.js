@@ -1,6 +1,6 @@
 document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
         <div class="nav">
-          <div id="logo"><a href="/"><img class="logo" src="/navbar/img/logo.png"></a></div>
+          <div id="logo"><a href="https://dev.hatch.lol/"><img class="logo" src="/navbar/img/logo.png"></a></div>
           <div id="search">
             <i class="fa-solid fa-magnifying-glass" onclick="searchMade()"></i>
             <input type="text" id="searchinp" name="search" placeholder="Search...">
@@ -11,17 +11,17 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
           <a class="navitem" href="https://forums.hatch.lol/">
             Forums
           </a>
-          <a class="navitem" href="/about">
+          <a class="navitem" href="https://dev.hatch.lol/about">
             About
           </a>
-          <a class="navitem" href="/explore">
+          <a class="navitem" href="https://dev.hatch.lol/explore">
             Explore
           </a>
-          <a class="navitem" id="mail" href="/messages">
+          <a class="navitem" id="mail" href="https://dev.hatch.lol/messages">
             <img src="/navbar/img/messages.svg" id="msgsym" /><div id="messagect"><b>1</b></div>
         
           </a>
-          <a class="navitem" href="/mystuff">
+          <a class="navitem" href="https://dev.hatch.lol/mystuff">
           <i class="fa-regular fa-folder-open fa-2xl" id="mystuff"></i> 
           </a>
           <div id="userbox">
@@ -30,7 +30,7 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
               <a class="dropdown-option nav-your-profile" id="highest">
                 Your Profile
               </a>
-              <a class="dropdown-option" href="/settings">
+              <a class="dropdown-option" href="https://dev.hatch.lol/settings">
                 Account Settings
               </a>
               <a class="dropdown-option lowest" id="nav-sign-out">
