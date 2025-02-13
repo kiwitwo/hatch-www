@@ -30,7 +30,7 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
               <a class="dropdown-option nav-your-profile" id="highest">
                 Your Profile
               </a>
-              <a class="dropdown-option" href="/settings">
+              <a class="dropdown-option" href="https://dev.hatch.lol/settings">
                 Account Settings
               </a>
               <a class="dropdown-option lowest" id="nav-sign-out">
