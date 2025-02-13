@@ -1,6 +1,6 @@
 document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
         <div class="nav">
-          <div id="logo"><a href="/"><img class="logo" src="/navbar/img/logo.png"></a></div>
+          <div id="logo"><a href="https://dev.hatch.lol/"><img class="logo" src="/navbar/img/logo.png"></a></div>
           <div id="search">
             <i class="fa-solid fa-magnifying-glass" onclick="searchMade()"></i>
             <input type="text" id="searchinp" name="search" placeholder="Search...">
@@ -21,7 +21,7 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
             <img src="/navbar/img/messages.svg" id="msgsym" /><div id="messagect"><b>1</b></div>
         
           </a>
-          <a class="navitem" href="/mystuff">
+          <a class="navitem" href="https://dev.hatch.lol/mystuff">
           <i class="fa-regular fa-folder-open fa-2xl" id="mystuff"></i> 
           </a>
           <div id="userbox">
