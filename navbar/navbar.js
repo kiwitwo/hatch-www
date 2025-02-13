@@ -11,13 +11,13 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
           <a class="navitem" href="https://forums.hatch.lol/">
             Forums
           </a>
-          <a class="navitem" href="/about">
+          <a class="navitem" href="https://dev.hatch.lol/about">
             About
           </a>
-          <a class="navitem" href="/explore">
+          <a class="navitem" href="https://dev.hatch.lol/explore">
             Explore
           </a>
-          <a class="navitem" id="mail" href="/messages">
+          <a class="navitem" id="mail" href="https://dev.hatch.lol/messages">
             <img src="/navbar/img/messages.svg" id="msgsym" /><div id="messagect"><b>1</b></div>
         
           </a>
