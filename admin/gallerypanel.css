@@ -1,20 +1,24 @@
 #admin {
     background-color: var(--innerBlock2);
     padding: 10px;
-    height: 100%;
+    height: fit-content;
     max-width: 20%;
     width: fit-content;
     color: var(--univText);
     overflow: wrap;
 }
-#adminprojecttitle {
+#admingalleryinfo {
     background-color: var(--innerBlock);
     padding: 10px;
     border-radius: 10px;
+}
+#admingallerytitle {
     font-size: 18px;
     font-weight: bold;
 }
-#adminprojectdetails {
+#admingalleryuserbanned {
+    color: var(--downvote);
+    font-weight: bold;
     font-size: 15px;
 }
 .adminbutton {
@@ -29,16 +33,16 @@
     border-width: 2px;
     font-size: 15px;
 }
-#adminnotes {
+#admingallerydesc {
     background-color: var(--innerBlock);
     padding: 10px;
     border-radius: 10px;
 }
-#adminnotestitle {
+#admingallerydesctitle {
     font-size: 18px;
     font-weight: bold;
 }
-#adminnotescontent {
+#admingallerydesccontent {
     padding: 10px;
     border-radius: 10px;
     background-color: var(--innerBlock2);
@@ -46,61 +50,38 @@
     max-height: 80px;
     overflow: auto;
 }
-#admindesc {
+#admingallerynotes {
     background-color: var(--innerBlock);
     padding: 10px;
     border-radius: 10px;
 }
-#admindesctitle {
+#admingallerynotestitle {
     font-size: 18px;
     font-weight: bold;
 }
-#adminprojectsdesc {
-    background-color: var(--innerBlock2);
+#admingallerynotescontent {
     padding: 10px;
     border-radius: 10px;
+    background-color: var(--innerBlock2);
     height: fit-content;
     max-height: 80px;
     overflow: auto;
 }
-#adminrating {
+#admingallerythumbinfo {
     background-color: var(--innerBlock);
     padding: 10px;
     border-radius: 10px;
 }
-#adminratingtitle {
+#admingallerythumbtitle {
     font-size: 18px;
     font-weight: bold;
 }
-#adminratingselect {
-    display: block;
+#admingallerythumb {
+    height: 100px;
+    padding: 10px;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
     border-radius: 10px;
-    background-color: var(--innerBlock2);
-    color: var(--univText);
-    padding: 10px;
-    border: var(--navLight);
-    border-style: solid;
-    border-width: 2px;
-}
-#admintags {
-    background-color: var(--innerBlock);
-    padding: 10px;
-    border-radius: 10px;
-}
-#admintagstitle {
-    font-size: 18px;
-    font-weight: bold;
-}
-#admintagscontent {
-    padding: 10px;
-    border-radius: 10px;
-    background-color: var(--innerBlock2);
-    height: fit-content;
-    max-height: 80px;
-    overflow: auto;
 }
 #adminactions {
     background-color: var(--innerBlock);
@@ -109,9 +90,5 @@
 }
 #adminactionstitle {
     font-size: 18px;
-    font-weight: bold;
-}
-#adminaccountstatusbanned {
-    color: var(--downvote);
     font-weight: bold;
 }
