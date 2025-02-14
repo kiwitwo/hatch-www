@@ -84,6 +84,7 @@
     border: var(--navLight);
     border-style: solid;
     border-width: 2px;
+    cursor: pointer;
 }
 #admintags {
     background-color: var(--innerBlock);
