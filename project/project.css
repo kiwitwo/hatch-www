@@ -355,6 +355,20 @@ body.loading .loading-skeleton {
   display: inline-block;
 }
 
+#project-teen-block {
+  display: none;
+  text-align: center;
+}
+
+#project-embed-container.teen-block {
+  height: 412px;
+  align-items: center;
+}
+
+#project-embed-container.teen-block #project-teen-block {
+  display: block;
+}
+
 @media (max-width: 1100px) {
   .project {
     display: block;

@@ -38,6 +38,17 @@ fetch(`https://api.hatch.lol/projects/${id}`).then(res => {
             document.querySelector("#project-age-rating").innerText = data.rating;
             if (data.rating === "13+") {
                 document.querySelector("#project-age-rating").classList.add("teen");
+
+                fetch("https://api.hatch.lol/auth/me", {
+                    headers: {
+                        "Token": localStorage.getItem("token")
+                    }
+                }).then(res => {
+                    if (res.status !== 200) {
+                        document.querySelector("#project-embed").remove();
+                        document.querySelector("#project-embed-container").classList.add("teen-block");
+                    }
+                });
             }
 
             document.querySelector("#download").href = `https://api.hatch.lol/projects/${id}/content`;
