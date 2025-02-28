@@ -36,6 +36,9 @@ fetch(`https://api.hatch.lol/projects/${id}`).then(res => {
             document.querySelector("#project-description").innerText = data.description;
 
             document.querySelector("#project-age-rating").innerText = data.rating;
+            if (data.rating === "13+") {
+                document.querySelector("#project-age-rating").classList.add("teen");
+            }
 
             document.querySelector("#download").href = `https://api.hatch.lol/projects/${id}/content`;
 
