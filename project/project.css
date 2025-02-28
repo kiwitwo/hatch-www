@@ -50,13 +50,17 @@
   color: var(--navLight);
   font-weight: bold;
 }
-.top-icons {
-  display: flex;
-  gap: 5px;
-}
-.top-icons img {
-  height: 32px;
+#project-age-rating {
+  padding: 7px;
+  height: 1rem;
+  line-height: 1rem;
   border-radius: 7px;
+  color: #000000;
+  background-color: var(--navDark);
+  cursor: help;
+}
+#project-age-rating[innerText="13+"] {
+  background-color: #ff7158;
 }
 .embed {
   width: 100%;

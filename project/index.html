@@ -21,10 +21,7 @@
               <b id="project-title" class="loading-skeleton">project.title</b>
               <span><a id="author-username" class="loading-skeleton">author.username</a></span>
             </div>
-            <div class="top-icons">
-              <img src="https://rdr.lol/u/4ymYkd.png" class="rating-icon" onclick="alert('This is Hatch\'s age rating system. Each age rating is determined by moderators manually. See the Wiki for more info.')">
-              <img src="https://rdr.lol/u/HUfST8.png" class="editor-icon">
-            </div>
+            <div id="project-age-rating" onclick="alert('This is Hatch\'s age rating system. Each age rating is determined by moderators manually. See the Wiki for more info.')"></div>
           </div>
           <div class="embed">
             <iframe id="project-embed" src="https://turbowarp.org/389464290/embed?addons=pause" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
@@ -57,8 +54,8 @@
         <div class="comment-input">
           <img src="https://rdr.lol/u/KRV1KZ.png">
           <form class="comment-submit" id="project-comment-form">
-            <input type="text" id="project-comment-form-input" placeholder="Post a comment...">
-            <input type="submit" value="Submit" autocomplete="false">
+            <input type="text" id="project-comment-form-input" placeholder="Post a comment..." autocomplete="off">
+            <input type="submit" value="Submit">
           </form>
         </div>
         <div id="comments" class="loading-skeleton"></div>

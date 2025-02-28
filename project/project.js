@@ -9,11 +9,12 @@ fetch(`https://api.hatch.lol/projects/${id}`).then(res => {
             fetch(`https://api.hatch.lol/projects/${id}/comments`, {
                 method: "POST",
                 headers: {
-                    "Token": localStorage.getItem("token")
+                    "Token": localStorage.getItem("token"),
+                    "Content-Type": "application/json"
                 },
-                body: {
+                body: JSON.stringify({
                     "content": document.querySelector("#project-comment-form-input").value
-                }
+                })
             }).then(res => {
                 if (res.status === 200) {
                     document.querySelector("#project-comment-form-input").value = "";
@@ -33,6 +34,8 @@ fetch(`https://api.hatch.lol/projects/${id}`).then(res => {
             document.querySelector("#project-publish-date").innerText = `${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][new Date(data.upload_ts * 1000).getMonth()]} ${new Date(data.upload_ts * 1000).getDate()}, ${new Date(data.upload_ts * 1000).getFullYear()}`;
             document.querySelector("#project-embed").src = `https://warp.algebrahelp.org/embed.html?project_url=https://api.hatch.lol/projects/${id}/content`;
             document.querySelector("#project-description").innerText = data.description;
+
+            document.querySelector("#project-age-rating").innerText = data.rating;
 
             document.querySelector("#download").href = `https://api.hatch.lol/projects/${id}/content`;
 
