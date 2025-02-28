@@ -70,7 +70,7 @@
 #userbox:has(#userdrop.active) #userinfo {
   background-color: var(--navDark) !important;
 }
-#lowest {
+.lowest {
   border-style: solid;
   border-width: 1px 0 0 0;
   border-color: var(--signoutBorder);
@@ -86,48 +86,23 @@
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;
-  color: var(--univColor);
+  color: black !important;
   text-decoration: none;
-}
-#searchimgnav {
-    float: right;
-    display: flex;
-    background-color: var(--navLight);
-  }
-#searchimgnav:hover {
-  background-color: var(--navDark);
-}
-#searchimghard {
-  width: 25px;
-  height: 25px;
-  padding: 12.5px 0 12.5px 0;
-  transition: transform .2s;
-  cursor: pointer;
+  font-weight: bold;
 }
 .navitem:hover {
   background-color: var(--navDark);
 }
-.searchnavitem {
+#search {
   height: 30px;
   background-color: var(--navLight);
   float: right;
   display: flex;
   padding: 10px 20px 10px 20px;
-}
-#searchdiv {
- -webkit-flex: auto;
- flex: auto;
- padding-left: none;
- }
-#search {
- -webkit-flex: auto;
- flex: auto;
-  background-color: var(--searchBar);
-  border-radius: 7px;
-  border: solid;
-  border-width: 0px;
-  float: left;
-  margin: 0px;
+  -webkit-flex: auto;
+  flex: auto;
+  padding-left: none;
+  position: relative;
 }
 #searchinp {
   -webkit-flex: auto;
@@ -138,6 +113,17 @@
   border-width: 0px;
   float: left;
   margin: 0px;
+  padding-left: 30px;
+}
+.fa-magnifying-glass {
+  position: absolute;
+  padding: 7px;
+  pointer-events: none;
+  height: fit-content;
+  border-radius: 10px 0px 0px 10px;
+}
+#searchinp::placeholder {
+  color: var(--innerBlock);
 }
 #dropdownarrow {
   width: 15px;
@@ -156,6 +142,7 @@
 #logo {
   transition: transform .2s;
   cursor: pointer;
+  filter: brightness(0);
 }
 #searchimghard:hover {
   -ms-transform: scale(1.1);
@@ -193,9 +180,7 @@
 }
 #userdrop > a {
   text-decoration: none;
-  color: #000000;
+  color: #000000 !important;
   display: block;
-}
-.navitem a {
-display: block;
+  font-weight: bold;
 }
