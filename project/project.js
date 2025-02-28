@@ -36,20 +36,31 @@ fetch(`https://api.hatch.lol/projects/${id}`).then(res => {
             document.querySelector("#project-description").innerText = data.description;
 
             document.querySelector("#project-age-rating").innerText = data.rating;
+            
             if (data.rating === "13+") {
                 document.querySelector("#project-age-rating").classList.add("teen");
+            }
 
-                fetch("https://api.hatch.lol/auth/me", {
-                    headers: {
-                        "Token": localStorage.getItem("token")
-                    }
-                }).then(res => {
-                    if (res.status !== 200) {
+            fetch("https://api.hatch.lol/auth/me", {
+                headers: {
+                    "Token": localStorage.getItem("token")
+                }
+            }).then(res => {
+                if (res.status !== 200) {
+                    if (data.rating === "13+") {
                         document.querySelector("#project-embed").remove();
                         document.querySelector("#project-embed-container").classList.add("teen-block");
+                        document.querySelector("#download").classList.add("disabled");
                     }
-                });
-            }
+
+                    document.querySelectorAll(".interaction-button, .comment-input, #report").forEach(element => {
+                        element.classList.add("disabled");
+                        element.tabIndex = -1;
+                    });
+
+                    document.querySelector("#project-comment-form-input").disabled = true;
+                }
+            });
 
             document.querySelector("#download").href = `https://api.hatch.lol/projects/${id}/content`;
 

@@ -369,6 +369,11 @@ body.loading .loading-skeleton {
   display: block;
 }
 
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 @media (max-width: 1100px) {
   .project {
     display: block;
