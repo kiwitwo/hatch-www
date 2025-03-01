@@ -90,5 +90,10 @@
        <div id="footercontainer"></div>
       <script src="/navbar/navbar.js"></script>
         <script src="/footer/footer.js"></script>
+        <script>
+            if (!localStorage.getItem("token")) {
+                window.location.href = "/login/";
+            }
+        </script>
     </body>
 </html>
