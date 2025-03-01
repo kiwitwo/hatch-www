@@ -1,3 +1,7 @@
+if (!localStorage.getItem("token")) {
+    window.location.href = "/login/";
+}
+
 document.querySelector("#submit").addEventListener("click", function() {
     const avatar = document.querySelector("#avatar");
     if (avatar.files[0]) {
