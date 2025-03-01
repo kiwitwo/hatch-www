@@ -43,58 +43,7 @@
                                 </div>
                                 <input type="button" value="Submit" id="submit">
                             </form>
-                            <script>
-                                // this is template code someone pls fix :agony: (i know zero js i just need something here for testing, but this code probably sucks)
-                                document.getElementById('submit').addEventListener('click', function() {
-                                const title = document.getElementById('upload-title').value;
-                                const description = document.getElementById('upload-description').value;
-                                const fileInput = document.getElementById('file');
-                                const file = fileInput.files[0];
-                            
-                                const touChecked = document.getElementById('tou').checked;
-                                if (!touChecked) {
-                                    alert('You must agree to the terms of use.');
-                                    return;
-                                }
-                            
-                                const token = localStorage.getItem('token');
-                                if (!token) {
-                                    alert('No token found. Please log in first.');
-                                    return;
-                                }
-                            
-                                const fileBlob = new Blob([file], { type: 'application/zip' });
-
-                                const formData = new FormData();
-                                formData.append('title', title);
-                                formData.append('description', description);
-                                formData.append('file', fileBlob, file.name);
-                            
-                                fetch('https://api.hatch.lol/projects', {
-                                    method: 'POST',
-                                    headers: {
-                                        'Token': token
-                                    },
-                                    body: formData
-                                })
-                                .then(response => {
-                                    return response.text().then(text => {
-                                        console.log('Response status:', response.status);
-                                        console.log('Response body:', text);
-                                        if (response.ok) {
-                                            alert(text);
-                                            alert('Project uploaded successfully!');
-                                        } else {
-                                            alert('Error: ' + text);
-                                        }
-                                    });
-                                })
-                                .catch(error => {
-                                    console.error('Error:', error);
-                                    alert('There was an error uploading the project.');
-                                });
-                            });
-                            </script>
+                            <script src="upload-project.js"></script>
                         </div>
                     </div>
                     <div id="my-projects">
