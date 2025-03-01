@@ -118,6 +118,7 @@
 }
 .actions a {
   cursor: pointer;
+  text-wrap: nowrap;
 }
 .report {
   background-color: var(--report);
