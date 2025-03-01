@@ -92,7 +92,7 @@ if (localStorage.getItem("token") !== null) {
   }).then(res => {
     if (res.status === 200) {
       res.json().then(json => {
-        document.getElementById("pfpnav").src = json.profilePicture.startsWith("data:image") ? json.profilePicture : `https://api.hatch.lol/${json.profilePicture}`;
+        document.getElementById("pfpnav").src = `https://api.hatch.lol${json.profilePicture}`;
         document.getElementById("usernamenav").innerText = json.displayName;
         document.getElementsByClassName("nav-your-profile")[0].href = `/user/?u=${json.name}`;
       });

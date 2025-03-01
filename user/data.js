@@ -13,7 +13,7 @@ fetch(`https://api.hatch.lol/users/${username}`).then(res => {
             document.querySelector("#bio").innerHTML = document.querySelector("#bio").innerHTML
                 .replace(/(https?:\/\/\S+)/g, "<a href='$1'>$1</a>")
                 .replace(/@([a-z,A-Z,0-9,-,_]+)\b/g, "<a href='/user/?u=$1'>@$1</a>");
-            document.querySelector("#pfp").src = data.profilePicture.startsWith("data:image") ? data.profilePicture : `https://api.hatch.lol/${data.profilePicture}`;
+            document.querySelector("#pfp").src = `https://api.hatch.lol${data.profilePicture}`;
             document.querySelector("#followers-count").innerText = data.followerCount;
             document.querySelector("#following-count").innerText = data.followingCount;
             document.querySelector("#posts-count").innerText = data.projectCount;
