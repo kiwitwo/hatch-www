@@ -1,3 +1,5 @@
+let logged_out = !localStorage.getItem("token");
+
 document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
         <div class="nav">
           <div id="logo"><a href="https://dev.hatch.lol/"><img class="logo" src="/navbar/img/logo.png"></a></div>
@@ -17,7 +19,12 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
           <a class="navitem" href="https://dev.hatch.lol/explore">
             Explore
           </a>
-          <a class="navitem" id="mail" href="https://dev.hatch.lol/messages">
+          ${logged_out ? `<a class="navitem" href="https://dev.hatch.lol/signup">
+            Sign up
+          </a>
+          <a class="navitem" href="https://dev.hatch.lol/login">
+            Log in
+          </a>` : `<a class="navitem" id="mail" href="https://dev.hatch.lol/messages">
             <img src="/navbar/img/messages.svg" id="msgsym" /><div id="messagect"><b>1</b></div>
         
           </a>
@@ -37,7 +44,7 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
                 Sign Out
               </a>
             </div>
-          </div>
+          </div>`}
         </div>`;
 
 let x = document.querySelector("#userdrop");
