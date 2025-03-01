@@ -22,6 +22,18 @@ fetch("https://api.hatch.lol/auth/me", {
     if (username.toLowerCase() === client_username.toLowerCase()) {
         document.querySelector("#follow-button").remove();
     }
+
+    fetch(`https://api.hatch.lol/users/${username}/following`).then(following => {
+        following.json().then(data => {
+            let following = [];
+            data.following.forEach(user => {
+                following.push(user.name);
+            });
+            if (!following.includes(client_username)) {
+                document.querySelector("#followstatus").remove();
+            }
+        });
+    });
 }));
 
 if (document.querySelector("#follow-button")) {
