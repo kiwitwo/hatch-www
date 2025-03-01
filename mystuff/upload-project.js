@@ -43,7 +43,7 @@ submit.addEventListener("click", function () {
                 return;
             };
 
-            window.location.replace(`/project?id={resp.id}`);
+            window.location.replace(`/project?id=${resp.id}`);
         })
         .catch(error => {
             submit.disabled = false;
