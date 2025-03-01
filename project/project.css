@@ -60,6 +60,12 @@
   cursor: help;
   text-wrap: nowrap;
 }
+#project-version {
+  color: var(--rating);
+  font-weight: normal;
+  font-size: initial;
+  margin-left: 10px;
+}
 #project-age-rating.teen {
   background-color: #ff7158;
 }
