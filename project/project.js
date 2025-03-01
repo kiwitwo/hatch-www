@@ -130,4 +130,8 @@ if (localStorage.getItem("token")) {
             });
         }
     });
+} else {
+    par.addEventListener("click", () => {
+        alert("This is Hatch's age rating system. Each age rating is determined by moderators manually. See the Wiki for more info.");
+    });
 }
