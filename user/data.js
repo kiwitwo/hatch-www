@@ -9,19 +9,21 @@ fetch("https://api.hatch.lol/auth/me", {
 }).then(res => res.json().then(data => {
     client_username = data.name;
     
+    if (username.toLowerCase() === client_username.toLowerCase()) {
+        document.querySelector("#follow-button").remove();
+    }
+    
     fetch(`https://api.hatch.lol/users/${username}/followers`).then(followers => {
         followers.json().then(data => {
             let followers = [];
             data.followers.forEach(user => {
                 followers.push(user.name);
             });
-            document.querySelector("#follow-button-text").innerText = `${followers.includes(client_username) ? "Unf" : "F"}ollow`;
+            if (document.querySelector("#follow-button-text")) {
+                document.querySelector("#follow-button-text").innerText = `${followers.includes(client_username) ? "Unf" : "F"}ollow`;
+            }
         });
     });
-
-    if (username.toLowerCase() === client_username.toLowerCase()) {
-        document.querySelector("#follow-button").remove();
-    }
 
     fetch(`https://api.hatch.lol/users/${username}/following`).then(following => {
         following.json().then(data => {
