@@ -1,6 +1,46 @@
 const params = new URLSearchParams(window.location.search);
 const username = params.get("u");
 
+let client_username;
+fetch("https://api.hatch.lol/auth/me", {
+    headers: {
+        "Token": localStorage.getItem("token")
+    }
+}).then(res => res.json().then(data => {
+    client_username = data.name;
+    
+    fetch(`https://api.hatch.lol/users/${username}/followers`).then(followers => {
+        followers.json().then(data => {
+            let followers = [];
+            data.followers.forEach(user => {
+                followers.push(user.name);
+            });
+            document.querySelector("#follow-button-text").innerText = `${followers.includes(client_username) ? "Unf" : "F"}ollow`;
+        });
+    });
+}));
+
+document.querySelector("#follow-button").addEventListener("click", () => {
+    fetch(`https://api.hatch.lol/users/${username}/followers`).then(followers => {
+        followers.json().then(data => {
+            let followers = [];
+            data.followers.forEach(user => {
+                followers.push(user.name);
+            });
+            fetch(`https://api.hatch.lol/users/${username}/${followers.includes(client_username) ? "un" : ""}follow`, {
+                method: "POST",
+                headers: {
+                    "Token": localStorage.getItem("token")
+                }
+            }).then(res => {
+                if (res.status === 200) {
+                    document.querySelector("#follow-button-text").innerText = `${followers.includes(client_username) ? "F" : "Unf"}ollow`;
+                }
+            });
+        });
+    });
+});
+
 fetch(`https://api.hatch.lol/users/${username}`).then(res => {
     if (res.status === 200) {
         res.json().then(data => {
