@@ -95,3 +95,39 @@ fetch(`https://api.hatch.lol/projects/${id}`).then(res => {
     }
 });
 
+if (localStorage.getItem("token")) {
+    fetch("https://api.hatch.lol/auth/me", {
+        headers: {
+            "Token": localStorage.getItem("token")
+        }
+    }).then(res => {
+        if (res.status === 200) {
+            res.json().then(data => {
+                const par = document.querySelector("#project-age-rating");
+                if (data.hatchTeam) {
+                    par.style.cursor = "pointer";
+                    par.addEventListener("click", () => {
+                        let new_rating = prompt("please enter a new age rating for this project");
+                        if (new_rating) {
+                            fetch("https://api.hatch.lol/admin/set-rating", {
+                                "method": "POST",
+                                "headers": {
+                                    "Token": localStorage.getItem("token"),
+                                    "Content-Type": "application/json"
+                                },
+                                "body": JSON.stringify({
+                                    "project_id": parseInt(id),
+                                    "rating": new_rating
+                                })
+                            });
+                        }
+                    });
+                } else {
+                    par.addEventListener("click", () => {
+                        alert("This is Hatch's age rating system. Each age rating is determined by moderators manually. See the Wiki for more info.");
+                    });
+                }
+            });
+        }
+    });
+}
