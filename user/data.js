@@ -18,28 +18,34 @@ fetch("https://api.hatch.lol/auth/me", {
             document.querySelector("#follow-button-text").innerText = `${followers.includes(client_username) ? "Unf" : "F"}ollow`;
         });
     });
+
+    if (username.toLowerCase() === client_username.toLowerCase()) {
+        document.querySelector("#follow-button").remove();
+    }
 }));
 
-document.querySelector("#follow-button").addEventListener("click", () => {
-    fetch(`https://api.hatch.lol/users/${username}/followers`).then(followers => {
-        followers.json().then(data => {
-            let followers = [];
-            data.followers.forEach(user => {
-                followers.push(user.name);
-            });
-            fetch(`https://api.hatch.lol/users/${username}/${followers.includes(client_username) ? "un" : ""}follow`, {
-                method: "POST",
-                headers: {
-                    "Token": localStorage.getItem("token")
-                }
-            }).then(res => {
-                if (res.status === 200) {
-                    document.querySelector("#follow-button-text").innerText = `${followers.includes(client_username) ? "F" : "Unf"}ollow`;
-                }
+if (document.querySelector("#follow-button")) {
+    document.querySelector("#follow-button").addEventListener("click", () => {
+        fetch(`https://api.hatch.lol/users/${username}/followers`).then(followers => {
+            followers.json().then(data => {
+                let followers = [];
+                data.followers.forEach(user => {
+                    followers.push(user.name);
+                });
+                fetch(`https://api.hatch.lol/users/${username}/${followers.includes(client_username) ? "un" : ""}follow`, {
+                    method: "POST",
+                    headers: {
+                        "Token": localStorage.getItem("token")
+                    }
+                }).then(res => {
+                    if (res.status === 200) {
+                        document.querySelector("#follow-button-text").innerText = `${followers.includes(client_username) ? "F" : "Unf"}ollow`;
+                    }
+                });
             });
         });
     });
-});
+}
 
 fetch(`https://api.hatch.lol/users/${username}`).then(res => {
     if (res.status === 200) {
