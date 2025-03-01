@@ -1,7 +1,11 @@
-if (!localStorage["token"]) {
-    window.history.replaceState(null, "", "/404/");
-    window.location.assign("/404/");
-}
+document.querySelector("#upload-project").addEventListener("click", () => {
+    document.querySelector("#create-row").classList.toggle("upload-project");
+    document.querySelector("#create-row").classList.remove("create-gallery");
+});
+document.querySelector("#create-gallery").addEventListener("click", () => {
+    document.querySelector("#create-row").classList.toggle("create-gallery");
+    document.querySelector("#create-row").classList.remove("upload-project");
+});
 
 const submit = document.getElementById("submit");
 
@@ -50,4 +54,20 @@ submit.addEventListener("click", function () {
             console.error("Error:", error);
             alert("There was an error uploading the project.");
         });
+});
+
+fetch("https://api.hatch.lol/auth/me", {
+    headers: {
+        "Token": localStorage.getItem("token")
+    }
+}).then(res => {
+    if (res.status === 200) {
+        res.json().then(data => {
+            document.querySelector("#follower-count").innerText = data.followerCount;
+            document.querySelector("#following-count").innerText = data.followingCount;
+            document.querySelector("#project-count").innerText = data.projectCount;
+        });
+    } else {
+        window.location.href = "/login/";
+    }
 });
