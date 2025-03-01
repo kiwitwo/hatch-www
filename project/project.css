@@ -58,6 +58,7 @@
   color: #000000;
   background-color: var(--navDark);
   cursor: help;
+  text-wrap: nowrap;
 }
 #project-age-rating.teen {
   background-color: #ff7158;
