@@ -101,7 +101,7 @@ fetch(`https://api.hatch.lol/users/${username}`).then((res) => {
         : "Hatchling";
       document.querySelector("#joindate").innerText =
         `Joined ${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][new Date(data.joinDate).getMonth()]} ${new Date(data.joinDate).getDate()}, ${new Date(data.joinDate).getFullYear()}`;
-      document.querySelector("#recent-activity").innerText = "Coming soon...";
+
       document.querySelector("#connections-list").innerText = "Coming soon...";
       document.body.classList.remove("loading");
     });
@@ -124,10 +124,65 @@ fetch(`https://api.hatch.lol/users/${username}/following`).then((res) => {
   }
 });
 
+function get_relative_time(timestamp) {
+  let date = new Date(timestamp);
+  let c_date = new Date(Date.now());
+  if (date.getUTCFullYear() === c_date.getUTCFullYear()) {
+    if (date.getUTCMonth() === c_date.getUTCMonth()) {
+      if (date.getUTCDate() === c_date.getUTCDate()) {
+        if (date.getUTCHours() === c_date.getUTCHours()) {
+          if (date.getUTCMinutes() === c_date.getUTCMinutes()) {
+            if (date.getUTCSeconds() === c_date.getUTCSeconds()) {
+              return `now`;
+            } else {
+              if (date.getUTCSeconds() > c_date.getUTCSeconds()) {
+                return `in ${date.getUTCSeconds() - c_date.getUTCSeconds()} seconds`;
+              } else {
+                return `${c_date.getUTCSeconds() - date.getUTCSeconds()} seconds ago`;
+              }
+            }
+          } else {
+            if (date.getUTCMinutes() > c_date.getUTCMinutes()) {
+              return `in ${date.getUTCMinutes() - c_date.getUTCMinutes()} minutes`;
+            } else {
+              return `${c_date.getUTCMinutes() - date.getUTCMinutes()} minutes ago`;
+            }
+          }
+        } else {
+          if (date.getUTCHours() > c_date.getUTCHours()) {
+            return `in ${date.getUTCHours() - c_date.getUTCHours()} hours`;
+          } else {
+            return `${c_date.getUTCHours() - date.getUTCHours()} hours ago`;
+          }
+        }
+      } else {
+        if (date.getUTCDate() > c_date.getUTCDate()) {
+          return `in ${date.getUTCDate() - c_date.getUTCDate()} days`;
+        } else {
+          return `${c_date.getUTCDate() - date.getUTCDate()} days ago`;
+        }
+      }
+    } else {
+      if (date.getUTCMonth() > c_date.getUTCMonth()) {
+        return `in ${date.getUTCMonth() - c_date.getUTCMonth()} months`;
+      } else {
+        return `${c_date.getUTCMonth() - date.getUTCMonth()} months ago`;
+      }
+    }
+  } else {
+    if (date.getUTCFullYear() > c_date.getUTCFullYear()) {
+      return `in ${date.getUTCFullYear() - c_date.getUTCFullYear()} years`;
+    } else {
+      return `${c_date.getUTCFullYear() - date.getUTCFullYear()} years ago`;
+    }
+  }
+}
+
 fetch(`https://api.hatch.lol/users/${username}/projects`).then((res) => {
   if (res.status === 200) {
     res.json().then((data) => {
       document.querySelector("#shared-projects-row").innerHTML = "";
+      document.querySelector("#recent-activity").innerHTML = "";
       data.projects.forEach((project) => {
         document.querySelector("#shared-projects-row").innerHTML = `
                     <div class="project">
@@ -146,6 +201,9 @@ fetch(`https://api.hatch.lol/users/${username}/projects`).then((res) => {
                         </div>
                     </div>
                     ${document.querySelector("#shared-projects-row").innerHTML}`;
+        document.querySelector("#recent-activity").innerHTML = `
+          <li>Published <a href="/project/?id=${project.id}">${project.title}</a> <span class="activity-time">${get_relative_time(project.upload_ts*1000)}</span></li>
+          ${document.querySelector("#recent-activity").innerHTML}`;
       });
     });
   }
