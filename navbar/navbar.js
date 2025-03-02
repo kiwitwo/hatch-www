@@ -5,7 +5,7 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
           <div id="logo"><a href="https://dev.hatch.lol/"><img class="logo" src="/navbar/img/logo.png" alt="Hatch logo"></a></div>
           <div id="search">
             <i class="fa-solid fa-magnifying-glass" onclick="searchMade()"></i>
-            <input type="text" id="searchinp" name="search" placeholder="Search...">
+            <input type="text" id="searchinp" name="search" placeholder="Search..." size="3">
           </div>
           <a class="navitem" href="https://wiki.hatch.lol">
             Wiki
