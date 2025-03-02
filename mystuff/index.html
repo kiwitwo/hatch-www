@@ -16,9 +16,9 @@
                 <div id="statistics">
                     <h2>My Statistics</h2>
                     <p id="stats">
-                        931 followers | 12,345 following<br>
-                        12,345 projects: <i class="fa-solid fa-square-caret-up"></i> 51,999 | <i class="fa-solid fa-eye"></i> 94,419,931 | <i class="fa-regular fa-message"></i> 31,021<br>
-                        61 galleries: <i class="fa-solid fa-users-rectangle"></i> 21,392 | <i class="fa-regular fa-file-code"></i> 841,912 | <i class="fa-regular fa-message"></i> 29,912 | <i class="fa-solid fa-user-plus"></i> 11,344
+                        <span id="follower-count">-</span> followers | <span id="following-count">-</span> following<br>
+                        <span id="project-count">-</span> projects: <i class="fa-solid fa-square-caret-up"></i> ? | <i class="fa-solid fa-eye"></i> ? | <i class="fa-regular fa-message"></i> ?<br>
+                        ? galleries: <i class="fa-solid fa-users-rectangle"></i> ? | <i class="fa-regular fa-file-code"></i> ? | <i class="fa-regular fa-message"></i> ? | <i class="fa-solid fa-user-plus"></i> ?
                     </p>
                 </div>
                 <div id="stuff-items">
@@ -43,58 +43,7 @@
                                 </div>
                                 <input type="button" value="Submit" id="submit">
                             </form>
-                            <script>
-                                // this is template code someone pls fix :agony: (i know zero js i just need something here for testing, but this code probably sucks)
-                                document.getElementById('submit').addEventListener('click', function() {
-                                const title = document.getElementById('upload-title').value;
-                                const description = document.getElementById('upload-description').value;
-                                const fileInput = document.getElementById('file');
-                                const file = fileInput.files[0];
-                            
-                                const touChecked = document.getElementById('tou').checked;
-                                if (!touChecked) {
-                                    alert('You must agree to the terms of use.');
-                                    return;
-                                }
-                            
-                                const token = localStorage.getItem('token');
-                                if (!token) {
-                                    alert('No token found. Please log in first.');
-                                    return;
-                                }
-                            
-                                const fileBlob = new Blob([file], { type: 'application/zip' });
-
-                                const formData = new FormData();
-                                formData.append('title', title);
-                                formData.append('description', description);
-                                formData.append('file', fileBlob, file.name);
-                            
-                                fetch('https://api.hatch.lol/projects', {
-                                    method: 'POST',
-                                    headers: {
-                                        'Token': token
-                                    },
-                                    body: formData
-                                })
-                                .then(response => {
-                                    return response.text().then(text => {
-                                        console.log('Response status:', response.status);
-                                        console.log('Response body:', text);
-                                        if (response.ok) {
-                                            alert(text);
-                                            alert('Project uploaded successfully!');
-                                        } else {
-                                            alert('Error: ' + text);
-                                        }
-                                    });
-                                })
-                                .catch(error => {
-                                    console.error('Error:', error);
-                                    alert('There was an error uploading the project.');
-                                });
-                            });
-                            </script>
+                            <script src="upload-project.js"></script>
                         </div>
                     </div>
                     <div id="my-projects">
@@ -204,5 +153,10 @@
         <div id="footercontainer"></div>
         <script src="/navbar/navbar.js"></script>
         <script src="/footer/footer.js"></script>
+        <script>
+            if (!localStorage.getItem("token")) {
+                window.location.href = "/login/";
+            }
+        </script>
     </body>
 </html>

@@ -18,16 +18,17 @@
           <div class="top-part">
             <img src="https://rdr.lol/u/KRV1KZ.png" class="authorlogo" id="author-logo">
             <div class="project-info">
-              <b id="project-title" class="loading-skeleton">project.title</b>
-              <span><a id="author-username" class="loading-skeleton">author.username</a></span>
+              <span><b id="project-title" class="loading-skeleton">project.title</b><span id="project-version">v1</span></span>
+              <span>by <a id="author-username" class="loading-skeleton">author.username</a></span>
             </div>
-            <div class="top-icons">
-              <img src="https://rdr.lol/u/4ymYkd.png" class="rating-icon" onclick="alert('This is Hatch\'s age rating system. Each age rating is determined by moderators manually. See the Wiki for more info.')">
-              <img src="https://rdr.lol/u/HUfST8.png" class="editor-icon">
-            </div>
+            <div id="project-age-rating"></div>
           </div>
-          <div class="embed">
+          <div class="embed" id="project-embed-container">
             <iframe id="project-embed" src="https://turbowarp.org/389464290/embed?addons=pause" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+            <div id="project-teen-block">
+              <h2>This project is rated 13+</h2>
+              <p>Please <a href="/login/">log in</a> or <a href="/signup/">create an account</a> to view this project.</p>
+            </div>
           </div>
           <div class="interactions">
             <div class="rating">
@@ -57,8 +58,8 @@
         <div class="comment-input">
           <img src="https://rdr.lol/u/KRV1KZ.png">
           <form class="comment-submit" id="project-comment-form">
-            <input type="text" id="project-comment-form-input" placeholder="Post a comment...">
-            <input type="submit" value="Submit" autocomplete="false">
+            <input type="text" id="project-comment-form-input" placeholder="Post a comment..." autocomplete="off">
+            <input type="submit" value="Submit">
           </form>
         </div>
         <div id="comments" class="loading-skeleton"></div>
@@ -72,7 +73,7 @@
         <h2>Description</h2>
         <p id="project-description" class="loading-skeleton">Lorem ipsum odor amet, consectetuer adipiscing elit. Ac sit id sit sodales nunc phasellus. Nisi euismod ante magna congue nullam ipsum. Fringilla integer platea velit id id elementum auctor. Vestibulum a ante enim eget eleifend. Leo erat mi sapien pulvinar sit pulvinar. Class penatibus nisi pretium imperdiet sollicitudin ridiculus maecenas. Integer metus enim nibh et arcu elementum felis. Senectus convallis imperdiet cras maecenas cursus nascetur finibus porttitor potenti.</p>
       </div>
-      <p class="disclaimer">This project and its description were uploaded by a user of this site, and they do not reflect the opinions, views, or standards of the Hatch platform or Hatch team.<br>
+      <p class="disclaimer">This project and its description were uploaded by a user of this site, and they do not necessarily reflect the opinions, views, or standards of the Hatch platform or Hatch team.<br>
         All projects on Hatch must follow the <a href="/guidelines">Hatch Platform Guidelines</a>.
       </p>
       <div class="tags">
