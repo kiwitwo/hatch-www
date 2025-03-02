@@ -50,7 +50,7 @@ fetch(`https://api.hatch.lol/projects/${id}`).then(res => {
                 if (res.status === 200) {
                     res.json().then(user => {
                         if (user.name === data.author.username) {
-                            document.querySelector("#project-edit-button").href = `project/edit/?id=${id}`;
+                            document.querySelector("#project-edit-button").href = `/project/edit/?id=${id}`;
                         } else {
                             document.querySelector("#project-edit-button").remove();
                         }
