@@ -107,25 +107,25 @@ fetch(`https://api.hatch.lol/users/${username}/projects`).then(res => {
         res.json().then(data => {
             document.querySelector("#shared-projects-row").innerHTML = "";
             data.projects.forEach(project => {
-                let comment_num;
-                fetch(`https://api.hatch.lol/projects/${project.id}/comments`).then(res => res.json().then(data => comment_num = data));
-                document.querySelector("#shared-projects-row").innerHTML = `
-                    <div class="project">
-                        <div class="project-top">
-                            <a href="/project/?id=${project.id}"><img src="https://rdr.lol/u/Ra9tJI.png" alt="project thumbnail" class="project-thumbnail"></a>
-                            <p class="project-stats">
-                                <i class="fa-solid fa-square-caret-up"></i>&ensp;?<br>
-                                <i class="fa-solid fa-eye"></i>&ensp;?<br>
-                                <i class="fa-solid fa-message"></i>&ensp;?<br>
-                                <span class="project-date">${new Date((project.upload_ts)*1000).getMonth()+1}/${new Date(project.upload_ts*1000).getDate()}/${new Date(project.upload_ts*1000).getFullYear()-2000}</span>
-                            </p>
+                fetch(`https://api.hatch.lol/projects/${project.id}/comments`).then(res => res.json().then(data => {
+                    document.querySelector("#shared-projects-row").innerHTML = `
+                        <div class="project">
+                            <div class="project-top">
+                                <a href="/project/?id=${project.id}"><img src="https://rdr.lol/u/Ra9tJI.png" alt="project thumbnail" class="project-thumbnail"></a>
+                                <p class="project-stats">
+                                    <i class="fa-solid fa-square-caret-up"></i>&ensp;?<br>
+                                    <i class="fa-solid fa-eye"></i>&ensp;?<br>
+                                    <i class="fa-solid fa-message"></i>&ensp;${data.comments.length}<br>
+                                    <span class="project-date">${new Date((project.upload_ts)*1000).getMonth()+1}/${new Date(project.upload_ts*1000).getDate()}/${new Date(project.upload_ts*1000).getFullYear()-2000}</span>
+                                </p>
+                            </div>
+                            <div class="project-bottom">
+                                <h3 class="project-title"><a href="/project/?id=${project.id}">${project.title}</a></h3>
+                                <p class="project-author">By <a href="/user/?u=${project.author.username}">@${project.author.username}</a></p>
+                            </div>
                         </div>
-                        <div class="project-bottom">
-                            <h3 class="project-title"><a href="/project/?id=${project.id}">${project.title}</a></h3>
-                            <p class="project-author">By <a href="/user/?u=${project.author.username}">@${project.author.username}</a></p>
-                        </div>
-                    </div>
-                    ${document.querySelector("#shared-projects-row").innerHTML}`;
+                        ${document.querySelector("#shared-projects-row").innerHTML}`;
+                }));
             });
         });
     }
