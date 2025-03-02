@@ -67,6 +67,8 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
             }
           });
         } else {
+          document.querySelector("#project-edit-button").remove();
+          
           if (data.rating === "13+") {
             document.querySelector("#project-embed").remove();
             document
