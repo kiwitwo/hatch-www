@@ -130,12 +130,19 @@ if (localStorage.getItem("token")) {
   }).then((res) => {
     if (res.status === 200) {
       res.json().then((data) => {
+        const par = document.querySelector("#project-age-rating");
+        const rate_dialog = document.querySelector("#rate-dialog");
         if (data.hatchTeam) {
           par.style.cursor = "pointer";
           par.addEventListener("click", () => {
-            let new_rating = prompt(
-              "please enter a new age rating for this project",
-            );
+            rate_dialog.toggleAttribute("open");
+          });
+          let new_rating;
+          let rating_picker = rate_dialog.querySelector("select");
+          rating_picker.onchange = (e) => {
+            new_rating = rating_picker.value;
+          }
+          rate_dialog.querySelector("button").onclick = () => {
             if (new_rating) {
               fetch("https://api.hatch.lol/admin/set-rating", {
                 method: "POST",
@@ -147,10 +154,18 @@ if (localStorage.getItem("token")) {
                   project_id: parseInt(id),
                   rating: new_rating,
                 }),
+              }).then((e) => {
+                if (e.ok) {
+                  par.innerHTML = new_rating;
+                } else {
+                  alert("Failed to change rating: " + e.text);
+                }
               });
+              rate_dialog.toggleAttribute("open");
             }
-          });
+          }
         } else {
+          rate_dialog.remove();
           par.addEventListener("click", () => {
             alert(
               "This is Hatch's age rating system. Each age rating is determined by moderators manually. See the Wiki for more info.",

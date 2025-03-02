@@ -396,3 +396,18 @@ body.loading .loading-skeleton {
     width: unset;
   }
 }
+#rate-dialog {
+  margin-top: 30px;
+  background-color: var(--innerBlock);
+  border: 3px solid white;
+  border-radius: 3px;
+  color: white;
+}
+#rate-dialog select, #rate-dialog button {
+  color: white;
+  background-color: #1b1b1b;
+  border: 3px solid #1b1b1b;
+  border-radius: 10px;
+  width: auto;
+  padding: 5px;
+}

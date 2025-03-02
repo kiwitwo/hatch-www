@@ -23,7 +23,7 @@
             <div class="player">
               <div class="top-part">
                 <img
-                  src="https://rdr.lol/u/KRV1KZ.png"
+                  src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
                   class="authorlogo"
                   id="author-logo"
                 />
@@ -41,11 +41,22 @@
                   >
                 </div>
                 <div id="project-age-rating"></div>
+                <dialog id="rate-dialog">
+                  <span>New rating:</p>
+                  <select name="rating" id="rating">
+                    <option value="N/A">N/A</option>
+                    <option value="E">E</option>
+                    <option value="7+">7+</option>
+                    <option value="9+">9+</option>
+                    <option value="13+">13+</option>
+                  </select>
+                  <button id="submit-rate">Rate</button>
+                </dialog>
               </div>
               <div class="embed" id="project-embed-container">
                 <iframe
                   id="project-embed"
-                  src="https://turbowarp.org/389464290/embed?addons=pause"
+                  src="about:blank"
                   width="482"
                   height="412"
                   allowtransparency="true"
