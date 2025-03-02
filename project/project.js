@@ -119,6 +119,7 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
   }
 });
 
+const par = document.querySelector("#project-age-rating");
 if (localStorage.getItem("token")) {
   fetch("https://api.hatch.lol/auth/me", {
     headers: {
@@ -127,7 +128,6 @@ if (localStorage.getItem("token")) {
   }).then((res) => {
     if (res.status === 200) {
       res.json().then((data) => {
-        const par = document.querySelector("#project-age-rating");
         if (data.hatchTeam) {
           par.style.cursor = "pointer";
           par.addEventListener("click", () => {
