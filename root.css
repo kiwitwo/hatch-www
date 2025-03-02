@@ -30,6 +30,10 @@ input {
 }
 body,
 html {
+    overflow: visible;
+}
+body,
+html {
     font-family: "Calibri", "Lato", sans-serif;
     margin: 0;
     padding: 0;
