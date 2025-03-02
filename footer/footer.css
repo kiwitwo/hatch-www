@@ -24,6 +24,8 @@
   color: #ffbd59;
   text-decoration: none;
   transition: transform 0.2s;
+  padding: 5px;
+  line-height: calc(1rem + 10px);
 }
 
 .foot a:hover {

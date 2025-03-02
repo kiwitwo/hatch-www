@@ -187,7 +187,7 @@ fetch(`https://api.hatch.lol/users/${username}/projects`).then((res) => {
         document.querySelector("#shared-projects-row").innerHTML = `
                     <div class="project">
                         <div class="project-top">
-                            <a href="/project/?id=${project.id}"><img src="https://rdr.lol/u/Ra9tJI.png" alt="project thumbnail" class="project-thumbnail"></a>
+                            <a href="/project/?id=${project.id}"><img src="https://rdr.lol/u/Ra9tJI.png" alt="Project thumbnail" class="project-thumbnail"></a>
                             <p class="project-stats">
                                 <i class="fa-solid fa-square-caret-up"></i>&ensp;?<br>
                                 <i class="fa-solid fa-eye"></i>&ensp;?<br>

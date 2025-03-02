@@ -2,7 +2,7 @@ let logged_out = !localStorage.getItem("token");
 
 document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
         <div class="nav">
-          <div id="logo"><a href="https://dev.hatch.lol/"><img class="logo" src="/navbar/img/logo.png"></a></div>
+          <div id="logo"><a href="https://dev.hatch.lol/"><img class="logo" src="/navbar/img/logo.png" alt="Hatch logo"></a></div>
           <div id="search">
             <i class="fa-solid fa-magnifying-glass" onclick="searchMade()"></i>
             <input type="text" id="searchinp" name="search" placeholder="Search...">
@@ -28,14 +28,14 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
             Log in
           </a>`
               : `<a class="navitem" id="mail" href="https://dev.hatch.lol/messages">
-            <img src="/navbar/img/messages.svg" id="msgsym" /><div id="messagect"><b>1</b></div>
+            <img src="/navbar/img/messages.svg" id="msgsym" alt="Messages" /><div id="messagect"><b>1</b></div>
         
           </a>
           <a class="navitem" href="https://dev.hatch.lol/mystuff">
           <i class="fa-regular fa-folder-open fa-2xl" id="mystuff"></i> 
           </a>
           <div id="userbox">
-          <div id="userinfo"><img id="pfpnav" src="https://api.hatch.lol/uploads/pfp/default.png"><div id="usernamenav">...</div><div id="dropdownimgcover"><img id="dropdownarrow" src="/navbar/img/downarrow.png" /></div></div>
+          <div id="userinfo"><img id="pfpnav" src="https://api.hatch.lol/uploads/pfp/default.png" alt="Your profile picture"><div id="usernamenav">...</div><div id="dropdownimgcover"><img id="dropdownarrow" src="/navbar/img/downarrow.png" alt="Dropdown arrow" /></div></div>
             <div id="userdrop" style="display: none" tabindex="0">
               <a class="dropdown-option nav-your-profile" id="highest">
                 Your Profile
