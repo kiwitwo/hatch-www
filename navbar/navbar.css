@@ -5,11 +5,11 @@
   position: sticky;
   top: 0;
   z-index: 1;
-  display: flex;
   padding: 0 10% 0 10%;
   max-width: 100%;
   display: -webkit-flex;
   display: flex;
+  justify-content: center;
 }
 .nav img {
   height: 46px;
