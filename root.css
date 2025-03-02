@@ -39,6 +39,7 @@ html {
     padding: 0;
     background-color: var(--websiteBack);
 }
+/*
 a {
     color: var(--lightOrange);
     font-weight: bold;
@@ -47,6 +48,7 @@ a {
 a:hover {
     color: var(--searchBar);
 }
+*/
 #main {
     min-height: calc(100vh - 185px);
     background-color: var(--websiteBack);
