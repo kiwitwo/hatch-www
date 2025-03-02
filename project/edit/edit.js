@@ -67,14 +67,7 @@ fetch("https://api.hatch.lol/auth/me", {
     Token: localStorage.getItem("token"),
   },
 }).then((res) => {
-  if (res.status === 200) {
-    res.json().then((data) => {
-      document.querySelector("#follower-count").innerText = data.followerCount;
-      document.querySelector("#following-count").innerText =
-        data.followingCount;
-      document.querySelector("#project-count").innerText = data.projectCount;
-    });
-  } else {
+  if (res.status !== 200) {
     window.location.href = "/login/";
   }
 });
