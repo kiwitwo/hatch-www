@@ -1,214 +1,280 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Hatch</title>
-    <link rel="stylesheet" href="/root.css" />
-    <link rel="stylesheet" href="project.css" />
-    <link rel="stylesheet" href="/navbar/navbar.css" />
-    <link rel="stylesheet" href="/footer/footer.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body class="loading">
-    <div id="navarea"></div>
-    <div id="main">
-      <div class="area">
-        <div class="project">
-          <div class="main-area">
-            <div class="player">
-              <div class="top-part">
-                <img
-                  src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                  class="authorlogo"
-                  id="author-logo"
-                  alt="Author's profile picture"
-                />
-                <div class="project-info">
-                  <span
-                    ><b id="project-title" class="loading-skeleton"
-                      >project.title</b
-                    ><span id="project-version">v1</span></span
-                  >
-                  <span
-                    >by
-                    <a id="author-username" class="loading-skeleton"
-                      >author.username</a
-                    ></span
-                  >
+    <head>
+        <title>Hatch</title>
+        <link rel="stylesheet" href="/root.css" />
+        <link rel="stylesheet" href="project.css" />
+        <link rel="stylesheet" href="/navbar/navbar.css" />
+        <link rel="stylesheet" href="/footer/footer.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+            integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="loading">
+        <div id="navarea"></div>
+        <div id="main">
+            <div class="area">
+                <div class="project">
+                    <div class="main-area">
+                        <div class="player">
+                            <div class="top-part">
+                                <img
+                                    src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                    class="authorlogo"
+                                    id="author-logo"
+                                    alt="Author's profile picture"
+                                />
+                                <div class="project-info">
+                                    <span
+                                        ><b
+                                            id="project-title"
+                                            class="loading-skeleton"
+                                            >project.title</b
+                                        ><span id="project-version"
+                                            >v1</span
+                                        ></span
+                                    >
+                                    <span
+                                        >by
+                                        <a
+                                            id="author-username"
+                                            class="loading-skeleton"
+                                            >author.username</a
+                                        ></span
+                                    >
+                                </div>
+                                <div id="project-age-rating"></div>
+                                <dialog id="rate-dialog">
+                                    <span>New rating:</span>
+                                    <select name="rating" id="rating">
+                                        <option value="N/A">N/A</option>
+                                        <option value="E">E</option>
+                                        <option value="7+">7+</option>
+                                        <option value="9+">9+</option>
+                                        <option value="13+">13+</option>
+                                    </select>
+                                    <button id="submit-rate">Rate</button>
+                                </dialog>
+                            </div>
+                            <div class="embed" id="project-embed-container">
+                                <iframe
+                                    id="project-embed"
+                                    src="about:blank"
+                                    width="482"
+                                    height="412"
+                                    allowtransparency="true"
+                                    frameborder="0"
+                                    scrolling="no"
+                                    allowfullscreen
+                                ></iframe>
+                                <div id="project-teen-block">
+                                    <h2>This project is rated 13+</h2>
+                                    <p>
+                                        Please <a href="/login/">log in</a> or
+                                        <a href="/signup/">create an account</a>
+                                        to view this project.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="interactions">
+                                <div class="rating">
+                                    <div class="upvote">
+                                        <img
+                                            src="https://rdr.lol/u/dNVXOI.png"
+                                            class="interaction-button"
+                                            alt="Upvote button"
+                                        />
+                                        <p
+                                            id="upvote-count"
+                                            class="loading-skeleton"
+                                        >
+                                            47
+                                        </p>
+                                    </div>
+                                    <div class="downvote">
+                                        <img
+                                            src="https://rdr.lol/u/6KIJeR.png"
+                                            class="interaction-button"
+                                            alt="Downvote button"
+                                        />
+                                        <p
+                                            id="downvote-count"
+                                            class="loading-skeleton"
+                                        >
+                                            2
+                                        </p>
+                                    </div>
+                                    <p
+                                        id="vote-percent"
+                                        class="loading-skeleton"
+                                    >
+                                        (96%)
+                                    </p>
+                                </div>
+                                <div class="actions">
+                                    <a id="report" class="report"
+                                        ><img
+                                            src="https://rdr.lol/u/JRHxiZ.png"
+                                            alt="Report"
+                                        />
+                                        Report</a
+                                    >
+                                    <a id="download" class="download"
+                                        ><img
+                                            src="https://rdr.lol/u/DMgwS6.png"
+                                            alt="Download"
+                                        />
+                                        Download</a
+                                    >
+                                    <a id="share" class="share"
+                                        ><img
+                                            src="https://rdr.lol/u/8Vf9jC.png"
+                                            alt="Share"
+                                        />
+                                        Share</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info"></div>
+                    </div>
+                    <div class="comments">
+                        <h2>Comments</h2>
+                        <div class="comment-input">
+                            <img
+                                src="https://rdr.lol/u/KRV1KZ.png"
+                                alt="Your profile picture"
+                            />
+                            <form
+                                class="comment-submit"
+                                id="project-comment-form"
+                            >
+                                <input
+                                    type="text"
+                                    id="project-comment-form-input"
+                                    placeholder="Post a comment..."
+                                    autocomplete="off"
+                                />
+                                <input type="submit" value="Submit" />
+                            </form>
+                        </div>
+                        <div id="comments" class="loading-skeleton"></div>
+                    </div>
                 </div>
-                <div id="project-age-rating"></div>
-                <dialog id="rate-dialog">
-                  <span>New rating:</p>
-                  <select name="rating" id="rating">
-                    <option value="N/A">N/A</option>
-                    <option value="E">E</option>
-                    <option value="7+">7+</option>
-                    <option value="9+">9+</option>
-                    <option value="13+">13+</option>
-                  </select>
-                  <button id="submit-rate">Rate</button>
-                </dialog>
-              </div>
-              <div class="embed" id="project-embed-container">
-                <iframe
-                  id="project-embed"
-                  src="about:blank"
-                  width="482"
-                  height="412"
-                  allowtransparency="true"
-                  frameborder="0"
-                  scrolling="no"
-                  allowfullscreen
-                ></iframe>
-                <div id="project-teen-block">
-                  <h2>This project is rated 13+</h2>
-                  <p>
-                    Please <a href="/login/">log in</a> or
-                    <a href="/signup/">create an account</a> to view this
-                    project.
-                  </p>
+                <div class="about-info">
+                    <div class="author-info">
+                        <b id="project-publish-date" class="loading-skeleton"
+                            >7 December 2024</b
+                        >
+                    </div>
+                    <a class="button" id="project-edit-button">Edit project</a>
+                    <div class="description">
+                        <h2>Description</h2>
+                        <p id="project-description" class="loading-skeleton">
+                            Lorem ipsum odor amet, consectetuer adipiscing elit.
+                            Ac sit id sit sodales nunc phasellus. Nisi euismod
+                            ante magna congue nullam ipsum. Fringilla integer
+                            platea velit id id elementum auctor. Vestibulum a
+                            ante enim eget eleifend. Leo erat mi sapien pulvinar
+                            sit pulvinar. Class penatibus nisi pretium imperdiet
+                            sollicitudin ridiculus maecenas. Integer metus enim
+                            nibh et arcu elementum felis. Senectus convallis
+                            imperdiet cras maecenas cursus nascetur finibus
+                            porttitor potenti.
+                        </p>
+                    </div>
+                    <p class="disclaimer">
+                        This project and its description were uploaded by a user
+                        of this site, and they do not necessarily reflect the
+                        opinions, views, or standards of the Hatch platform or
+                        Hatch team.<br />
+                        All projects on Hatch must follow the
+                        <a href="/guidelines">Hatch Platform Guidelines</a>.
+                    </p>
+                    <div class="tags">
+                        <p>
+                            Tags:
+                            <span id="project-tags" class="loading-skeleton"
+                                ><a href="/search?tag=pc">#PC</a>
+                                <a href="/search?tag=game">#Game</a></span
+                            >
+                        </p>
+                    </div>
                 </div>
-              </div>
-              <div class="interactions">
-                <div class="rating">
-                  <div class="upvote">
-                    <img
-                      src="https://rdr.lol/u/dNVXOI.png"
-                      class="interaction-button"
-                      alt="Upvote button"
-                    />
-                    <p id="upvote-count" class="loading-skeleton">47</p>
-                  </div>
-                  <div class="downvote">
-                    <img
-                      src="https://rdr.lol/u/6KIJeR.png"
-                      class="interaction-button"
-                      alt="Downvote button"
-                    />
-                    <p id="downvote-count" class="loading-skeleton">2</p>
-                  </div>
-                  <p id="vote-percent" class="loading-skeleton">(96%)</p>
+                <div class="galleries">
+                    <h2>Galleries</h2>
+                    <div class="galleries-scroll" id="project-galleries">
+                        <div class="gallery">
+                            <a href="/galleries">
+                                <img
+                                    src="https://rdr.lol/u/s5m1y4.png"
+                                    alt="Gallery thumbnail"
+                                />
+                                <p>Cool Hatch Projects</p>
+                            </a>
+                        </div>
+                        <div class="gallery">
+                            <a href="/galleries">
+                                <img
+                                    src="https://rdr.lol/u/s5m1y4.png"
+                                    alt="Gallery thumbnail"
+                                />
+                                <p>Cool Hatch Projects</p>
+                            </a>
+                        </div>
+                        <div class="gallery">
+                            <a href="/galleries">
+                                <img
+                                    src="https://rdr.lol/u/s5m1y4.png"
+                                    alt="Gallery thumbnail"
+                                />
+                                <p>Cool Hatch Projects</p>
+                            </a>
+                        </div>
+                        <div class="gallery">
+                            <a href="/galleries">
+                                <img
+                                    src="https://rdr.lol/u/s5m1y4.png"
+                                    alt="Gallery thumbnail"
+                                />
+                                <p>Cool Hatch Projects</p>
+                            </a>
+                        </div>
+                        <div class="gallery">
+                            <a href="/galleries">
+                                <img
+                                    src="https://rdr.lol/u/s5m1y4.png"
+                                    alt="Gallery thumbnail"
+                                />
+                                <p>Cool Hatch Projects</p>
+                            </a>
+                        </div>
+                        <div class="gallery">
+                            <a href="/galleries">
+                                <img
+                                    src="https://rdr.lol/u/s5m1y4.png"
+                                    alt="Gallery thumbnail"
+                                />
+                                <p>Cool Hatch Projects</p>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="actions">
-                  <a id="report" class="report"
-                    ><img src="https://rdr.lol/u/JRHxiZ.png" alt="Report" /> Report</a
-                  >
-                  <a id="download" class="download"
-                    ><img src="https://rdr.lol/u/DMgwS6.png" alt="Download" /> Download</a
-                  >
-                  <a id="share" class="share"
-                    ><img src="https://rdr.lol/u/8Vf9jC.png" alt="Share" /> Share</a
-                  >
-                </div>
-              </div>
             </div>
-            <div class="project-info"></div>
-          </div>
-          <div class="comments">
-            <h2>Comments</h2>
-            <div class="comment-input">
-              <img src="https://rdr.lol/u/KRV1KZ.png" alt="Your profile picture" />
-              <form class="comment-submit" id="project-comment-form">
-                <input
-                  type="text"
-                  id="project-comment-form-input"
-                  placeholder="Post a comment..."
-                  autocomplete="off"
-                />
-                <input type="submit" value="Submit" />
-              </form>
-            </div>
-            <div id="comments" class="loading-skeleton"></div>
-          </div>
         </div>
-        <div class="about-info">
-          <div class="author-info">
-            <b id="project-publish-date" class="loading-skeleton"
-              >7 December 2024</b
-            >
-          </div>
-          <a class="button" id="project-edit-button">Edit project</a>
-          <div class="description">
-            <h2>Description</h2>
-            <p id="project-description" class="loading-skeleton">
-              Lorem ipsum odor amet, consectetuer adipiscing elit. Ac sit id sit
-              sodales nunc phasellus. Nisi euismod ante magna congue nullam
-              ipsum. Fringilla integer platea velit id id elementum auctor.
-              Vestibulum a ante enim eget eleifend. Leo erat mi sapien pulvinar
-              sit pulvinar. Class penatibus nisi pretium imperdiet sollicitudin
-              ridiculus maecenas. Integer metus enim nibh et arcu elementum
-              felis. Senectus convallis imperdiet cras maecenas cursus nascetur
-              finibus porttitor potenti.
-            </p>
-          </div>
-          <p class="disclaimer">
-            This project and its description were uploaded by a user of this
-            site, and they do not necessarily reflect the opinions, views, or
-            standards of the Hatch platform or Hatch team.<br />
-            All projects on Hatch must follow the
-            <a href="/guidelines">Hatch Platform Guidelines</a>.
-          </p>
-          <div class="tags">
-            <p>
-              Tags:
-              <span id="project-tags" class="loading-skeleton"
-                ><a href="/search?tag=pc">#PC</a>
-                <a href="/search?tag=game">#Game</a></span
-              >
-            </p>
-          </div>
-        </div>
-        <div class="galleries">
-          <h2>Galleries</h2>
-          <div class="galleries-scroll" id="project-galleries">
-            <div class="gallery">
-              <a href="/galleries">
-                <img src="https://rdr.lol/u/s5m1y4.png" alt="Gallery thumbnail" />
-                <p>Cool Hatch Projects</p>
-              </a>
-            </div>
-            <div class="gallery">
-              <a href="/galleries">
-                <img src="https://rdr.lol/u/s5m1y4.png" alt="Gallery thumbnail" />
-                <p>Cool Hatch Projects</p>
-              </a>
-            </div>
-            <div class="gallery">
-              <a href="/galleries">
-                <img src="https://rdr.lol/u/s5m1y4.png" alt="Gallery thumbnail" />
-                <p>Cool Hatch Projects</p>
-              </a>
-            </div>
-            <div class="gallery">
-              <a href="/galleries">
-                <img src="https://rdr.lol/u/s5m1y4.png" alt="Gallery thumbnail" />
-                <p>Cool Hatch Projects</p>
-              </a>
-            </div>
-            <div class="gallery">
-              <a href="/galleries">
-                <img src="https://rdr.lol/u/s5m1y4.png" alt="Gallery thumbnail" />
-                <p>Cool Hatch Projects</p>
-              </a>
-            </div>
-            <div class="gallery">
-              <a href="/galleries">
-                <img src="https://rdr.lol/u/s5m1y4.png" alt="Gallery thumbnail" />
-                <p>Cool Hatch Projects</p>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="footercontainer"></div>
-    <script src="project.js"></script>
-  </body>
-  <script src="/navbar/navbar.js"></script>
-  <script src="/footer/footer.js"></script>
+        <div id="footercontainer"></div>
+        <script src="project.js"></script>
+    </body>
+    <script src="/navbar/navbar.js"></script>
+    <script src="/footer/footer.js"></script>
 </html>
