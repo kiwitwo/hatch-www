@@ -7,18 +7,23 @@ document.getElementById("footercontainer").innerHTML = `<div class="footer">
                 </tr>
                 <tr class="foot">
                     <td><a href="/hatch-team">Hatch Team</a></td>
-                    <td><a href="/guidelines">Hatch Guidelines</a></td>
-                    <td><a href="/about">About</a></td>
+                    <td><a href="/explore">Explore</a></td>
+                    <td><a href="/guidelines">Guidelines</a></td>
                 </tr>
                 <tr class="foot">
                     <td><a href="/contact-us">Contact Us</a></td>
                     <td><a href="https://discord.gg/ENTDZdaGnD">Discord Server</a></td>
-                    <td><a href="/privacy-policy">Privacy Policy</a></td>
+                    <td><a href="/terms">Terms of Use</a></td>
                 </tr>
                 <tr class="foot">
                     <td><a href="https://github.com/hatchdotlol">Source Code</a></td>
+                    <td><a href="https://forums.hatch.lol">Forums</a></td>
+                    <td><a href="/privacy-policy">Privacy Policy</a></td>
+                </tr>
+                <tr class="foot">
+                    <td><a href="/about">About</a></td>
                     <td><a href="https://social.hatch.lol">Social Media</a></td>
-                    <td><a href="/terms">Terms of Use</a></td>
+                    <td><a href="https://wiki.hatch.lol">Wiki</a></td>
                 </tr>
             </table>
         </div>
