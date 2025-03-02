@@ -81,7 +81,7 @@ fetch(`https://api.hatch.lol/users/${username}`).then((res) => {
 
       document.querySelector("#banner-image").src =
         data.bannerImage === null
-          ? "https://rdr.lol/u/GBc7y6.png"
+          ? "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
           : data.bannerImage;
       document.querySelector("#displayname").innerText = data.displayName;
       document.querySelector("#username").innerText = `@${data.name}`;
