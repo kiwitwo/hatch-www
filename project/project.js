@@ -42,7 +42,7 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
       document.querySelector("#project-publish-date").innerText =
         `${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][new Date(data.upload_ts * 1000).getMonth()]} ${new Date(data.upload_ts * 1000).getDate()}, ${new Date(data.upload_ts * 1000).getFullYear()}`;
       document.querySelector("#project-embed").src =
-        `https://warp.algebrahelp.org/embed.html?project_url=https://api.hatch.lol/projects/${id}/content`;
+        `https://warp.algebrahelp.org/embed.html?project_url=https://api.hatch.lol/projects/${id}/content${localStorage.getItem("token") && data.rating === "13+" ? `?token=${localStorage.getItem("token")}` : ""}`;
       document.querySelector("#project-description").innerText =
         data.description;
 
@@ -87,7 +87,7 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
       });
 
       document.querySelector("#download").href =
-        `https://api.hatch.lol/projects/${id}/content`;
+        `https://api.hatch.lol/projects/${id}/content${localStorage.getItem("token") && data.rating === "13+" ? `?token=${localStorage.getItem("token")}` : ""}`;
 
       fetch(`https://api.hatch.lol/projects/${id}/comments`).then((res) => {
         res.json().then((data) => {
