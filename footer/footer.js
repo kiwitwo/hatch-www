@@ -1,4 +1,4 @@
- document.getElementById("footercontainer").innerHTML = `<div class="footer">
+document.getElementById("footercontainer").innerHTML = `<div class="footer">
             <table>
                 <tr class="foot">
                     <th>Us</th>

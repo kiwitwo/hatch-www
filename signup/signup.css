@@ -16,7 +16,8 @@
   justify-content: center;
   text-align: center;
 }
-.welcome h1, .welcome p {
+.welcome h1,
+.welcome p {
   margin: 0px;
 }
 .welcome a {
@@ -55,7 +56,9 @@
   border: 3px solid var(--univText);
   border-radius: 10px;
   margin-bottom: 10px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 #signup-username:focus {
   border: 3px solid var(--navLight);
@@ -73,7 +76,9 @@
   color: var(--univText);
   border: 3px solid var(--univText);
   border-radius: 10px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 #password:focus {
   border: 3px solid var(--navLight);
@@ -88,7 +93,9 @@
   color: var(--univText);
   border: 3px solid var(--univText);
   border-radius: 10px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 #email:focus {
   border: 3px solid var(--navLight);
@@ -103,7 +110,9 @@
   color: var(--univText);
   border: 3px solid var(--univText);
   border-radius: 10px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 #admin:focus {
   border: 3px solid var(--navLight);
@@ -119,7 +128,8 @@
   border-radius: 10px;
   margin-bottom: 10px;
 }
-#tou:hover, #age:hover {
+#tou:hover,
+#age:hover {
   cursor: pointer;
 }
 .checkboxes {
@@ -134,7 +144,9 @@
   font-weight: bold;
   border: 3px solid var(--univText);
   border-radius: 10px;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 #submit:hover {
   background-color: var(--navDark);

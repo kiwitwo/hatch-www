@@ -1,11 +1,15 @@
-#bio a, #recent-activity a, #connections-list a {
+#bio a,
+#recent-activity a,
+#connections-list a {
   color: var(--lightOrange);
   font-weight: bold;
   transition: ease 0.3s;
   text-decoration: none;
 }
 
-#bio a:hover, #recent-activity a:hover, #connections-list a:hover {
+#bio a:hover,
+#recent-activity a:hover,
+#connections-list a:hover {
   color: var(--searchBar);
 }
 #content {
@@ -16,7 +20,11 @@
   margin-left: auto;
   margin-right: auto;
 }
-h1, h2, h3, h4, p {
+h1,
+h2,
+h3,
+h4,
+p {
   padding: 0;
   margin: 0;
 }
@@ -81,7 +89,9 @@ h1, h2, h3, h4, p {
   border-radius: 8px;
   background-color: var(--lightOrange);
   border: 5px white solid;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
   margin-left: auto;
   display: flex;
   justify-content: center;
@@ -91,7 +101,8 @@ h1, h2, h3, h4, p {
   cursor: pointer;
   border: 5px solid var(--lightOrange);
 }
-#names-top, #names-bottom {
+#names-top,
+#names-bottom {
   display: flex;
   gap: 10px;
   align-items: center;
@@ -101,7 +112,7 @@ h1, h2, h3, h4, p {
   font-weight: bold;
 }
 #status {
-  color: #C4C4C4;
+  color: #c4c4c4;
 }
 #followstatus {
   font-size: 0.8em;
@@ -151,7 +162,7 @@ h1, h2, h3, h4, p {
   font-weight: bold;
 }
 .activity-time {
-  color: #C4C4C4;
+  color: #c4c4c4;
   font-style: italic;
 }
 #connections {
@@ -186,17 +197,18 @@ h1, h2, h3, h4, p {
   color: #ffbd59;
 }
 #report {
-  color:red !important;
-  padding:0px;
-  margin:0px;
-  text-decoration:none;
+  color: red !important;
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
 }
 #report img {
   width: 10px;
   height: 10px;
 }
-#joindate, #country {
-  color: #C4C4C4;
+#joindate,
+#country {
+  color: #c4c4c4;
 }
 #user-items {
   display: flex;
@@ -211,12 +223,14 @@ h1, h2, h3, h4, p {
   flex-direction: column;
   gap: 10px;
 }
-#featured-projects a, #shared-projects a {
+#featured-projects a,
+#shared-projects a {
   color: var(--lightOrange);
   font-weight: bold;
-  transition: ease 0.3s
+  transition: ease 0.3s;
 }
-#featured-projects a:hover, #shared-projects a:hover {
+#featured-projects a:hover,
+#shared-projects a:hover {
   color: var(--searchBar);
 }
 #featured-projects-row {
@@ -250,10 +264,10 @@ h1, h2, h3, h4, p {
   filter: brightness(80%);
 }
 .project-date {
-  color: #C4C4C4;
+  color: #c4c4c4;
   font-style: italic;
 }
-.project-author a{
+.project-author a {
   color: var(--lightOrange);
   font-weight: bold;
   text-decoration: none;

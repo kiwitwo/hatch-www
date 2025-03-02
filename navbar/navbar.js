@@ -19,12 +19,15 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
           <a class="navitem" href="https://dev.hatch.lol/explore">
             Explore
           </a>
-          ${logged_out ? `<a class="navitem" href="https://dev.hatch.lol/signup">
+          ${
+            logged_out
+              ? `<a class="navitem" href="https://dev.hatch.lol/signup">
             Sign up
           </a>
           <a class="navitem" href="https://dev.hatch.lol/login">
             Log in
-          </a>` : `<a class="navitem" id="mail" href="https://dev.hatch.lol/messages">
+          </a>`
+              : `<a class="navitem" id="mail" href="https://dev.hatch.lol/messages">
             <img src="/navbar/img/messages.svg" id="msgsym" /><div id="messagect"><b>1</b></div>
         
           </a>
@@ -44,7 +47,8 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
                 Sign Out
               </a>
             </div>
-          </div>`}
+          </div>`
+          }
         </div>`;
 
 let x = document.querySelector("#userdrop");
@@ -52,8 +56,8 @@ let y = document.querySelector("#userinfo");
 
 if (!logged_out) {
   document.querySelector("#nav-sign-out").addEventListener("click", () => {
-      localStorage.removeItem("token");
-      location.reload();
+    localStorage.removeItem("token");
+    location.reload();
   });
 
   y.addEventListener("click", (e) => {
@@ -63,38 +67,42 @@ if (!logged_out) {
 
   document.onclick = (e) => {
     if (!e.composedPath().includes(y)) {
-      x.classList.remove("active")
+      x.classList.remove("active");
     }
-  }
+  };
 }
 
 function dropToggle() {
   x.classList.toggle("active");
 }
 
-function searchMade(){
-    let searchTerm = document.getElementById('searchinp').value.replace(/ /g,"_");
-    window.location.href = "https://dev.hatch.lol/search/?id=" + searchTerm
+function searchMade() {
+  let searchTerm = document
+    .getElementById("searchinp")
+    .value.replace(/ /g, "_");
+  window.location.href = "https://dev.hatch.lol/search/?id=" + searchTerm;
 }
 
 const searchInp = document.getElementById("searchinp");
 searchInp.onkeydown = (e) => {
-    if (e.key === "Enter" && searchInp.value !== "") {
-        searchMade()
-    }
-}
+  if (e.key === "Enter" && searchInp.value !== "") {
+    searchMade();
+  }
+};
 
 if (localStorage.getItem("token") !== null) {
   fetch("https://api.hatch.lol/auth/me", {
     headers: {
-      "Token": localStorage.getItem("token")
-    }
-  }).then(res => {
+      Token: localStorage.getItem("token"),
+    },
+  }).then((res) => {
     if (res.status === 200) {
-      res.json().then(json => {
-        document.getElementById("pfpnav").src = `https://api.hatch.lol${json.profilePicture}`;
+      res.json().then((json) => {
+        document.getElementById("pfpnav").src =
+          `https://api.hatch.lol${json.profilePicture}`;
         document.getElementById("usernamenav").innerText = json.displayName;
-        document.getElementsByClassName("nav-your-profile")[0].href = `/user/?u=${json.name}`;
+        document.getElementsByClassName("nav-your-profile")[0].href =
+          `/user/?u=${json.name}`;
       });
     }
   });

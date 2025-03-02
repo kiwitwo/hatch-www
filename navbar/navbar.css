@@ -140,7 +140,7 @@
   transform: scale(1.1);
 }
 #logo {
-  transition: transform .2s;
+  transition: transform 0.2s;
   cursor: pointer;
   filter: brightness(0);
 }
@@ -163,7 +163,7 @@
   z-index: 10002;
   color: var(--univText);
 }
-#msgsym{
+#msgsym {
   z-index: 10001;
   height: 30px;
   padding: 0px;

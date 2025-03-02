@@ -15,9 +15,9 @@
   font-size: 13.5px;
   text-align: center;
 }
-.resulttypebutton{
+.resulttypebutton {
   background-color: var(--innerBlock2);
-  width: 200px;;
+  width: 200px;
   display: block;
   margin-top: auto;
   margin-bottom: auto;
@@ -62,12 +62,12 @@
 }
 
 #loadmore {
-   background-color: var(--innerBlock2);
-   border-radius: 20px;
-   padding: 10px;
-   text-align: center;
-   border: none;
-   font-size: 15px;
+  background-color: var(--innerBlock2);
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+  border: none;
+  font-size: 15px;
 }
 #loadmore:hover {
   font-size: 16px;
