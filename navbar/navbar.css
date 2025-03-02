@@ -74,7 +74,7 @@
 .lowest {
     border-style: solid;
     border-width: 1px 0 0 0;
-    border-color: var(--signoutBorder);
+    border-color: var(--searchBar);
     border-radius: 0px 0px 10px 10px;
 }
 .navitem {
