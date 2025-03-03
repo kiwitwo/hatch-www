@@ -14,7 +14,7 @@
   margin: 0px;
 }
 .welcome a {
-  color: #ffbd59;
+  color: var(--primary);
   font-weight: bold;
 }
 .big-logo {
@@ -37,7 +37,7 @@
   padding-right: 16px;
 }
 #signinform a {
-  color: #ffbd59;
+  color: var(--primary);
   font-weight: bold;
 }
 #username {
@@ -54,8 +54,8 @@
     color 0.3s ease;
 }
 #username:focus {
-  border: 3px solid #ffbd59;
-  background-color: #ffbd59;
+  border: 3px solid var(--primary);
+  background-color: var(--primary);
   color: black;
 }
 #signinform label {
@@ -74,8 +74,8 @@
     color 0.3s ease;
 }
 #password:focus {
-  border: 3px solid #ffbd59;
-  background-color: #ffbd59;
+  border: 3px solid var(--primary);
+  background-color: var(--primary);
   color: black;
 }
 #username:disabled,
@@ -97,6 +97,6 @@
 }
 #submit:hover {
   color: black;
-  background-color: #ffbd59;
+  background-color: var(--primary);
   cursor: pointer;
 }

@@ -16,4 +16,17 @@ document.querySelector("#submit").addEventListener("click", function () {
       },
     });
   }
+  fetch("https://api.hatch.lol/users", {
+    method: "POST",
+    headers: {
+      Token: localStorage.getItem("token"),
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      display_name: document.getElementById("display").value,
+      bio: document.getElementById("bio").value,
+      country: "United States",
+      theme: document.getElementById("theme").value
+    })
+  });
 });

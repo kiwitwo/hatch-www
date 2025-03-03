@@ -42,7 +42,7 @@
   margin: 0px;
 }
 .owner a {
-  color: #ffbd59;
+  color: var(--primary);
   text-decoration: none;
   font-weight: bold;
 }
@@ -63,7 +63,7 @@
   padding: 5px;
   width: 100%;
   border-radius: 8px;
-  background-color: #ffbd59;
+  background-color: var(--primary);
   border: 5px white solid;
   transition:
     background-color 0.3s ease,
@@ -72,14 +72,14 @@
 #join:hover {
   background-color: #d69d47;
   cursor: pointer;
-  border: 5px solid #ffbd59;
+  border: 5px solid var(--primary);
 }
 #follow {
   color: black;
   padding: 5px;
   width: 100%;
   border-radius: 8px;
-  background-color: #ffbd59;
+  background-color: var(--primary);
   border: 5px white solid;
   transition:
     background-color 0.3s ease,
@@ -88,7 +88,7 @@
 #follow:hover {
   background-color: #d69d47;
   cursor: pointer;
-  border: 5px solid #ffbd59;
+  border: 5px solid var(--primary);
 }
 #gallery-contents {
   background-color: #1b1b1b;
@@ -107,8 +107,8 @@
   padding: 5px;
   width: 24.5%;
   border-radius: 8px;
-  background-color: #ffbd59;
-  border: 5px #ffbd59 solid;
+  background-color: var(--primary);
+  border: 5px var(--primary) solid;
   transition:
     background-color 0.3s ease,
     border-color 0.3s ease;
@@ -116,14 +116,14 @@
 .tab-current:hover {
   background-color: white;
   cursor: pointer;
-  border: 5px solid #ffbd59;
+  border: 5px solid var(--primary);
 }
 .tab {
   color: black;
   padding: 5px;
   width: 24.5%;
   border-radius: 8px;
-  background-color: #ffbd59;
+  background-color: var(--primary);
   border: 5px white solid;
   transition:
     background-color 0.3s ease,
@@ -132,7 +132,7 @@
 .tab:hover {
   background-color: #d69d47;
   cursor: pointer;
-  border: 5px solid #ffbd59;
+  border: 5px solid var(--primary);
 }
 #tab-content {
   border: 0;
@@ -167,7 +167,7 @@
   border-radius: 10px;
 }
 #description-content a {
-  color: #ffbd59;
+  color: var(--primary);
   font-weight: bold;
 }
 #more-info {
@@ -178,7 +178,7 @@
   font-weight: bold;
 }
 .gallery-disclaimer > a {
-  color: #ffbd59;
+  color: var(--primary);
   font-weight: bold;
 }
 .gallery-guidelines {
@@ -186,6 +186,6 @@
   font-weight: bold;
 }
 .gallery-guidelines > a {
-  color: #ffbd59;
+  color: var(--primary);
   font-weight: bold;
 }

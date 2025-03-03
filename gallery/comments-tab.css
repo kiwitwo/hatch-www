@@ -70,6 +70,6 @@ p.content {
 }
 
 p.content > a {
-  color: #ffbd59;
+  color: var(--primary);
   font-weight: bold;
 }

@@ -39,7 +39,7 @@
   transition: ease 0.3s all;
 }
 .person:hover .username {
-  color: var(--searchBar);
+  filter: brightness(80%);
 }
 .person:hover .pfp {
   filter: brightness(80%);

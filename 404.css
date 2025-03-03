@@ -29,7 +29,7 @@
 }
 #container a {
   text-decoration: none;
-  color: #ffbd59;
+  color: var(--primary);
 }
 #container a:hover {
   font-weight: bold;

@@ -187,7 +187,7 @@ form.comment-submit > input[type="text"] {
   padding: 5px;
 }
 form.comment-submit > input[type="text"]:focus {
-  border: 3px solid #ffbd59;
+  border: 3px solid var(--primary);
 }
 form.comment-submit > input[type="submit"] {
   cursor: pointer;
@@ -201,7 +201,7 @@ form.comment-submit > input[type="submit"] {
     border 0.3s ease;
 }
 form.comment-submit > input[type="submit"]:hover {
-  color: #ffbd59;
+  color: var(--primary);
   background-color: var(--innerBlock2);
   border: 3px solid var(--navLight);
   border-radius: 10px;

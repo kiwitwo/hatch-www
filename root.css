@@ -1,13 +1,13 @@
 :root {
-    --navLight: #ffbd59; /* navbar appearance */
-    --navDark: #f0b151; /* navbar on hover */
-    --lightOrange: #ffbd59; /* orange links around the site */
-    --searchBar: #d69d47; /* search bar background-color */
+    --navLight: var(--primary); /* navbar appearance */
+    --navDark: var(--primary); /* navbar appearance */
+    --lightOrange: var(--primary); /* orange links around the site */
+    --searchBar: #0000002c; /* search bar background-color */
     --websiteBack: #000000; /* main background */
     --univText: #ffffff; /* text color */
     --innerBlock: #2b2b2b; /* all inner boxes */
     --innerBlock2: #1b1b1b; /* use in combination with --innerBlock for nested sections */
-    --footerDisc: #ffbd59; /* very bottom, disclaimer */
+    --footerDisc: var(--primary); /* very bottom, disclaimer */
     --upvote: #7ed957; /* Upvote Button */
     --downvote: #ff5757; /* downvote button */
     --rating: #808080; /* rating text */

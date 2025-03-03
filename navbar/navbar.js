@@ -1,5 +1,11 @@
 let logged_out = !localStorage.getItem("token");
 
+if (logged_out) {
+  document.querySelector("html").style = "--primary: #ffbd59";
+} else if (localStorage.getItem("theme")) {
+  document.querySelector("html").style = `--primary: ${localStorage.getItem("theme")}`;
+}
+
 document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
         <div class="nav">
           <div id="logo"><a href="https://dev.hatch.lol/"><img class="logo" src="/navbar/img/logo.png" alt="Hatch logo"></a></div>
@@ -98,6 +104,10 @@ if (localStorage.getItem("token") !== null) {
   }).then((res) => {
     if (res.status === 200) {
       res.json().then((json) => {
+        document.querySelector("html").style = `--primary: ${json.theme}`;
+        if (localStorage.getItem("theme") !== json.theme) {
+          localStorage.setItem("theme", json.theme);
+        }
         document.getElementById("pfpnav").src =
           `https://api.hatch.lol${json.profilePicture}`;
         document.getElementById("usernamenav").innerText = json.displayName;

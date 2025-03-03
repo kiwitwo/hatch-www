@@ -10,7 +10,7 @@
 #bio a:hover,
 #recent-activity a:hover,
 #connections-list a:hover {
-  color: var(--searchBar);
+  filter: brightness(80%);
 }
 #content {
   display: flex;
@@ -97,7 +97,7 @@ p {
   justify-content: center;
 }
 #follow-button:hover {
-  background-color: var(--searchBar);
+  filter: brightness(80%);
   cursor: pointer;
   border: 5px solid var(--lightOrange);
 }
@@ -194,7 +194,7 @@ p {
   border-radius: 10px;
 }
 #badges {
-  color: #ffbd59;
+  color: var(--primary);
 }
 #report {
   color: red !important;
@@ -231,7 +231,7 @@ p {
 }
 #featured-projects a:hover,
 #shared-projects a:hover {
-  color: var(--searchBar);
+  filter: brightness(80%);
 }
 #featured-projects-row {
   display: flex;

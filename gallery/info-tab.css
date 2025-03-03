@@ -21,7 +21,7 @@
   padding: 0;
 }
 .statistics a {
-  color: #ffbd59;
+  color: var(--primary);
   font-weight: bold;
   text-decoration: none;
 }
@@ -51,7 +51,7 @@ input[type="file"]::file-selector-button {
     color 0.3s ease;
 }
 input[type="file"]::file-selector-button:hover {
-  background-color: #ffbd59;
+  background-color: var(--primary);
   border: 3px solid white;
   border-radius: 10px;
   color: black;
@@ -71,8 +71,8 @@ input[type="file"]::file-selector-button:hover {
     color 0.3s ease;
 }
 #gallery-name-input:focus {
-  border: 3px solid #ffbd59;
-  background-color: #ffbd59;
+  border: 3px solid var(--primary);
+  background-color: var(--primary);
   color: black;
 }
 #gallery-description-input {
@@ -92,8 +92,8 @@ input[type="file"]::file-selector-button:hover {
   font-size: 16px;
 }
 #gallery-description-input:focus {
-  border: 3px solid #ffbd59;
-  background-color: #ffbd59;
+  border: 3px solid var(--primary);
+  background-color: var(--primary);
   color: black;
 }
 #gallery-description-submit {
@@ -110,7 +110,7 @@ input[type="file"]::file-selector-button:hover {
 }
 #gallery-description-submit:hover {
   color: black;
-  background-color: #ffbd59;
+  background-color: var(--primary);
   cursor: pointer;
 }
 #gallery-name-submit {
@@ -127,7 +127,7 @@ input[type="file"]::file-selector-button:hover {
 }
 #gallery-name-submit:hover {
   color: black;
-  background-color: #ffbd59;
+  background-color: var(--primary);
   cursor: pointer;
 }
 #gallery-thumbnail-submit {
@@ -144,7 +144,7 @@ input[type="file"]::file-selector-button:hover {
 }
 #gallery-thumbnail-submit:hover {
   color: black;
-  background-color: #ffbd59;
+  background-color: var(--primary);
   cursor: pointer;
 }
 #remove-member-input {
@@ -161,8 +161,8 @@ input[type="file"]::file-selector-button:hover {
     color 0.3s ease;
 }
 #remove-member-input:focus {
-  border: 3px solid #ffbd59;
-  background-color: #ffbd59;
+  border: 3px solid var(--primary);
+  background-color: var(--primary);
   color: black;
 }
 .settings-label {
@@ -190,8 +190,8 @@ input[type="file"]::file-selector-button:hover {
     color 0.3s ease;
 }
 #promote-member-input:focus {
-  border: 3px solid #ffbd59;
-  background-color: #ffbd59;
+  border: 3px solid var(--primary);
+  background-color: var(--primary);
   color: black;
 }
 #promote-member-submit {
@@ -208,7 +208,7 @@ input[type="file"]::file-selector-button:hover {
 }
 #promote-member-submit:hover {
   color: black;
-  background-color: #ffbd59;
+  background-color: var(--primary);
   cursor: pointer;
 }
 

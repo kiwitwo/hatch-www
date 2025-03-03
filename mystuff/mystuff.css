@@ -46,7 +46,7 @@
   width: 100%;
   padding: 5px;
   border-radius: 8px;
-  background-color: #ffbd59;
+  background-color: var(--primary);
   border: 5px white solid;
   transition:
     background-color 0.3s ease,
@@ -55,7 +55,7 @@
 #create-items > button:hover {
   background-color: #d69d47;
   cursor: pointer;
-  border: 5px solid #ffbd59;
+  border: 5px solid var(--primary);
 }
 #upload-project-section {
   background-color: var(--innerBlock);
@@ -75,7 +75,7 @@
   padding-right: 16px;
 }
 #uploadform a {
-  color: #ffbd59;
+  color: var(--primary);
   font-weight: bold;
 }
 #upload-title {
@@ -92,8 +92,8 @@
     color 0.3s ease;
 }
 #upload-title:focus {
-  border: 3px solid #ffbd59;
-  background-color: #ffbd59;
+  border: 3px solid var(--primary);
+  background-color: var(--primary);
   color: black;
 }
 #signupform label {
@@ -114,8 +114,8 @@
   font-family: "Calibri", sans-serif;
 }
 #upload-description:focus {
-  border: 3px solid #ffbd59;
-  background-color: #ffbd59;
+  border: 3px solid var(--primary);
+  background-color: var(--primary);
   color: black;
 }
 input[type="file"] {
@@ -132,7 +132,7 @@ input[type="file"]::file-selector-button {
     color 0.3s ease;
 }
 input[type="file"]::file-selector-button:hover {
-  background-color: #ffbd59;
+  background-color: var(--primary);
   border: 3px solid white;
   border-radius: 10px;
   color: black;
@@ -159,7 +159,7 @@ input[type="file"]::file-selector-button:hover {
 }
 #submit:hover {
   color: black;
-  background-color: #ffbd59;
+  background-color: var(--primary);
   cursor: pointer;
 }
 #my-projects {
@@ -235,6 +235,6 @@ input[type="file"]::file-selector-button:hover {
 }
 .share-status:hover {
   cursor: pointer;
-  background-color: #ffbd59;
+  background-color: var(--primary);
   color: black;
 }
