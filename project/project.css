@@ -370,6 +370,10 @@ body.loading .loading-skeleton {
   text-align: center;
 }
 
+#project-teen-block a {
+  color: var(--primary);
+}
+
 #project-embed-container.teen-block {
   height: 412px;
   align-items: center;
@@ -398,10 +402,30 @@ body.loading .loading-skeleton {
 }
 #rate-dialog {
   margin-top: 30px;
+  z-index: 1;
+  max-width: 500px;
+}
+dialog {
   background-color: var(--innerBlock);
   border: 3px solid white;
   border-radius: 3px;
   color: white;
+  margin-top: calc(50px + 9rem);
+}
+#share-dialog * {
+  text-wrap: nowrap;
+}
+#share-dialog pre {
+  width: 30rem;
+  height: 2rem;
+  overflow-x: auto;
+}
+#share-embed a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+#share-dialog h3 {
+  margin: 0;
 }
 #rate-dialog select, #rate-dialog button {
   color: white;

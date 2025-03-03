@@ -2,48 +2,52 @@ const params = new URLSearchParams(window.location.search);
 const username = params.get("u");
 
 let client_username;
-fetch("https://api.hatch.lol/auth/me", {
-  headers: {
-    Token: localStorage.getItem("token"),
-  },
-}).then((res) =>
-  res.json().then((data) => {
-    client_username = data.name;
-
-    if (username.toLowerCase() === client_username.toLowerCase()) {
-      document.querySelector("#follow-button").remove();
-    }
-
-    fetch(`https://api.hatch.lol/users/${username}/followers`).then(
-      (followers) => {
-        followers.json().then((data) => {
-          let followers = [];
-          data.followers.forEach((user) => {
-            followers.push(user.name);
+if (localStorage.getItem("token")) {
+  fetch("https://api.hatch.lol/auth/me", {
+    headers: {
+      Token: localStorage.getItem("token"),
+    },
+  }).then((res) =>
+    res.json().then((data) => {
+      client_username = data.name;
+  
+      if (username.toLowerCase() === client_username.toLowerCase()) {
+        document.querySelector("#follow-button").remove();
+      }
+  
+      fetch(`https://api.hatch.lol/users/${username}/followers`).then(
+        (followers) => {
+          followers.json().then((data) => {
+            let followers = [];
+            data.followers.forEach((user) => {
+              followers.push(user.name);
+            });
+            if (document.querySelector("#follow-button-text")) {
+              document.querySelector("#follow-button-text").innerText =
+                `${followers.includes(client_username) ? "Unf" : "F"}ollow`;
+            }
           });
-          if (document.querySelector("#follow-button-text")) {
-            document.querySelector("#follow-button-text").innerText =
-              `${followers.includes(client_username) ? "Unf" : "F"}ollow`;
-          }
-        });
-      },
-    );
-
-    fetch(`https://api.hatch.lol/users/${username}/following`).then(
-      (following) => {
-        following.json().then((data) => {
-          let following = [];
-          data.following.forEach((user) => {
-            following.push(user.name);
+        },
+      );
+  
+      fetch(`https://api.hatch.lol/users/${username}/following`).then(
+        (following) => {
+          following.json().then((data) => {
+            let following = [];
+            data.following.forEach((user) => {
+              following.push(user.name);
+            });
+            if (!following.includes(client_username)) {
+              document.querySelector("#followstatus").remove();
+            }
           });
-          if (!following.includes(client_username)) {
-            document.querySelector("#followstatus").remove();
-          }
-        });
-      },
-    );
-  }),
-);
+        },
+      );
+    }),
+  );
+} else {
+  document.querySelector("#followstatus").remove();
+}
 
 if (document.querySelector("#follow-button")) {
   document.querySelector("#follow-button").addEventListener("click", () => {

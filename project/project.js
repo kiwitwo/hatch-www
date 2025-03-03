@@ -1,5 +1,13 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
+const rate_dialog = document.querySelector("#rate-dialog");
+
+document.querySelector("#share").addEventListener("click", () => {
+  document.querySelector("#share-dialog").open = !document.querySelector("#share-dialog").open;
+});
+
+document.querySelector("#share-url").innerText = window.location.href;
+document.querySelector("#share-embed").innerText = `<iframe src="https://warp.algebrahelp.org/embed.html?project_url=https://api.hatch.lol/projects/${id}/content" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>`;
 
 fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
   if (res.status === 200) {
@@ -50,6 +58,7 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
 
       if (data.rating === "13+") {
         document.querySelector("#project-age-rating").classList.add("teen");
+        document.querySelector("#share-embed").innerHTML = "Embeds are not available for 13+ projects. <a onclick=\"alert('Projects with an age rating of 13+ on Hatch require user authentication to view, and this cannot be done remotely. We apologize for the inconvenience.');\">Learn more</a>";
       }
 
       fetch("https://api.hatch.lol/auth/me", {
@@ -114,6 +123,67 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
       document.querySelector("#project-tags").innerText = "Coming soon...";
       document.querySelector("#project-galleries").innerText = "Coming soon...";
       document.body.classList.remove("loading");
+
+      let hatchTeam;
+      if (localStorage.getItem("token")) {
+        fetch("https://api.hatch.lol/auth/me", {
+          headers: {
+            Token: localStorage.getItem("token"),
+          },
+        }).then((res) => {
+          if (res.status === 200) {
+            res.json().then((data) => {
+              const par = document.querySelector("#project-age-rating");
+              hatchTeam = data.hatchTeam;
+              if (data.hatchTeam) {
+                par.style.cursor = "pointer";
+                let new_rating;
+                let rating_picker = rate_dialog.querySelector("select");
+                rating_picker.onchange = (e) => {
+                  new_rating = rating_picker.value;
+                }
+                rate_dialog.querySelector("button").onclick = () => {
+                  if (new_rating) {
+                    fetch("https://api.hatch.lol/admin/set-rating", {
+                      method: "POST",
+                      headers: {
+                        Token: localStorage.getItem("token"),
+                        "Content-Type": "application/json",
+                      },
+                      body: JSON.stringify({
+                        project_id: parseInt(id),
+                        rating: new_rating,
+                      }),
+                    }).then((e) => {
+                      if (e.ok) {
+                        par.innerHTML = new_rating;
+                      } else {
+                        alert("Failed to change rating: " + e.text);
+                      }
+                    });
+                    rate_dialog.toggleAttribute("open");
+                  }
+                }
+              }
+            });
+          }
+        });
+      }
+      if (!hatchTeam) {
+        if (data.rating === "N/A") {
+          rate_dialog.innerHTML = "<h3>About this rating</h3><p>Projects with the age rating of N/A have not been rated by a Hatch Team member yet. This means the project content could contain anything, even if not appropriate for the site. Report projects that does not follow the Hatch Guidelines.</p>";
+        } else if (data.rating === "E") {
+          rate_dialog.innerHTML = "<h3>About this rating</h3><p>Projects with the age rating of E are suitable for all ages. This project contains little to no violence and/or language.</p>";
+        } else if (data.rating === "7+") {
+          rate_dialog.innerHTML = "<h3>About this rating</h3><p>Projects with the age rating of 7+ are suitable for most users. This project contains little to no violence and/or language, and may recieve an NFE rating on Scratch.</p>";
+        } else if (data.rating === "9+") {
+          rate_dialog.innerHTML = "<h3>About this rating</h3><p>Projects with the age rating of 9+ are suitable for some users. This project may contain some violence, cartoonish blood, light profanity, and scares, and would most likely recieve an NFE rating on Scratch.</p>";
+        } else if (data.rating === "13+") {
+          rate_dialog.innerHTML = "<h3>About this rating</h3><p>Projects with the age rating of 13+ are only suitable for teenagers. This project may contain intense violence, blood, profanity, scares, and suggestive content, and would be taken down on Scratch.</p>";
+        } else {
+          rate_dialog.innerHTML = "<h3>About this rating</h3><p>This rating is not recognized.</p>";
+        }
+      }
     });
   } else if (res.status === 404 || res.status === 422) {
     window.history.replaceState(null, "", "/404/");
@@ -122,63 +192,6 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
 });
 
 const par = document.querySelector("#project-age-rating");
-if (localStorage.getItem("token")) {
-  fetch("https://api.hatch.lol/auth/me", {
-    headers: {
-      Token: localStorage.getItem("token"),
-    },
-  }).then((res) => {
-    if (res.status === 200) {
-      res.json().then((data) => {
-        const par = document.querySelector("#project-age-rating");
-        const rate_dialog = document.querySelector("#rate-dialog");
-        if (data.hatchTeam) {
-          par.style.cursor = "pointer";
-          par.addEventListener("click", () => {
-            rate_dialog.toggleAttribute("open");
-          });
-          let new_rating;
-          let rating_picker = rate_dialog.querySelector("select");
-          rating_picker.onchange = (e) => {
-            new_rating = rating_picker.value;
-          }
-          rate_dialog.querySelector("button").onclick = () => {
-            if (new_rating) {
-              fetch("https://api.hatch.lol/admin/set-rating", {
-                method: "POST",
-                headers: {
-                  Token: localStorage.getItem("token"),
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  project_id: parseInt(id),
-                  rating: new_rating,
-                }),
-              }).then((e) => {
-                if (e.ok) {
-                  par.innerHTML = new_rating;
-                } else {
-                  alert("Failed to change rating: " + e.text);
-                }
-              });
-              rate_dialog.toggleAttribute("open");
-            }
-          }
-        } else {
-          rate_dialog.remove();
-          par.addEventListener("click", () => {
-            alert(
-              "This is Hatch's age rating system. Each age rating is determined by moderators manually. See the Wiki for more info.",
-            );
-          });
-        }
-      });
-    }
-  });
-} else {
-  par.addEventListener("click", () => {
-    alert(
-      "This is Hatch's age rating system. Each age rating is determined by moderators manually. See the Wiki for more info.",
-    );
-  });
-}
+par.addEventListener("click", () => {
+  rate_dialog.toggleAttribute("open");
+});
