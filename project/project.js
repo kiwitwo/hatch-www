@@ -57,6 +57,7 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
 
       if (data.rating === "13+") {
         document.querySelector("#project-age-rating").classList.add("teen");
+        document.querySelector("#share-embed").innerHTML = "Embeds are not available for 13+ projects. <a onclick=\"alert('Projects with an age rating of 13+ on Hatch require user authentication to view, and this cannot be done remotely. We apologize for the inconvenience.');\">Learn more</a>";
       }
 
       fetch("https://api.hatch.lol/auth/me", {

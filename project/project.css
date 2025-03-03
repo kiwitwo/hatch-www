@@ -418,6 +418,10 @@ dialog {
   height: 2rem;
   overflow-x: auto;
 }
+#share-embed a {
+  color: var(--primary);
+  text-decoration: underline;
+}
 #share-dialog h3 {
   margin: 0;
 }
