@@ -411,3 +411,7 @@ body.loading .loading-skeleton {
   width: auto;
   padding: 5px;
 }
+#project-edit-button {
+  color: var(--primary);
+  font-weight: bold;
+}
