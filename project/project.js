@@ -1,6 +1,13 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
+document.querySelector("#share").addEventListener("click", () => {
+  document.querySelector("#share-dialog").open = !document.querySelector("#share-dialog").open;
+});
+
+document.querySelector("#share-url").innerText = window.location.href;
+document.querySelector("#share-embed").innerText = `<iframe src="https://warp.algebrahelp.org/embed.html?project_url=https://api.hatch.lol/projects/${id}/content" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>`;
+
 fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
   if (res.status === 200) {
     document

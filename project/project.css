@@ -398,10 +398,24 @@ body.loading .loading-skeleton {
 }
 #rate-dialog {
   margin-top: 30px;
+}
+dialog {
   background-color: var(--innerBlock);
   border: 3px solid white;
   border-radius: 3px;
   color: white;
+  margin-top: calc(50px + 9rem);
+}
+#share-dialog * {
+  text-wrap: nowrap;
+}
+#share-dialog pre {
+  width: 30rem;
+  height: 2rem;
+  overflow-x: auto;
+}
+#share-dialog h3 {
+  margin: 0;
 }
 #rate-dialog select, #rate-dialog button {
   color: white;
