@@ -92,6 +92,7 @@ fetch(`https://api.hatch.lol/users/${username}`).then((res) => {
         .replace(/@([a-z,A-Z,0-9,-,_]+)\b/g, "<a href='/user/?u=$1'>@$1</a>");
       document.querySelector("#pfp").src =
         `https://api.hatch.lol${data.profilePicture}`;
+      document.querySelector("#banner").src = data.bannerImage;
       document.querySelector("#followers-count").innerText = data.followerCount;
       document.querySelector("#following-count").innerText =
         data.followingCount;

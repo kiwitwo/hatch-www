@@ -25,7 +25,8 @@ document.querySelector("#submit").addEventListener("click", function () {
     body: JSON.stringify({
       display_name: document.getElementById("display").value,
       bio: document.getElementById("bio").value,
-      country: "United States",
+      country: document.getElementById("location").value,
+      banner_image: document.getElementById("banner").value,
       theme: document.getElementById("theme").value
     })
   });
