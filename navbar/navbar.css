@@ -43,6 +43,7 @@
 #usernamenav {
     display: flex;
     align-items: center;
+    color: #000;
 }
 .dropdown-option {
     background-color: var(--navLight);
