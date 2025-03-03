@@ -93,7 +93,7 @@
     font-weight: bold;
 }
 .navitem:hover {
-    background-color: var(--navDark);
+    filter: brightness(0.9);
 }
 #search {
     height: 30px;
