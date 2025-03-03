@@ -19,6 +19,11 @@
             href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
             rel="stylesheet"
         />
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js"
+            async
+        ></script>
     </head>
     <body>
         <div id="navarea"></div>
@@ -28,7 +33,7 @@
                 <div class="banner">About Us</div>
                 <div class="spacer"></div>
                 <div id="container1">
-                    <div id="paragraph1">
+                    <div class="paragraph1">
                         Hatch is a third-party project hosting service for the
                         Scratch programming language. Scratch is a great option
                         to learn the fundamentals of programming, but it is
@@ -42,8 +47,8 @@
                     </div>
                     <img
                         id="image1"
-                        src="https://rdr.lol/u/JhLk7r.png"
-                        alt="Hatch logo"
+                        src="/images/banners/new-1-small.png"
+                        alt="Hatch Banner"
                     />
                 </div>
             </div>
@@ -93,6 +98,36 @@
                         not share links to Hatch or mention Hatch anywhere on
                         the Scratch website.
                     </div>
+                </div>
+            </div>
+            <div class="spacer"></div>
+            <div class="content">
+                <div class="banner">Recent Posts by the Hatch Team</div>
+                <div class="spacer"></div>
+                <div class="paragraph1">
+                    To see all of our social accounts, see our
+                    <a href="https://social.hatch.lol/" target="_blank"
+                        >Socials Page</a
+                    >.
+                </div>
+                <div class="spacer"></div>
+                <div
+                    style="
+                        background-color: var(--innerBlock2);
+                        border-radius: 10px;
+                    "
+                >
+                    <bsky-embed
+                        username="hatch.lol"
+                        mode="dark"
+                        limit="7"
+                        link-target="_blank"
+                        link-image="true"
+                        load-more="true"
+                        disable-styles="false"
+                        custom-styles=".border-slate-300 { border-color: #ffbd59; }"
+                    >
+                    </bsky-embed>
                 </div>
             </div>
         </div>
