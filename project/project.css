@@ -370,6 +370,10 @@ body.loading .loading-skeleton {
   text-align: center;
 }
 
+#project-teen-block a {
+  color: var(--primary);
+}
+
 #project-embed-container.teen-block {
   height: 412px;
   align-items: center;
