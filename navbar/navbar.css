@@ -1,5 +1,6 @@
 .nav {
     /* im genuinely stumped why isnt it sticky :sob: */
+    /* rayne: because the element isn't in a <section>, did you mean to use "fixed" ? QwQ */
     background-color: var(--navLight);
     width: 80%;
     height: 50px;
