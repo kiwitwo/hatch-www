@@ -47,6 +47,7 @@ if (localStorage.getItem("token")) {
   );
 } else {
   document.querySelector("#followstatus").remove();
+  document.querySelector("#follow-button").remove();
 }
 
 if (document.querySelector("#follow-button")) {
