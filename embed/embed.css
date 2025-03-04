@@ -1,0 +1,34 @@
+body {
+	margin: 0;
+	overflow: hidden;
+	background-color: var(--innerBlock2) !important;
+	width: 100vw;
+	height: 100vh;
+}
+
+body.teen {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+iframe {
+	display: block;
+}
+
+body.teen iframe {
+	display: none;
+}
+
+#teen-login {
+	display: none;
+	text-align: center;
+}
+
+body.teen #teen-login {
+	display: block;
+}
+
+#teen-hatch-logo {
+	height: 70px;
+}
