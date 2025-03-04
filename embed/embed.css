@@ -1,3 +1,7 @@
+:root {
+	--primary: #ffbd59;
+}
+
 body {
 	margin: 0;
 	overflow: hidden;
@@ -31,4 +35,8 @@ body.teen #teen-login {
 
 #teen-hatch-logo {
 	height: 70px;
+}
+
+a {
+	color: var(--primary);
 }

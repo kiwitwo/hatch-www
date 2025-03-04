@@ -63,6 +63,7 @@ fetch(`https://api.hatch.lol/projects/${id}/`).then((res) => {
 		res.json().then((data) => {
 			if (data.rating === "13+") {
 				document.body.classList.add("teen");
+				document.querySelector("#teen-new-tab").href = `https://dev.hatch.lol/project/?id=${id}`;
 			}
 		});
 	}
