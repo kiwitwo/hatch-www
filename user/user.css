@@ -257,6 +257,7 @@ p {
 }
 .project-thumbnail {
   height: 100px;
+  aspect-ratio: 4 / 3; /* scratch project aspect ratio */
   border-radius: 10px;
   transition: filter 0.3s ease;
 }
