@@ -9,20 +9,29 @@
 </head>
 <body>
 	<iframe src="https://warp.algebrahelp.org/embed.html" frameborder="0" allowfullscreen></iframe>
-	<div id="teen-login">
+	<div id="notice">
 		<a href="https://dev.hatch.lol/" target="_blank">
-			<img id="teen-hatch-logo" src="/images/wordmark-yellow.png" alt="Hatch logo">
+			<img id="hatch-logo" src="/images/wordmark-yellow.png" alt="Hatch logo">
 		</a>
-		<h2>This project is rated 13+</h2>
-		<p>Please sign in to your Hatch account to view this project.</p>
-		<form id="teen-form">
-			<label for="username">Username</label>
-			<input type="text" id="username" required><br>
-			<label for="username">Password</label>
-			<input type="password" id="password" required><br>
-			<input type="submit" value="Sign in">
-		</form>
-		<p>...or you can <a id="teen-new-tab" target="_blank">open on Hatch</a>.</p>
+		<div id="teen">
+			<h2>This project is rated 13+</h2>
+			<p>Please sign in to your Hatch account to view this project.</p>
+			<form id="teen-form">
+				<label for="username">Username</label>
+				<input type="text" id="username" required><br>
+				<label for="username">Password</label>
+				<input type="password" id="password" required><br>
+				<input type="submit" value="Sign in">
+			</form>
+			<p>...or you can <a id="teen-new-tab" target="_blank">open on Hatch</a>.</p>
+		</div>
+		<div id="unavailable">
+			<h2>This project is unavailable</h2>
+			<p>It could have been unshared or deleted.</p>
+		</div>
+		<div id="error">
+			<h2 id="error-message">Unknown error</h2>
+		</div>
 		<hr>
 		<p><a href="https://dev.hatch.lol/terms" target="_blank">Terms</a></p>
 	</div>

@@ -59,12 +59,19 @@ window.addEventListener("resize", () => {
 });
 
 fetch(`https://api.hatch.lol/projects/${id}/`).then((res) => {
-	if (res.status === 200) {
+	if (res.ok) {
 		res.json().then((data) => {
 			if (data.rating === "13+") {
 				document.body.classList.add("teen");
 				document.querySelector("#teen-new-tab").href = `https://dev.hatch.lol/project/?id=${id}`;
 			}
 		});
+	} else {
+		if (res.status === 404) {
+			document.body.classList.add("unavailable");
+		} else {
+			document.querySelector("#error-message").innerText = `${res.status}: ${res.statusText}`;
+			document.body.classList.add("error");
+		}
 	}
 });

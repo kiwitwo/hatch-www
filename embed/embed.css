@@ -10,7 +10,9 @@ body {
 	height: 100vh;
 }
 
-body.teen {
+body.teen,
+body.unavailable,
+body.error {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -20,20 +22,40 @@ iframe {
 	display: block;
 }
 
-body.teen iframe {
+body.teen iframe,
+body.unavailable iframe,
+body.error iframe {
 	display: none;
 }
 
-#teen-login {
+#notice {
 	display: none;
 	text-align: center;
 }
 
-body.teen #teen-login {
+#teen, #unavailable, #error {
+	display: none;
+}
+
+body.teen #notice,
+body.unavailable #notice,
+body.error #notice {
 	display: block;
 }
 
-#teen-hatch-logo {
+body.teen #notice #teen {
+	display: block;
+}
+
+body.unavailable #notice #unavailable {
+	display: block;
+}
+
+body.error #notice #error {
+	display: block;
+}
+
+#hatch-logo {
 	height: 70px;
 }
 
