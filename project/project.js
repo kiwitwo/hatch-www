@@ -19,7 +19,7 @@ const member_rating = (rating) => {
   } else if (rating === "9+") {
     rate_dialog.innerHTML = "<h3>About this rating</h3><p>Projects with the age rating of 9+ are suitable for some users. This project may contain some violence, cartoonish blood, light profanity, and scares, and would most likely recieve an NFE rating on Scratch.</p>";
   } else if (rating === "13+") {
-    rate_dialog.innerHTML = "<h3>About this rating</h3><p>Projects with the age rating of 13+ are only suitable for teenagers. This project may contain intense violence, blood, profanity, scares, and suggestive content, and would be taken down on Scratch.</p>";
+    rate_dialog.innerHTML = "<h3>About this rating</h3><p>Projects with the age rating of 13+ are only suitable for teenagers. This project may contain intense violence, blood, profanity, scares, and moderate suggestive content, and would be taken down on Scratch.</p>";
   } else {
     rate_dialog.innerHTML = "<h3>About this rating</h3><p>This rating is not recognized.</p>";
   }
