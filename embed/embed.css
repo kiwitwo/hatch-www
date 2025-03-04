@@ -40,3 +40,8 @@ body.teen #teen-login {
 a {
 	color: var(--primary);
 }
+
+hr {
+	color: #ffffff;
+	opacity: 0.5;
+}
