@@ -9,6 +9,22 @@ document.querySelector("#share").addEventListener("click", () => {
 document.querySelector("#share-url").innerText = window.location.href;
 document.querySelector("#share-embed").innerText = `<iframe src="https://dev.hatch.lol/embed/?id=${id}" width="482" height="412" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>`;
 
+const member_rating = (rating) => {
+  if (rating === "N/A") {
+    rate_dialog.innerHTML = "<h3>About this rating</h3><p>Projects with the age rating of N/A have not been rated by a Hatch Team member yet. This means the project content could contain anything, even if not appropriate for the site. Report projects that does not follow the Hatch Guidelines.</p>";
+  } else if (rating === "E") {
+    rate_dialog.innerHTML = "<h3>About this rating</h3><p>Projects with the age rating of E are suitable for all ages. This project contains little to no violence and/or language.</p>";
+  } else if (rating === "7+") {
+    rate_dialog.innerHTML = "<h3>About this rating</h3><p>Projects with the age rating of 7+ are suitable for most users. This project contains little to no violence and/or language, and may recieve an NFE rating on Scratch.</p>";
+  } else if (rating === "9+") {
+    rate_dialog.innerHTML = "<h3>About this rating</h3><p>Projects with the age rating of 9+ are suitable for some users. This project may contain some violence, cartoonish blood, light profanity, and scares, and would most likely recieve an NFE rating on Scratch.</p>";
+  } else if (rating === "13+") {
+    rate_dialog.innerHTML = "<h3>About this rating</h3><p>Projects with the age rating of 13+ are only suitable for teenagers. This project may contain intense violence, blood, profanity, scares, and suggestive content, and would be taken down on Scratch.</p>";
+  } else {
+    rate_dialog.innerHTML = "<h3>About this rating</h3><p>This rating is not recognized.</p>";
+  }
+}
+
 fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
   if (res.status === 200) {
     document
@@ -123,7 +139,6 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
       document.querySelector("#project-galleries").innerText = "Coming soon...";
       document.body.classList.remove("loading");
 
-      let hatchTeam;
       if (localStorage.getItem("token")) {
         fetch("https://api.hatch.lol/auth/me", {
           headers: {
@@ -131,10 +146,9 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
           },
         }).then((res) => {
           if (res.status === 200) {
-            res.json().then((data) => {
+            res.json().then((user_data) => {
               const par = document.querySelector("#project-age-rating");
-              hatchTeam = data.hatchTeam;
-              if (data.hatchTeam) {
+              if (user_data.hatchTeam) {
                 par.style.cursor = "pointer";
                 let new_rating;
                 let rating_picker = rate_dialog.querySelector("select");
@@ -163,25 +177,16 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
                     rate_dialog.toggleAttribute("open");
                   }
                 }
+              } else {
+                member_rating(data.rating);
               }
             });
+          } else {
+            member_rating(data.rating);
           }
         });
-      }
-      if (!hatchTeam) {
-        if (data.rating === "N/A") {
-          rate_dialog.innerHTML = "<h3>About this rating</h3><p>Projects with the age rating of N/A have not been rated by a Hatch Team member yet. This means the project content could contain anything, even if not appropriate for the site. Report projects that does not follow the Hatch Guidelines.</p>";
-        } else if (data.rating === "E") {
-          rate_dialog.innerHTML = "<h3>About this rating</h3><p>Projects with the age rating of E are suitable for all ages. This project contains little to no violence and/or language.</p>";
-        } else if (data.rating === "7+") {
-          rate_dialog.innerHTML = "<h3>About this rating</h3><p>Projects with the age rating of 7+ are suitable for most users. This project contains little to no violence and/or language, and may recieve an NFE rating on Scratch.</p>";
-        } else if (data.rating === "9+") {
-          rate_dialog.innerHTML = "<h3>About this rating</h3><p>Projects with the age rating of 9+ are suitable for some users. This project may contain some violence, cartoonish blood, light profanity, and scares, and would most likely recieve an NFE rating on Scratch.</p>";
-        } else if (data.rating === "13+") {
-          rate_dialog.innerHTML = "<h3>About this rating</h3><p>Projects with the age rating of 13+ are only suitable for teenagers. This project may contain intense violence, blood, profanity, scares, and suggestive content, and would be taken down on Scratch.</p>";
-        } else {
-          rate_dialog.innerHTML = "<h3>About this rating</h3><p>This rating is not recognized.</p>";
-        }
+      } else {
+        member_rating(data.rating);
       }
     });
   } else if (res.status === 404 || res.status === 422) {
