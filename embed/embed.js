@@ -69,7 +69,7 @@ fetch(`https://api.hatch.lol/projects/${id}/`).then((res) => {
 	} else {
 		if (res.status === 404) {
 			document.body.classList.add("unavailable");
-		} else {
+		} else if (id) {
 			document.querySelector("#error-message").innerText = `${res.status}: ${res.statusText}`;
 			document.body.classList.add("error");
 		}
