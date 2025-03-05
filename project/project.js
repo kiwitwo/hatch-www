@@ -55,7 +55,7 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
       document.title = `${data.title} on Hatch`;
 
       document.querySelector("#author-logo").src =
-        `https://api.hatch.lol${data.author.profile_picture}`;
+        `https://api.hatch.lol${data.author.profilePicture}`;
       document.querySelector("#author-username").innerText =
         data.author.username;
       document.querySelector("#author-username").href =
@@ -64,7 +64,7 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
       document.querySelector("#project-title").innerText = data.title;
       document.querySelector("#project-version").innerText = "v" + data.version;
       document.querySelector("#project-publish-date").innerText =
-        `${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][new Date(data.upload_ts * 1000).getMonth()]} ${new Date(data.upload_ts * 1000).getDate()}, ${new Date(data.upload_ts * 1000).getFullYear()}`;
+        `${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][new Date(data.uploadTs * 1000).getMonth()]} ${new Date(data.uploadTs * 1000).getDate()}, ${new Date(data.uploadTs * 1000).getFullYear()}`;
       document.querySelector("#project-embed").src =
         `https://warp.algebrahelp.org/embed.html?project_url=https://api.hatch.lol/projects/${id}/content${localStorage.getItem("token") && data.rating === "13+" ? `?token=${localStorage.getItem("token")}` : ""}`;
       document.querySelector("#project-description").innerText =
@@ -121,8 +121,8 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
             document.querySelector("#comments").innerHTML = `
         <div class="comment">
           <div class="comment-top">
-            <img src="${`https://api.hatch.lol${comment.author.profile_picture}`}" class="comment-pfp" alt="Profile picture">
-            <a href="/user/?u=${comment.author.username}" class="comment-username">${comment.author.display_name}</a>
+            <img src="${`https://api.hatch.lol${comment.author.profilePicture}`}" class="comment-pfp" alt="Profile picture">
+            <a href="/user/?u=${comment.author.username}" class="comment-username">${comment.author.displayName}</a>
             <p class="comment-time">${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][new Date(comment.postDate * 1000).getMonth()]} ${new Date(comment.postDate * 1000).getDate()}, ${new Date(comment.postDate * 1000).getFullYear()}</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png" alt="Report"></a>
           </div>
           <p class="content">${comment.replyTo === null ? "" : `<a href="/user/?u=${comment.replyTo}">@${comment.replyTo}</a> `}${comment.content}</p>

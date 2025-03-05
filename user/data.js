@@ -198,7 +198,7 @@ fetch(`https://api.hatch.lol/users/${username}/projects`).then((res) => {
                                 <i class="fa-solid fa-square-caret-up"></i>&ensp;?<br>
                                 <i class="fa-solid fa-eye"></i>&ensp;?<br>
                                 <i class="fa-solid fa-message"></i>&ensp;?<br>
-                                <span class="project-date">${new Date(project.upload_ts * 1000).getMonth() + 1}/${new Date(project.upload_ts * 1000).getDate()}/${new Date(project.upload_ts * 1000).getFullYear() - 2000}</span>
+                                <span class="project-date">${new Date(project.uploadTs * 1000).getMonth() + 1}/${new Date(project.uploadTs * 1000).getDate()}/${new Date(project.uploadTs * 1000).getFullYear() - 2000}</span>
                             </p>
                         </div>
                         <div class="project-bottom">
@@ -208,7 +208,7 @@ fetch(`https://api.hatch.lol/users/${username}/projects`).then((res) => {
                     </div>
                     ${document.querySelector("#shared-projects-row").innerHTML}`;
         document.querySelector("#recent-activity").innerHTML = `
-          <li>Published <a href="/project/?id=${project.id}">${project.title}</a> <span class="activity-time">${get_relative_time(project.upload_ts*1000)}</span></li>
+          <li>Published <a href="/project/?id=${project.id}">${project.title}</a> <span class="activity-time">${get_relative_time(project.uploadTs*1000)}</span></li>
           ${document.querySelector("#recent-activity").innerHTML}`;
       });
     });
