@@ -435,7 +435,8 @@ dialog {
   width: auto;
   padding: 5px;
 }
-#project-edit-button {
+#project-edit-button,
+#project-see-inside-button {
   color: var(--primary);
   font-weight: bold;
 }
