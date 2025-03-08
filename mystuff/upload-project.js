@@ -15,6 +15,8 @@ submit.addEventListener("click", function () {
   const description = document.getElementById("upload-description").value;
   const fileInput = document.getElementById("file");
   const file = fileInput.files[0];
+  const thumbInput = document.getElementById("thumb");
+  const thumb = thumbInput.files[0];
 
   const touChecked = document.getElementById("tou").checked;
   if (!touChecked) {
@@ -25,11 +27,13 @@ submit.addEventListener("click", function () {
   const token = localStorage.getItem("token");
 
   const fileBlob = new Blob([file], { type: "application/zip" });
+  const thumbBlob = new Blob([thumb], { type: "image/png" });
 
   const formData = new FormData();
   formData.append("title", title);
   formData.append("description", description);
   formData.append("file", fileBlob, file.name);
+  formData.append("thumbnail", thumbBlob, thumb.name);
 
   submit.disabled = true;
   fetch("https://api.hatch.lol/projects", {
