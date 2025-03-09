@@ -99,6 +99,7 @@
     filter: brightness(0.9);
 }
 #search {
+    color: black !important;
     height: 30px;
     background-color: var(--navLight);
     float: right;
@@ -185,7 +186,7 @@
 }
 #userdrop > a {
     text-decoration: none;
-    color: #000000 !important;
+    color: black !important;
     display: block;
     font-weight: bold;
 }
