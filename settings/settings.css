@@ -16,7 +16,8 @@
   cursor: pointer;
 }
 input,
-textarea {
+textarea,
+select {
   width: calc(100% - 16px);
   padding: 5px;
   margin-right: 16px;
