@@ -1,5 +1,23 @@
 if (!localStorage.getItem("token")) {
   window.location.href = "/login/";
+} else {
+  fetch("https://api.hatch.lol/auth/me", {
+    headers: {
+      "Token": localStorage.getItem("token")
+    }
+  }).then(res => {
+    if (res.ok) {
+      res.json().then(data => {
+        document.querySelector("#display").value = data.displayName;
+        document.querySelector("#bio").value = data.bio;
+        document.querySelector("#banner").value = data.bannerImage;
+        document.querySelector("#location").value = data.country;
+        document.querySelector("#theme").value = data.theme;
+      });
+    } else {
+      window.location.href = "/login/";
+    }
+  });
 }
 
 document.querySelector("#submit").addEventListener("click", function () {
