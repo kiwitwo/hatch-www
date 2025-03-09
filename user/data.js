@@ -107,7 +107,7 @@ fetch(`https://api.hatch.lol/users/${username}`).then((res) => {
         : "Hatchling";
       document.querySelector("#joindate").innerText =
         `Joined ${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][new Date(data.joinDate).getMonth()]} ${new Date(data.joinDate).getDate()}, ${new Date(data.joinDate).getFullYear()}`;
-
+      document.querySelector("#country").innerText = data.country;
       document.querySelector("#connections-list").innerText = "Coming soon...";
       document.body.classList.remove("loading");
     });
