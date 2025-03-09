@@ -1,9 +1,11 @@
 let logged_out = !localStorage.getItem("token");
 
 if (logged_out) {
-  document.querySelector("html").style = "--primary: #ffbd59";
+    document.querySelector("html").style = "--primary: #ffbd59";
 } else if (localStorage.getItem("theme")) {
-  document.querySelector("html").style = `--primary: ${localStorage.getItem("theme")}`;
+    document.querySelector("html").style = `--primary: ${localStorage.getItem(
+        "theme"
+    )}`;
 }
 
 document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
@@ -26,14 +28,14 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
             Explore
           </a>
           ${
-            logged_out
-              ? `<a class="navitem" href="https://dev.hatch.lol/signup">
+              logged_out
+                  ? `<a class="navitem" href="https://dev.hatch.lol/signup">
             Sign up
           </a>
           <a class="navitem" href="https://dev.hatch.lol/login">
             Log in
           </a>`
-              : `<a class="navitem" id="mail" href="https://dev.hatch.lol/messages">
+                  : `<a class="navitem" id="mail" href="https://dev.hatch.lol/messages">
             <img src="/navbar/img/messages.svg" id="msgsym" alt="Messages" /><div id="messagect"><b>1</b></div>
         
           </a>
@@ -41,7 +43,7 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
           <i class="fa-regular fa-folder-open fa-2xl" id="mystuff"></i> 
           </a>
           <div id="userbox">
-          <div id="userinfo"><img id="pfpnav" src="https://api.hatch.lol/uploads/pfp/default.png" alt="Your profile picture"><div id="usernamenav">...</div><div id="dropdownimgcover"><img id="dropdownarrow" src="/navbar/img/downarrow.png" alt="Dropdown arrow" /></div></div>
+          <div id="userinfo"><img id="pfpnav" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Your profile picture"><div id="usernamenav"> </div><div id="dropdownimgcover"><img id="dropdownarrow" src="/navbar/img/downarrow.png" alt="Dropdown arrow" /></div></div>
             <div id="userdrop" style="display: none" tabindex="0">
               <a class="dropdown-option nav-your-profile" id="highest">
                 Your Profile
@@ -61,59 +63,64 @@ let x = document.querySelector("#userdrop");
 let y = document.querySelector("#userinfo");
 
 if (!logged_out) {
-  document.querySelector("#nav-sign-out").addEventListener("click", () => {
-    localStorage.removeItem("token");
-    location.reload();
-  });
+    document.querySelector("#nav-sign-out").addEventListener("click", () => {
+        localStorage.removeItem("token");
+        location.reload();
+    });
 
-  y.addEventListener("click", (e) => {
-    e.preventDefault();
-    dropToggle();
-  });
+    y.addEventListener("click", (e) => {
+        e.preventDefault();
+        dropToggle();
+    });
 
-  document.onclick = (e) => {
-    if (!e.composedPath().includes(y)) {
-      x.classList.remove("active");
-    }
-  };
+    document.onclick = (e) => {
+        if (!e.composedPath().includes(y)) {
+            x.classList.remove("active");
+        }
+    };
 }
 
 function dropToggle() {
-  x.classList.toggle("active");
+    x.classList.toggle("active");
 }
 
 function searchMade() {
-  let searchTerm = document
-    .getElementById("searchinp")
-    .value.replace(/ /g, "_");
-  window.location.href = "https://dev.hatch.lol/search/?id=" + searchTerm;
+    let searchTerm = document
+        .getElementById("searchinp")
+        .value.replace(/ /g, "_");
+    window.location.href = "https://dev.hatch.lol/search/?id=" + searchTerm;
 }
 
 const searchInp = document.getElementById("searchinp");
 searchInp.onkeydown = (e) => {
-  if (e.key === "Enter" && searchInp.value !== "") {
-    searchMade();
-  }
+    if (e.key === "Enter" && searchInp.value !== "") {
+        searchMade();
+    }
 };
 
 if (localStorage.getItem("token") !== null) {
-  fetch("https://api.hatch.lol/auth/me", {
-    headers: {
-      Token: localStorage.getItem("token"),
-    },
-  }).then((res) => {
-    if (res.status === 200) {
-      res.json().then((json) => {
-        document.querySelector("html").style = `--primary: ${json.theme}`;
-        if (localStorage.getItem("theme") !== json.theme) {
-          localStorage.setItem("theme", json.theme);
+    fetch("https://api.hatch.lol/auth/me", {
+        headers: {
+            Token: localStorage.getItem("token"),
+        },
+    }).then((res) => {
+        if (res.status === 200) {
+            res.json().then((json) => {
+                document.querySelector(
+                    "html"
+                ).style = `--primary: ${json.theme}`;
+                if (localStorage.getItem("theme") !== json.theme) {
+                    localStorage.setItem("theme", json.theme);
+                }
+                document.getElementById(
+                    "pfpnav"
+                ).src = `https://api.hatch.lol${json.profilePicture}`;
+                document.getElementById("usernamenav").innerText =
+                    json.displayName;
+                document.getElementsByClassName(
+                    "nav-your-profile"
+                )[0].href = `/user/?u=${json.name}`;
+            });
         }
-        document.getElementById("pfpnav").src =
-          `https://api.hatch.lol${json.profilePicture}`;
-        document.getElementById("usernamenav").innerText = json.displayName;
-        document.getElementsByClassName("nav-your-profile")[0].href =
-          `/user/?u=${json.name}`;
-      });
-    }
-  });
+    });
 }

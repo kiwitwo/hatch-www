@@ -1,10 +1,12 @@
 .nav {
     /* im genuinely stumped why isnt it sticky :sob: */
     /* rayne: because the element isn't in a <section>, did you mean to use "fixed" ? QwQ */
+    /* yeah that works but i use sticky on my main website and it works fine idk. 
+       also i cant do this because it makes stuff go undr it and margin-bottom doesnt work here and
+       its not worth the braincells to try to fix it so im just gonna leave it unsticky */
     background-color: var(--navLight);
     width: 80%;
     height: 50px;
-    position: sticky;
     top: 0;
     z-index: 1000;
     padding: 0 10% 0 10%;
