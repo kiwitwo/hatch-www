@@ -440,3 +440,14 @@ dialog {
   color: var(--primary);
   font-weight: bold;
 }
+#comments {
+  height: 100%;
+}
+#comments:not(:has(.comment)) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#comments:has(.comment) #no-comments-text {
+  display: none;
+}
