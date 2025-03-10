@@ -84,6 +84,9 @@ fetch(`https://api.hatch.lol/users/${username}`).then((res) => {
     res.json().then((data) => {
       document.title = `${data.displayName} (@${data.name}) on Hatch`;
 
+      if (data.verified == false) {
+        document.querySelector("#verified-check").remove();
+      }
       document.querySelector("#banner-image").src =
         data.bannerImage === null
           ? "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
