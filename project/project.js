@@ -89,6 +89,7 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
             } else {
               document.querySelector("#project-edit-button").remove();
             }
+            document.querySelector("#project-comment-form-pfp").src = `https://api.hatch.lol${user.profilePicture}`;
           });
         } else {
           document.querySelector("#project-edit-button").remove();
