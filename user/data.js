@@ -99,6 +99,7 @@ fetch(`https://api.hatch.lol/users/${username}`).then((res) => {
       document.querySelector("#banner").src = data.bannerImage;
       document.querySelector("#followers-count").innerText = data.followerCount;
       document.querySelector("#followers-link").href = `/user/followers/?u=${data.name}`;
+      document.querySelector("#following-link").href = `/user/following/?u=${data.name}`;
       document.querySelector("#following-count").innerText =
         data.followingCount;
       document.querySelector("#posts-count").innerText = data.projectCount;
