@@ -61,3 +61,21 @@ a:hover {
     flex-direction: column;
     color: var(--univText);
 }
+.small-user {
+    background-color: var(--innerBlock2);
+    width: 60px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+    display: inline-block;
+}
+.small-user img {
+    width: 60px;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+}
+.emoji {
+    height: 1.2rem;
+    display: inline-block;
+    margin-bottom: -0.2rem;
+}
