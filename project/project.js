@@ -121,15 +121,15 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
 
       fetch(`https://api.hatch.lol/projects/${id}/comments`).then((res) => {
         res.json().then((data) => {
-          data.comments.forEach((comment) => {
+          Object.entries(data).forEach((comment) => {
             document.querySelector("#comments").innerHTML = `
         <div class="comment">
           <div class="comment-top">
-            <img src="${`https://api.hatch.lol${comment.author.profilePicture}`}" class="comment-pfp" alt="Profile picture">
-            <a href="/user/?u=${comment.author.username}" class="comment-username">${comment.author.displayName}</a>
-            <p class="comment-time">${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][new Date(comment.postDate * 1000).getMonth()]} ${new Date(comment.postDate * 1000).getDate()}, ${new Date(comment.postDate * 1000).getFullYear()}</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png" alt="Report"></a>
+            <img src="${`https://api.hatch.lol${comment[1].author.profilePicture}`}" class="comment-pfp" alt="Profile picture">
+            <a href="/user/?u=${comment[1].author.username}" class="comment-username">${comment[1].author.displayName}</a>
+            <p class="comment-time">${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][new Date(comment[1].postDate * 1000).getMonth()]} ${new Date(comment[1].postDate * 1000).getDate()}, ${new Date(comment[1].postDate * 1000).getFullYear()}</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png" alt="Report"></a>
           </div>
-          <p class="content">${comment.replyTo === null ? "" : `<a href="/user/?u=${comment.replyTo}">@${comment.replyTo}</a> `}${text_modify(comment.content)}</p>
+          <p class="content">${comment[1].replyTo === null ? "" : `<a href="/user/?u=${comment[1].replyTo}">@${comment[1].replyTo}</a> `}${text_modify(comment[1].content)}</p>
         </div>
         ${document.querySelector("#comments").innerHTML}`;
           });

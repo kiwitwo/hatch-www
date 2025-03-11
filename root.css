@@ -74,3 +74,8 @@ a:hover {
     aspect-ratio: 1 / 1;
     border-radius: 10px;
 }
+.emoji {
+    height: 1.2rem;
+    display: inline-block;
+    margin-bottom: -0.2rem;
+}
