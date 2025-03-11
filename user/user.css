@@ -269,12 +269,12 @@ p {
   color: #c4c4c4;
   font-style: italic;
 }
-.project-author a {
+a {
   color: var(--lightOrange);
   font-weight: bold;
   text-decoration: none;
 }
-#shared-projects {
+#shared-projects, #following-panel {
   background-color: var(--innerBlock);
   padding: 10px;
   border-radius: 10px;

@@ -98,6 +98,7 @@ fetch(`https://api.hatch.lol/users/${username}`).then((res) => {
         `https://api.hatch.lol${data.profilePicture}`;
       document.querySelector("#banner").src = data.bannerImage;
       document.querySelector("#followers-count").innerText = data.followerCount;
+      document.querySelector("#followers-link").href = `/user/followers/?u=${data.name}`;
       document.querySelector("#following-count").innerText =
         data.followingCount;
       document.querySelector("#posts-count").innerText = data.projectCount;
