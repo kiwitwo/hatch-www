@@ -1,6 +1,8 @@
 const params = new URLSearchParams(window.location.search);
 const username = params.get("u");
 
+document.querySelector("#redirect").href = `/user/following/?u=${username}`;
+
 let client_username;
 if (localStorage.getItem("token")) {
   fetch("https://api.hatch.lol/auth/me", {
@@ -54,13 +56,13 @@ fetch(`https://api.hatch.lol/users/${username}`).then((res) => {
   }
 });
 
-fetch(`https://api.hatch.lol/users/${username}/followers`).then((res) => {
+fetch(`https://api.hatch.lol/users/${username}/following`).then((res) => {
   if (res.ok) {
     res.json().then((data) => {
-      let followers_list = document.querySelector("#followers-list");
-      data.followers.forEach((user) => {
-        followers_list.innerHTML = `
-        ${followers_list.innerHTML}
+      let following_list = document.querySelector("#followers-list");
+      data.following.forEach((user) => {
+        following_list.innerHTML = `
+        ${following_list.innerHTML}
         <a class="small-user" href="/user/?u=${user.name}">
           <img src="https://api.hatch.lol${user.profilePicture}">
           <span>${user.displayName}</span>
