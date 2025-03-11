@@ -271,7 +271,7 @@ a.comment-reply {
 p.content {
   margin-top: 0;
 }
-p.content > a {
+a {
   color: var(--navLight);
   font-weight: bold;
 }

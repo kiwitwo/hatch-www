@@ -93,13 +93,7 @@ fetch(`https://api.hatch.lol/users/${username}`).then((res) => {
           : data.bannerImage;
       document.querySelector("#displayname").innerText = data.displayName;
       document.querySelector("#username").innerText = `@${data.name}`;
-      document.querySelector("#bio").innerHTML = data.bio ? data.bio
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/(https?:\/\/[\S,!&lt;]+)/g, "<a href='$1'>$1</a>")
-        .replace(/@([a-z,A-Z,0-9,-,_]+)\b/g, "<a href='/user/?u=$1'>@$1</a>")
-        .replace(/\n/g, "<br>") : "";
+      document.querySelector("#bio").innerHTML = data.bio ? text_modify(data.bio) : "";
       document.querySelector("#pfp").src =
         `https://api.hatch.lol${data.profilePicture}`;
       document.querySelector("#banner").src = data.bannerImage;

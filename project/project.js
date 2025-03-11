@@ -67,8 +67,8 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
         `${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][new Date(data.uploadTs * 1000).getMonth()]} ${new Date(data.uploadTs * 1000).getDate()}, ${new Date(data.uploadTs * 1000).getFullYear()}`;
       document.querySelector("#project-embed").src =
         `https://warp.algebrahelp.org/embed.html?project_url=https://api.hatch.lol/projects/${id}/content${localStorage.getItem("token") && data.rating === "13+" ? `?token=${localStorage.getItem("token")}` : ""}`;
-      document.querySelector("#project-description").innerText =
-        data.description;
+      document.querySelector("#project-description").innerHTML =
+        text_modify(data.description);
 
       document.querySelector("#project-age-rating").innerText = data.rating;
 
@@ -129,7 +129,7 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
             <a href="/user/?u=${comment.author.username}" class="comment-username">${comment.author.displayName}</a>
             <p class="comment-time">${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][new Date(comment.postDate * 1000).getMonth()]} ${new Date(comment.postDate * 1000).getDate()}, ${new Date(comment.postDate * 1000).getFullYear()}</p><a href="#reply" class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png" alt="Report"></a>
           </div>
-          <p class="content">${comment.replyTo === null ? "" : `<a href="/user/?u=${comment.replyTo}">@${comment.replyTo}</a> `}${comment.content}</p>
+          <p class="content">${comment.replyTo === null ? "" : `<a href="/user/?u=${comment.replyTo}">@${comment.replyTo}</a> `}${text_modify(comment.content)}</p>
         </div>
         ${document.querySelector("#comments").innerHTML}`;
           });
