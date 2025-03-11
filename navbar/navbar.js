@@ -85,10 +85,23 @@ function dropToggle() {
 }
 
 function searchMade() {
-    let searchTerm = document
-        .getElementById("searchinp")
-        .value.replace(/ /g, "_");
-    window.location.href = "https://dev.hatch.lol/search/?id=" + searchTerm;
+    const searchinput = document.getElementById("searchinp").value.trim();
+    let allowedchars = /^[a-zA-Z0-9-_]+$/;
+    if (searchinput[0] === "@" && allowedchars.test(searchinput.substring(1))) {
+        window.location.href = `https://dev.hatch.lol/user/?u=${searchinput.substring(
+            1
+        )}`;
+    } else if (
+        searchinput[0] === "!" &&
+        /^\d+$/.test(searchinput.substring(1))
+    ) {
+        window.location.href = `https://dev.hatch.lol/project/?id=${searchinput.substring(
+            1
+        )}`;
+    } else {
+        let searchTerm = searchinput.replace(/ /g, "_");
+        window.location.href = "https://dev.hatch.lol/search/?id=" + searchTerm;
+    }
 }
 
 const searchInp = document.getElementById("searchinp");
