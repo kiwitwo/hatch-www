@@ -87,7 +87,7 @@ function dropToggle() {
 function searchMade() {
     const searchinput = document.getElementById("searchinp").value.trim();
     let allowedchars = /^[a-zA-Z0-9-_]+$/;
-    let searchTerm = searchinput.replace(/ /g, "_");
+    let searchTerm = searchinput.replaceAll(" ", "%20");
     if (searchinput[0] === "@" && allowedchars.test(searchinput.substring(1))) {
         window.location.href = `https://dev.hatch.lol/user/?u=${searchinput.substring(
             1
@@ -104,9 +104,12 @@ function searchMade() {
         (searchinput[1] == "!" || searchinput[1] == "@")
     ) {
         window.location.href =
-            "https://dev.hatch.lol/search/?id=" + searchTerm.substring(1);
+            "https://dev.hatch.lol/search/?q=" +
+            encodeURIComponent(searchTerm.substring(1));
     } else {
-        window.location.href = "https://dev.hatch.lol/search/?id=" + searchTerm;
+        window.location.href =
+            "https://dev.hatch.lol/search/?q=" +
+            encodeURIComponent(searchTerm.substring(1));
     }
 }
 
