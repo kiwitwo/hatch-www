@@ -108,8 +108,7 @@ function searchMade() {
             encodeURIComponent(searchTerm.substring(1));
     } else {
         window.location.href =
-            "https://dev.hatch.lol/search/?q=" +
-            encodeURIComponent(searchTerm.substring(1));
+            "https://dev.hatch.lol/search/?q=" + encodeURIComponent(searchTerm);
     }
 }
 
