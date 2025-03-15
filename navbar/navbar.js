@@ -32,7 +32,7 @@ document.getElementById("navarea").innerHTML = `<div class="navbg"></div>
                   ? `<a class="navitem" href="https://dev.hatch.lol/signup">
             Sign up
           </a>
-          <a class="navitem" href="https://dev.hatch.lol/login">
+          <a class="navitem" href="/login">
             Log in
           </a>`
                   : `<a class="navitem" id="mail" href="https://dev.hatch.lol/messages">
