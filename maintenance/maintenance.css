@@ -1,8 +1,9 @@
-#content {
+.block {
   background-color: var(--innerBlock);
   padding: 10px;
   border-radius: 10px;
   color: var(--univText);
+  margin-bottom: 10px;
 }
 #banner {
   background-color: var(--innerBlock2);

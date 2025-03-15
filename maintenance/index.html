@@ -3,7 +3,7 @@
     <head>
         <title>Hatch</title>
         <link rel="stylesheet" href="/root.css" />
-        <link rel="stylesheet" href="maintenance.css" />
+        <link rel="stylesheet" href="/maintenance/maintenance.css" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
@@ -17,11 +17,16 @@
             href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
             rel="stylesheet"
         />
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js"
+            async
+        ></script>
     </head>
     <body>
         <!-- Main Page -->
         <div id="main">
-            <div id="content">
+            <div class="block">
                 <div id="logodiv">
                     <img
                         id="logo"
@@ -29,20 +34,40 @@
                         alt="hatch logo"
                     />
                 </div>
-                <div id="banner">Hatch is not quite done yet!</div>
-                <div class="spacer"></div>
+                <div id="banner">Hatch.lol is not publicly released yet.</div>
                 <div id="message">
-                    Please check our
-                    <a href="https://wasteof.money/users/hatch">wasteof</a>,
-                    <a href="https://darflen.com/users/hatch">Darflen</a>,
-                    <a href="https://x.com/hatch_lol">&Xopf;</a> or
-                    <a href="https://discord.gg/3YNeWCM9Jf"
-                        >join our Discord server</a
-                    >
-                    for more updates.
+                    <p>The Hatch Development Team is working hard to make Hatch.lol a great site for you.</p>
+                    <p>You can stay caught up on development by following us on <a href="https://bsky.app/profile/hatch.lol/">Bluesky</a> or joining our <a href="https://discord.gg/ENTDZdaGnD">Discord server</a>!</p>
                 </div>
             </div>
+            <div class="block">
+                <h1>What is Hatch.lol?</h1>
+                <p>Simply put, Hatch.lol is a third-party project hosting service for the Scratch programming language.</p>
+                <p>
+                    Scratch is a great option
+                    to learn the fundamentals of programming, but it is
+                    designed for young children. Many Scratchers
+                    understandably find themselves outgrowing Scratch as
+                    they get older, and/or have distaste for new Scratch
+                    features, but they want to keep using the Scratch
+                    language. Hatch.lol is designed with this group of users in
+                    mind. While we're very similar to Scratch, having a
+                    close online community, we have more relaxed rules.
+                </p>
+            </div>
+            <div class="block">
+                <bsky-embed
+                    username="hatch.lol"
+                    mode="dark"
+                    limit="7"
+                    link-target="_blank"
+                    link-image="true"
+                    load-more="true"
+                    disable-styles="false"
+                    custom-styles=".border-slate-300 { border-color: #ffbd59; }"
+                >
+                </bsky-embed>
+            </div>
         </div>
-        <!--This ends #main - all content inside! Should stick to footer top!-->
     </body>
 </html>
