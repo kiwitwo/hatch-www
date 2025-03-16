@@ -249,7 +249,7 @@ p.comment-time {
 a.comment-report {
     text-decoration: none;
     font-weight: bold;
-    color: var(--report);
+    color: var(--reportText);
     padding-right: 5px;
     border-radius: 5px;
 }
