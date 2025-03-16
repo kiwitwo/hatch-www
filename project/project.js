@@ -86,7 +86,7 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
 
       document.querySelector("#project-title").innerText = data.title;
       document.querySelector("#project-version").innerText = "v" + data.version;
-      document.querySelector("#project-publish-date").innerText = time_ago(uploadTs);
+      document.querySelector("#project-publish-date").innerText = time_ago(data.uploadTs);
       document.querySelector("#project-publish-date").setAttribute("title", new Date(data.uploadTs).toDateString())
       document.querySelector("#project-embed").src =
         `https://warp.algebrahelp.org/embed.html?project_url=https://api.hatch.lol/projects/${id}/content${localStorage.getItem("token") && data.rating === "13+" ? `?token=${localStorage.getItem("token")}` : ""}`;
