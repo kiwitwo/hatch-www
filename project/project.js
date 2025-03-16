@@ -151,10 +151,10 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
         <div class="comment">
           <div class="comment-top">
             <img src="${`https://api.hatch.lol${comment.author.profilePicture}`}" class="comment-pfp" alt="Profile picture">
-            <a href="/user/?u=${comment.author.username}" class="comment-username">${comment[1].author.displayName}</a>
+            <a href="/user/?u=${comment.author.username}" class="comment-username">${comment.author.displayName}</a>
             <p class="comment-time" title="${exact_date}">${date}</p><a class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png" alt="Report"></a>
           </div>
-          <p class="content">${comment.replyTo === null ? "" : `<a href="/user/?u=${comment[1].replyTo}">@${comment[1].replyTo}</a> `}${text_modify(comment[1].content)}</p>
+          <p class="content">${comment.replyTo === null ? "" : `<a href="/user/?u=${comment.replyTo}">@${comment.replyTo}</a> `}${text_modify(comment.content)}</p>
         </div>
         ${document.querySelector("#comments").innerHTML}`;
           });
