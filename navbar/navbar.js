@@ -140,7 +140,7 @@ if (localStorage.getItem("token") !== null) {
                     json.displayName;
                 document.getElementsByClassName(
                     "nav-your-profile"
-                )[0].href = `/user/?u=${json.name}`;
+                )[0].href = `https://dev.hatch.lol/user/?u=${json.name}`;
             });
         }
     });
