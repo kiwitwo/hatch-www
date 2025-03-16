@@ -1,29 +1,44 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     if (localStorage.getItem("token")) {
-        fetch("https://api.hatch.lol/auth/me", {
-            headers: {
-                Token: localStorage.getItem("token"),
-            },
-        }).then((res) => {
-            if (res.ok) {
-                res.json().then((data) => {
-                    if (data.hatchTeam === true) {
+        try {
+            const authResponse = await fetch("https://api.hatch.lol/auth/me", {
+                headers: {
+                    Token: localStorage.getItem("token"),
+                },
+            });
+
+            if (authResponse.ok) {
+                const authData = await authResponse.json();
+
+                if (authData.hatchTeam === true) {
+                    const params = new URLSearchParams(window.location.search);
+                    const username = params.get("u");
+
+                    const userResponse = await fetch(
+                        `https://api.hatch.lol/users/${username}`
+                    );
+
+                    if (userResponse.ok) {
+                        const userdata = await userResponse.json();
+                        const userJoinDate = userdata.joinDate;
+                        const userBio = userdata.bio;
+                        const pfpUrl = userdata.profilePicture;
+                        const displayName = userdata.displayName;
+
                         document.getElementById("admin").innerHTML = `
                             <div id="adminuser">
                                 <div id="adminusername">
-                                    han&nbsp;<i class="fa-solid fa-check"></i>&nbsp;<i
-                                        class="fa-solid fa-shield-halved"
-                                    ></i>
+                                    ${username}
                                 </div>
                                 <div id="adminuserinfo">
                                     <div class="adminuserinfoitem">
-                                        Created: <i>April 16, 2024</i>.
+                                        Created: ${userJoinDate}.
                                     </div>
                                     <div class="adminuserinfoitem">
-                                        Email: <i>han@hatch.lol</i>.
+                                        Email: <i>Unavailable</i>.
                                     </div>
                                     <div class="adminuserinfoitem">
-                                        Last Login: <i>February 12, 2024</i>.
+                                        Last Login: <i>Unavailable</i>.
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <div id="adminbio">
                                 <div id="adminbiotitle">Bio</div>
                                 <div class="spacer"></div>
-                                <div id="adminusersbio">hi im han this is my bio wowie</div>
+                                <div id="adminusersbio">${userBio}</div>
                                 <div class="spacer"></div>
                                 <div class="adminbutton">Edit Bio</div>
                             </div>
@@ -93,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <div id="adminpfp">
                                 <div id="adminpfptitle">Profile Picture</div>
                                 <img
-                                    src="https://api.hatch.lol//uploads/pfp/default.png"
+                                    src="https://api.hatch.lol/${pfpUrl}"
                                     id="userspfp"
                                     alt="Profile picture"
                                 />
@@ -103,55 +118,47 @@ document.addEventListener("DOMContentLoaded", () => {
                             <div id="admindisplayname">
                                 <div id="admindisplaynametitle">Display Name</div>
                                 <div class="spacer"></div>
-                                <div id="adminusersdisplayname">han</div>
+                                <div id="adminusersdisplayname">${displayName}</div>
                                 <div class="spacer"></div>
                                 <div class="adminbutton">Change Display Name</div>
-                            </div>
-                            <div class="spacer"></div>
-                            <div id="adminroles">
-                                <div id="adminrolestitle">Current Roles</div>
-                                <div class="spacer"></div>
-                                <div id="roleslist">
-                                    Hatchling, Roles, Won't, Be, Styled, Just, Separated,
-                                    With, Commas
-                                </div>
-                                <div class="spacer"></div>
-                                <div class="adminbutton">Edit Roles</div>
                             </div>
                             <div class="spacer"></div>
                             <div id="adminactions">
                                 <div id="adminactionstitle">Administrative Actions</div>
                                 <div class="spacer"></div>
-                                <div class="adminbutton">Ban</div>
+                                <div class="adminbutton" id="adminaction-userban">Ban</div>
+                                <div class="spacer"></div>
+                                <div class="adminbutton" id="adminaction-userunban">Unban</div>
                                 <div class="spacer"></div>
                                 <div class="adminbutton">
                                     Verify User&nbsp;<i class="fa-solid fa-check"></i>
                                 </div>
                                 <div class="spacer"></div>
-                                <div class="adminbutton">
+                                <div class="adminbutton" id="adminaction-changeusername">
                                     Change Username&nbsp;<i
                                         class="fa-solid fa-circle-exclamation"
                                     ></i>
                                 </div>
                                 <div class="spacer"></div>
-                                <div class="adminbutton">
+                                <div class="adminbutton" id="adminaction-deleteuser">
                                     Delete&nbsp;<i
                                         class="fa-solid fa-circle-exclamation"
                                     ></i>
                                 </div>
                                 <div class="spacer"></div>
-                                <div class="adminbutton">
+                                <div class="adminbutton" id="adminaction-makehatchteam">
                                     Make Hatch Team&nbsp;<i
                                         class="fa-solid fa-circle-exclamation"
                                     ></i>
                                 </div>
                                 <div class="spacer"></div>
-                                <div class="adminbutton">
+                                <div class="adminbutton" id="adminaction-toggleusercomments">
                                     Toggle Comment Status <i>(Disabled)</i>
                                 </div>
                             </div>
                         </div>
                         `;
+
                         let adminPanelElement =
                             document.getElementById("admin");
                         document.addEventListener("keydown", (event) => {
@@ -167,9 +174,54 @@ document.addEventListener("DOMContentLoaded", () => {
                                 }
                             }
                         });
+
+                        document
+                            .getElementById("adminaction-userban")
+                            .addEventListener("click", async () => {
+                                try {
+                                    const response = await fetch(
+                                        `https://api.hatch.lol/admin/ip-ban/${username}`,
+                                        {
+                                            method: "POST",
+                                            headers: {
+                                                Token: localStorage.getItem(
+                                                    "token"
+                                                ),
+                                            },
+                                        }
+                                    );
+                                    const data = await response.json();
+                                    console.log(data);
+                                } catch (error) {
+                                    console.error("Error! ", error);
+                                }
+                            });
                     }
-                });
+                    document
+                        .getElementById("adminaction-userunban")
+                        .addEventListener("click", async () => {
+                            try {
+                                const response = await fetch(
+                                    `https://api.hatch.lol/admin/ip-unban/${username}`,
+                                    {
+                                        method: "POST",
+                                        headers: {
+                                            Token: localStorage.getItem(
+                                                "token"
+                                            ),
+                                        },
+                                    }
+                                );
+                                const data = await response.json();
+                                console.log(data);
+                            } catch (error) {
+                                console.error("Error! ", error);
+                            }
+                        });
+                }
             }
-        });
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
     }
 });
