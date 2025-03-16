@@ -304,9 +304,3 @@ a {
 .project-title a:hover {
     color: #c4c4c4 !important;
 }
-
-#admin {
-    position: fixed;
-    top: 50px;
-    right: 0px;
-}

@@ -1,12 +1,23 @@
 #admin {
     background-color: var(--innerBlock2);
     padding: 10px;
-    height: 100%;
+    height: calc(100vh - 80px);
     max-width: 20%;
     width: fit-content;
     color: var(--univText);
     overflow-x: hidden;
     overflow-y: scroll;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+    border-radius: 10px 0px 0px 10px;
+    position: fixed;
+    top: 55px;
+    right: 0px;
+}
+#admin,
+#admin > * {
+    transition: 0.3s ease all;
 }
 #adminusername {
     font-size: 20px;
