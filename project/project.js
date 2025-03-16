@@ -92,7 +92,7 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
 
             document.querySelector(
                 "#author-logo"
-            ).src = `https://api.hatch.lol${data.author.profilePicture}`;
+            ).src = `https://api.hatch.lol${data.author.profilePicture}?size=70`;
             document.querySelector("#author-username").innerText =
                 data.author.username;
             document.querySelector(
@@ -147,7 +147,7 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
                         }
                         document.querySelector(
                             "#project-comment-form-pfp"
-                        ).src = `https://api.hatch.lol${user.profilePicture}`;
+                        ).src = `https://api.hatch.lol${user.profilePicture}?size=40`;
                     });
                 } else {
                     document.querySelector("#project-edit-button").remove();
@@ -209,7 +209,7 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
                             document.querySelector("#comments").innerHTML = `
         <div class="comment">
           <div class="comment-top">
-            <img src="${`https://api.hatch.lol${comment.author.profilePicture}`}" class="comment-pfp" alt="Profile picture">
+            <img src="${`https://api.hatch.lol${comment.author.profilePicture}`}?size=40" class="comment-pfp" alt="Profile picture">
             <a href="/user/?u=${
                 comment.author.username
             }" class="comment-username">${comment.author.displayName}</a>
