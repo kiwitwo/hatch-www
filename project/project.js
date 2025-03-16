@@ -25,6 +25,29 @@ const member_rating = (rating) => {
   }
 }
 
+const ranges = {
+  years: 3600 * 24 * 365,
+  months: 3600 * 24 * 30,
+  weeks: 3600 * 24 * 7,
+  days: 3600 * 24,
+  hours: 3600,
+  minutes: 60,
+  seconds: 1
+};
+
+const time_ago = (input) => {
+  const date = new Date(input);
+  const formatter = new Intl.RelativeTimeFormat("en");
+  
+  const secondsElapsed = (date.getTime() - Date.now()) / 1000;
+  for (let key in ranges) {
+    if (ranges[key] < Math.abs(secondsElapsed)) {
+      const delta = secondsElapsed / ranges[key];
+      return formatter.format(Math.round(delta), key);
+    }
+  }
+}
+
 fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
   if (res.status === 200) {
     document
@@ -63,8 +86,8 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
 
       document.querySelector("#project-title").innerText = data.title;
       document.querySelector("#project-version").innerText = "v" + data.version;
-      document.querySelector("#project-publish-date").innerText =
-        `${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][new Date(data.uploadTs * 1000).getMonth()]} ${new Date(data.uploadTs * 1000).getDate()}, ${new Date(data.uploadTs * 1000).getFullYear()}`;
+      document.querySelector("#project-publish-date").innerText = time_ago(uploadTs);
+      document.querySelector("#project-publish-date").setAttribute("title", new Date(data.uploadTs).toDateString())
       document.querySelector("#project-embed").src =
         `https://warp.algebrahelp.org/embed.html?project_url=https://api.hatch.lol/projects/${id}/content${localStorage.getItem("token") && data.rating === "13+" ? `?token=${localStorage.getItem("token")}` : ""}`;
       document.querySelector("#project-description").innerHTML =
@@ -121,15 +144,17 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
 
       fetch(`https://api.hatch.lol/projects/${id}/comments`).then((res) => {
         res.json().then((data) => {
-          Object.entries(data).forEach((comment) => {
+          Object.values(data).forEach((comment) => {
+            let exact_date = new Date(comment.postDate).toDateString();
+            let date = time_ago(exact_date);
             document.querySelector("#comments").innerHTML = `
         <div class="comment">
           <div class="comment-top">
-            <img src="${`https://api.hatch.lol${comment[1].author.profilePicture}`}" class="comment-pfp" alt="Profile picture">
-            <a href="/user/?u=${comment[1].author.username}" class="comment-username">${comment[1].author.displayName}</a>
-            <p class="comment-time">${["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][new Date(comment[1].postDate * 1000).getMonth()]} ${new Date(comment[1].postDate * 1000).getDate()}, ${new Date(comment[1].postDate * 1000).getFullYear()}</p><a class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png" alt="Report"></a>
+            <img src="${`https://api.hatch.lol${comment.author.profilePicture}`}" class="comment-pfp" alt="Profile picture">
+            <a href="/user/?u=${comment.author.username}" class="comment-username">${comment[1].author.displayName}</a>
+            <p class="comment-time" title="${exact_date}">${date}</p><a class="comment-reply">↪ Reply</a><a href="#report" class="comment-report"><img src="https://rdr.lol/u/JRHxiZ.png" alt="Report"></a>
           </div>
-          <p class="content">${comment[1].replyTo === null ? "" : `<a href="/user/?u=${comment[1].replyTo}">@${comment[1].replyTo}</a> `}${text_modify(comment[1].content)}</p>
+          <p class="content">${comment.replyTo === null ? "" : `<a href="/user/?u=${comment[1].replyTo}">@${comment[1].replyTo}</a> `}${text_modify(comment[1].content)}</p>
         </div>
         ${document.querySelector("#comments").innerHTML}`;
           });
