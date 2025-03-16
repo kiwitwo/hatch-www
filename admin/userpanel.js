@@ -192,6 +192,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                                     );
                                     const data = await response.json();
                                     console.log(data);
+                                    alert("banned: " + data["banned"]);
                                 } catch (error) {
                                     console.error("Error! ", error);
                                 }
@@ -214,6 +215,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                                 );
                                 const data = await response.json();
                                 console.log(data);
+                                alert("banned: " + data["banned"]);
                             } catch (error) {
                                 console.error("Error! ", error);
                             }
