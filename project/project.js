@@ -87,7 +87,7 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
       document.querySelector("#project-title").innerText = data.title;
       document.querySelector("#project-version").innerText = "v" + data.version;
       document.querySelector("#project-publish-date").innerText = time_ago(data.uploadTs * 1000);
-      document.querySelector("#project-publish-date").setAttribute("title", new Date(data.uploadTs * 1000).toDateString())
+      document.querySelector("#project-publish-date").setAttribute("title", new Date(data.uploadTs * 1000).toString())
       document.querySelector("#project-embed").src =
         `https://warp.algebrahelp.org/embed.html?project_url=https://api.hatch.lol/projects/${id}/content${localStorage.getItem("token") && data.rating === "13+" ? `?token=${localStorage.getItem("token")}` : ""}`;
       document.querySelector("#project-description").innerHTML =
@@ -145,7 +145,7 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
       fetch(`https://api.hatch.lol/projects/${id}/comments`).then((res) => {
         res.json().then((data) => {
           Object.values(data).forEach((comment) => {
-            let exact_date = new Date(comment.postDate * 1000).toDateString();
+            let exact_date = new Date(comment.postDate * 1000).toString();
             let date = time_ago(comment.postDate * 1000);
             document.querySelector("#comments").innerHTML = `
         <div class="comment">
