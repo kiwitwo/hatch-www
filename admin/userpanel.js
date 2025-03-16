@@ -25,10 +25,33 @@ document.addEventListener("DOMContentLoaded", async () => {
                         const pfpUrl = userdata.profilePicture;
                         const displayName = userdata.displayName;
 
+                        const isBannedResponse = await fetch(
+                            `https://api.hatch.lol/admin/user-banned/${username}`,
+                            {
+                                headers: {
+                                    Token: localStorage.getItem("token"),
+                                },
+                            }
+                        );
+                        let isBanned;
+                        if (isBannedResponse.ok) {
+                            const isBannedData = await isBannedResponse.json();
+                            if (isBannedData.banned === true) {
+                                isBanned = "Banned";
+                                document.getElementById(
+                                    "displayname"
+                                ).innerHTML = `${displayName} <i class="fa-solid fa-user-slash fa-xs"></i>`;
+                            } else {
+                                isBanned = "Not Banned";
+                            }
+                        } else {
+                            isBanned = "Unknown";
+                        }
+
                         document.getElementById("admin").innerHTML = `
                             <div id="adminuser">
                                 <div id="adminusername">
-                                    ${username}
+                                    ${username} (${isBanned})
                                 </div>
                                 <div id="adminuserinfo">
                                     <div class="adminuserinfoitem">
@@ -193,8 +216,12 @@ document.addEventListener("DOMContentLoaded", async () => {
                                     const data = await response.json();
                                     console.log(data);
                                     alert("banned: " + data["banned"]);
+                                    window.location.reload();
                                 } catch (error) {
                                     console.error("Error! ", error);
+                                    alert(
+                                        "An error occurred banning this user."
+                                    );
                                 }
                             });
                     }
@@ -216,8 +243,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                                 const data = await response.json();
                                 console.log(data);
                                 alert("banned: " + data["banned"]);
+                                window.location.reload();
                             } catch (error) {
                                 console.error("Error! ", error);
+                                alert("An error occurred unbanning this user.");
                             }
                         });
                 }
