@@ -123,11 +123,7 @@ fetch(`https://api.hatch.lol/projects/${id}`).then((res) => {
             document.querySelector("#project-age-rating").innerText =
                 data.rating;
 
-            if (data.rating === "13+") {
-                document
-                    .querySelector("#project-age-rating")
-                    .classList.add("teen");
-            }
+            document.querySelector("#project-age-rating").classList.add(`teen-${data.rating}`);
 
             fetch("https://api.hatch.lol/auth/me", {
                 headers: {

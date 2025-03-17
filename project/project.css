@@ -64,8 +64,21 @@
     font-size: initial;
     margin-left: 10px;
 }
-#project-age-rating.teen {
-    background-color: #ff7158;
+#project-age-rating.teen-E {
+    background-color: #b0ff70;
+    color: #000000;
+}
+#project-age-rating.teen-7\+ {
+    background-color: #e3ff67;
+    color: #000000;
+}
+#project-age-rating.teen-9\+ {
+    background-color: #ffe367;
+    color: #000000;
+}
+#project-age-rating.teen-13\+ {
+    background-color: #ff736e;
+    color: #000000;
 }
 .embed {
     width: 100%;
