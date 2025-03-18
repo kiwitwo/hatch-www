@@ -30,7 +30,6 @@ document.querySelector("#submit").addEventListener("click", function () {
       method: "POST",
       body: formData,
       headers: {
-        // "Content-Type": "multipart/form-data",
         Token: localStorage.getItem("token"),
       },
     });
@@ -52,5 +51,12 @@ document.querySelector("#submit").addEventListener("click", function () {
       banner_image: bannerImage,
       theme: document.getElementById("theme").value
     })
+  }).then(async (e) => {
+    if (e.ok) {
+      alert("Profile info saved");
+    } else {
+      let error = (await e.json())["error"];
+      alert(`Could not update profile. ${error}`);
+    }
   });
 });
