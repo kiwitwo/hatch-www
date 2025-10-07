@@ -239,12 +239,14 @@
 
 <style>
   :root {
-    --block1: #1b1b1b;
+    --block1: #29272555;
     --bodyText: #fff;
-    --links: #2196f3;
+    --links: #889aff;
     --primary: #ffbd59;
     --secondary: #ffe159;
-    color-scheme: dark;
+    --sub: #979797;
+
+    --themeGradient: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
 
     --bgGradient: radial-gradient(circle at top left, #42331b 00%, #000 45%);
     --bgDots: radial-gradient(#7a7a7a 0.0625rem, transparent 0.0625rem);
@@ -253,6 +255,8 @@
     --headerBack: #1b1b1bcc;
     --navBubble: #dddddd33; /* the floaty bubble thing over nav links */
     --navLogin: #ffbd5944; /* used for outline around log in button in nav and search bar and other stuff */
+
+    color-scheme: dark;
   }
 
   :global(*) {
@@ -315,7 +319,7 @@
     padding: 0.25rem 1rem;
   }
 
-  a {
+  :global(a) {
     color: var(--links);
     text-decoration: underline;
   }
@@ -400,7 +404,7 @@
     height: 2.4em;
     padding: 0.5rem 0.75rem;
     background: var(--secondary);
-    background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+    background: var(--themeGradient);
     border-radius: 1000rem;
     color: #000;
     text-decoration: none;
@@ -423,7 +427,7 @@
     color: inherit;
     text-decoration: none;
     height: fit-content;
-    background-color: #1b1b1b55;
+    background-color: var(--block1);
     padding: 0;
     padding-left: 0.4rem;
     border-radius: 1000px;
@@ -451,7 +455,7 @@
     width: 100%;
     height: 100%;
     padding: 0.5rem 0.75rem;
-    background-color: #1b1b1b55;
+    background-color: var(--block1);
     outline: 0.125rem solid var(--navLogin);
     border-radius: 1000rem;
     color: #fff;
@@ -477,7 +481,7 @@
     height: 2.5rem;
     padding: 0;
     background-color: var(--primary);
-    background-image: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+    background-image: var(--themeGradient);
     font-size: 1em;
     color: #000;
     font: inherit;
@@ -488,6 +492,7 @@
     margin-right: 0.375rem;
     padding: 0.5rem 1rem;
     transition: all 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
+    cursor: pointer;
   }
 
   :global(.pill-btn:hover) {
@@ -530,7 +535,6 @@
   }
 
   :global(*::-webkit-scrollbar-track) {
-    background: #1b1b1b;
     border-radius: 0.625rem;
   }
 
@@ -579,7 +583,6 @@
     gap: 0.75rem;
   }
 
-  #userbox-inner > p,
   #ub-name,
   #ub-notifs-top,
   .ub-notif-alert > p,
@@ -751,36 +754,6 @@
     background-image: linear-gradient(0deg, #ffbd59 0%, rgba(0, 0, 0, 0) 20%);
   }
 
-  :global(.project-rating) {
-    background-image: linear-gradient(#000000c4);
-    border-radius: 2rem;
-    padding: 0.1rem 0.5rem;
-    text-wrap: nowrap;
-    color: var(--project-rating-color);
-    background-color: var(--project-rating-color);
-    outline: 0.0625rem solid var(--project-rating-color);
-  }
-
-  :global(.project-rating.rating-N\/A) {
-    --project-rating-color: #d8d8d8;
-  }
-
-  :global(.project-rating.rating-E) {
-    --project-rating-color: #8ef58a;
-  }
-
-  :global(.project-rating.rating-7\+) {
-    --project-rating-color: #f1e683;
-  }
-
-  :global(.project-rating.rating-9\+) {
-    --project-rating-color: #f39c74;
-  }
-
-  :global(.project-rating.rating-13\+) {
-    --project-rating-color: #fa7a7a;
-  }
-
   :global(input:where([type="text"], [type="password"], [type="email"])) {
     font: inherit;
     border: none;
@@ -788,5 +761,20 @@
     outline: 0.125rem solid #ffbd5944;
     background-color: var(--block1);
     padding: 0.5rem 0.75rem;
+  }
+
+  :global(.pfp) {
+    border-radius: 30%;
+    width: 3rem;
+    aspect-ratio: 1 / 1;
+  }
+
+  :global(a.user, a .user) {
+    color: var(--primary);
+  }
+
+  :global(sub) {
+    font-size: 0.9rem;
+    color: var(--sub);
   }
 </style>

@@ -1,3 +1,7 @@
+<script>
+    import ProjectRating from "$lib/components/ProjectRating.svelte";
+
+</script>
 <h1>Guide to Moderation</h1>
 <p>This page provides detailed information about how moderation is done on the Hatch website.</p>
 <h2 id="project-ratings">Project Ratings</h2>
@@ -9,7 +13,7 @@
   <tbody>
     <tr>
       <td>
-        <span class="project-rating rating-N/A">N/A</span>
+        <ProjectRating rating="N/A" />
       </td>
       <td>
         This project has not been rated yet. Only visitors who are logged in can view this project.
@@ -18,7 +22,7 @@
     </tr>
     <tr>
       <td>
-        <span class="project-rating rating-E">Safe</span>
+        <ProjectRating rating="E" />
       </td>
       <td>
         This project is suitable for all audiences. This project contains little to no violence
@@ -27,7 +31,7 @@
     </tr>
     <tr>
       <td>
-        <span class="project-rating rating-7+">Light</span>
+        <ProjectRating rating="7+" />
       </td>
       <td>
         This project is suitable for most audiences. This project contains little to no violence
@@ -36,7 +40,7 @@
     </tr>
     <tr>
       <td>
-        <span class="project-rating rating-9+">Moderate</span>
+        <ProjectRating rating="9+" />
       </td>
       <td>
         This project is suitable for some audiences. This project may contain some violence,
@@ -46,7 +50,7 @@
     </tr>
     <tr>
       <td>
-        <span class="project-rating rating-13+">Restricted</span>
+        <ProjectRating rating="13+" />
       </td>
       <td>
         This project only suitable for teenagers. This project may contain intense violence, blood,

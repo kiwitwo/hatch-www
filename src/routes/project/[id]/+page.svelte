@@ -1,0 +1,123 @@
+<script lang="ts">
+  import ProjectRating from "$lib/components/ProjectRating.svelte";
+  import { parse } from "marked";
+
+  const { data } = $props();
+</script>
+
+<style>
+  section {
+    display: flex;
+    gap: 2rem;
+  }
+
+  section:has(iframe) {
+    height: 412px;
+  }
+
+  iframe {
+    flex-shrink: 0;
+  }
+
+  .project {
+    border-radius: 0.7rem;
+    width: 482px;
+    height: 412px;
+    background-color: var(--block1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  div:has(> .author) {
+    flex-shrink: 0;
+  }
+
+  .author {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    text-decoration: none;
+    color: unset;
+    flex-grow: 1;
+  }
+
+  aside {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  aside > div {
+    overflow-y: auto;
+    padding: 0 0.1rem;
+  }
+
+  comments {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  comments > div {
+    background-color: var(--block1);
+    border-radius: 0.8rem;
+    padding: 0.6rem;
+  }
+</style>
+
+<section>
+  {#if data.rating === "13+"}
+    <div class="project">
+      <h3>This project is rated 13+</h3>
+      <p>Please log in or sign up to view this project.</p>
+    </div>
+  {:else}
+    <iframe title={data.title} src="https://turbowarp.org/embed?fullscreen-background=%231b1b1b&addons=pause,gamepad,mute-project&project_url=https://api.hatch.lol/projects/{data.id}/content" width="482" height="412" allowtransparency={true} frameborder="0" scrolling="no" allowfullscreen style="color-scheme: light;"></iframe>
+  {/if}
+  <aside>
+    <div>
+      <div class="author">
+        <a class="author" href="/user/{data.author.username}">
+          <img src="https://api.hatch.lol/users/{data.author.username}/pfp" alt={data.author.username} class="pfp">
+          <div>
+            <span class="user">{data.author.displayName}</span><br>
+            <sub>@{data.author.username}</sub>
+          </div>
+        </a>
+        <button class="pill-btn">Follow</button>
+      </div>
+    </div>
+    <div>
+      <h2>{data.title}</h2>
+      <ProjectRating rating={data.rating} />
+      {#await parse(data.description)}
+        <p>Please wait</p>
+      {:then description}
+        {@html description}
+      {/await}
+    </div>
+  </aside>
+</section>
+<h3>Comments ({data.commentCount})</h3>
+<comments>
+  {#each data.comments as comment}
+    <div id="comment-{comment.id}">
+      <a class="author" href="/user/{comment.author.username}">
+        <img src="https://api.hatch.lol/users/{comment.author.username}/pfp" alt={comment.author.username} class="pfp">
+        <div>
+          <span class="user">{comment.author.displayName}</span><br>
+          <sub>@{comment.author.username}</sub>
+        </div>
+      </a>
+      <div>
+        {#await parse(comment.content)}
+          <p>Please wait</p>
+        {:then content}
+          {@html content}
+        {/await}
+      </div>
+    </div>
+  {/each}
+</comments>

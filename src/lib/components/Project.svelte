@@ -43,7 +43,7 @@
     box-sizing: content-box;
     text-decoration: none;
     width: 10.67rem;
-    background-color: #14141488;
+    background-color: var(--block1);
     border-radius: 0.625rem;
     transition: all 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
   }
@@ -55,7 +55,7 @@
   }
 
   a:has(img):hover {
-    background-color: #42331b55;
+    background-color: var(--block1);
     box-shadow: 0 0 1rem 0 #ffbd59cc;
   }
 
@@ -78,7 +78,7 @@
     text-wrap: nowrap;
     white-space: nowrap;
     width: inherit;
-    color: #ddd;
+    color: var(--text);
   }
 
   .stats {
