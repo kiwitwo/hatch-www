@@ -34,6 +34,14 @@
       username: "ElizaDoesStuff"
     },
     {
+      name: "Han",
+      description: "yab member, forumer, coder",
+      position: "Frontend, Moderator",
+      avatar: "https://avatars.githubusercontent.com/u/188119532",
+      scratch: "han614698",
+      username: "han"
+    },
+    {
       name: "Kat",
       description: "I started out with programming in Scratch, then went on to start working in HTML/CSS (No JS) and Godot.",
       position: "Frontend",
