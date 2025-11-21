@@ -4,6 +4,16 @@
   const { rating }: { rating: ProjectRating } = $props();
 </script>
 
+<span class="rating-{rating}"
+  >{{
+    "N/A": "N/A",
+    E: "Safe",
+    "7+": "Light",
+    "9+": "Moderate",
+    "13+": "Restricted"
+  }[rating]}</span
+>
+
 <style>
   span {
     background-image: linear-gradient(#000000c4);
@@ -35,11 +45,3 @@
     --project-rating-color: #fa7a7a;
   }
 </style>
-
-<span class="rating-{rating}">{{
-  "N/A": "N/A",
-  "E": "Safe",
-  "7+": "Light",
-  "9+": "Moderate",
-  "13+": "Restricted"
-}[rating]}</span>

@@ -157,10 +157,10 @@
     </a>
   </div>
 </div>
-<div class="home-featured-titlebox">
+<div class="title-box">
   <h2>Featured Projects</h2>
   <!-- svelte-ignore a11y_invalid_attribute -->
-  <a href="#" class="home-featured-seeall"
+  <a href="#" class="see-all"
     >See All&ensp;<i class="fa-solid fa-square-up-right"></i></a
   >
 </div>
@@ -218,9 +218,9 @@
   Guidelines. Thanks!
 </p>
 <div class="home-news">
-  <div class="home-featured-titlebox">
+  <div class="title-box">
     <h2>Hatch News</h2>
-    <a href="https://forums.hatch.lol" class="home-featured-seeall"
+    <a href="https://forums.hatch.lol" class="see-all"
       >See All&ensp;<i class="fa-solid fa-square-up-right"></i></a
     >
   </div>
@@ -348,30 +348,6 @@
     padding: 1rem;
     align-items: center;
     gap: 0.75rem;
-  }
-
-  .home-featured-titlebox {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 2;
-    position: relative;
-  }
-
-  .home-featured-seeall {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2em;
-    transition: all 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
-  }
-
-  .home-featured-seeall:hover {
-    color: var(--primary);
-    font-weight: bold;
-    text-shadow:
-      0 0 0.5rem #ffe15955,
-      0 0 0.75rem #ffbd5955,
-      0 0 1rem #ffbd5955;
   }
 
   .home-why-section {

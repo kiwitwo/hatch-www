@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { page } from "$app/state";
+  import { page } from "$app/state";
   import favicon from "$lib/assets/favicon.svg";
   import { onMount } from "svelte";
   import { fly } from "svelte/transition";
@@ -32,7 +32,7 @@
           link.href === page.url.href.slice(0, page.url.href.length - 1)
         )
           link.classList.add("nav-link-cur");
-          else link.classList.remove("nav-link-cur");
+        else link.classList.remove("nav-link-cur");
         link.addEventListener("mouseenter", () => moveBubble(link));
         link.addEventListener("focus", () => moveBubble(link));
       });
@@ -261,6 +261,7 @@
 
   :global(*) {
     box-sizing: border-box;
+    word-wrap: break-word;
   }
 
   :global(body) {
@@ -462,7 +463,7 @@
     transition: all 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
   }
 
-  :global(h1) {
+  :global(h1:not(.comment h1)) {
     padding: 0;
     margin: 0;
     font-size: 5em;
@@ -766,6 +767,7 @@
   :global(.pfp) {
     border-radius: 30%;
     width: 3rem;
+    height: 3rem;
     aspect-ratio: 1 / 1;
   }
 
@@ -776,5 +778,39 @@
   :global(sub) {
     font-size: 0.9rem;
     color: var(--sub);
+  }
+
+  :global(.action-row) {
+    display: flex;
+    overflow-y: visible !important;
+    align-items: center;
+  }
+
+  :global(.action-row > :is(a, button)) {
+    flex: 1 0;
+  }
+
+  :global(.title-box) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+  }
+
+  :global(.see-all) {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: all 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
+  }
+
+  :global(.see-all:hover) {
+    color: var(--primary);
+    font-weight: bold;
+    text-shadow:
+      0 0 0.5rem #ffe15955,
+      0 0 0.75rem #ffbd5955,
+      0 0 1rem #ffbd5955;
   }
 </style>

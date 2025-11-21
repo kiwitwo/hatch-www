@@ -1,7 +1,7 @@
 <script>
-    import ProjectRating from "$lib/components/ProjectRating.svelte";
-
+  import ProjectRating from "$lib/components/ProjectRating.svelte";
 </script>
+
 <h1>Guide to Moderation</h1>
 <p>This page provides detailed information about how moderation is done on the Hatch website.</p>
 <h2 id="project-ratings">Project Ratings</h2>
