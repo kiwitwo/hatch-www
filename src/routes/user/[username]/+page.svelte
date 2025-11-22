@@ -51,6 +51,64 @@
   {/each}
 </div>
 
+<h2>Comments ({data.comments.length})</h2>
+<comments>
+  {#each data.comments as comment}
+    <div id="comment-{comment.id}" class="comment">
+      <a class="author" href="/user/{comment.author.username}">
+        <img
+          src="https://api.hatch.lol/users/{comment.author.username}/pfp"
+          alt={comment.author.username}
+          class="pfp"
+        />
+        <div>
+          <span class="user">{comment.author.displayName}</span><br />
+          <sub>@{comment.author.username}</sub>
+        </div>
+      </a>
+      <div>
+        {#await parse(comment.content)}
+          <p>Please wait</p>
+        {:then content}
+          {@html content}
+        {/await}
+      </div>
+      {#if comment.hasReplies}
+        {#await fetch(`https://api.hatch.lol/projects/${data.id}/comments/${comment.id}/replies`)}
+          <p>Loading replies</p>
+        {:then response}
+          {#await response.json()}
+            <p>Loading replies</p>
+          {:then replies}
+            {#each replies as reply}
+              <div id="comment-{reply.id}" class="comment reply">
+                <a class="author" href="/user/{reply.author.username}">
+                  <img
+                    src="https://api.hatch.lol/users/{reply.author.username}/pfp"
+                    alt={reply.author.username}
+                    class="pfp"
+                  />
+                  <div>
+                    <span class="user">{reply.author.displayName}</span><br />
+                    <sub>@{reply.author.username}</sub>
+                  </div>
+                </a>
+                <div>
+                  {#await parse(reply.content)}
+                    <p>Please wait</p>
+                  {:then content}
+                    {@html content}
+                  {/await}
+                </div>
+              </div>
+            {/each}
+          {/await}
+        {/await}
+      {/if}
+    </div>
+  {/each}
+</comments>
+
 <style>
   #banner {
     width: 100%;

@@ -813,4 +813,20 @@
       0 0 0.75rem #ffbd5955,
       0 0 1rem #ffbd5955;
   }
+
+  :global(.project-row) {
+    width: 100%;
+    height: 12.5rem;
+    /*backdrop-filter: blur(0.625rem);*/
+    border-radius: 1.25rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    align-items: center;
+    gap: 0.75rem;
+  }
 </style>

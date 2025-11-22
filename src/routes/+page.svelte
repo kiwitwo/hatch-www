@@ -164,8 +164,7 @@
     >See All&ensp;<i class="fa-solid fa-square-up-right"></i></a
   >
 </div>
-<div id="home-featured">
-  <!-- svelte-ignore a11y_invalid_attribute -->
+<div class="project-row">
   {#each projects as project}
     <Project
       author={project.author}
@@ -332,22 +331,6 @@
 
   .home-social-btn:hover {
     box-shadow: 0 0 1rem 0 #ffbd59cc;
-  }
-
-  #home-featured {
-    width: 100%;
-    height: 12.5rem;
-    /*backdrop-filter: blur(0.625rem);*/
-    border-radius: 1.25rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    z-index: 2;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    padding: 1rem;
-    align-items: center;
-    gap: 0.75rem;
   }
 
   .home-why-section {

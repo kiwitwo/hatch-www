@@ -22,7 +22,9 @@
     <div class="stats">
       <i class="fa-solid fa-eye"></i> 2500 |
       <i class="fa-solid fa-up-down"></i>
-      {upvotes}/{downvotes} ({Math.round((upvotes / (upvotes + downvotes)) * 100)}%)
+      {upvotes}/{downvotes} {#if upvotes > 0 || downvotes > 0}
+        ({Math.round((upvotes / (upvotes + downvotes)) * 100)}%)
+      {/if}
     </div>
   </div>
 </a>
