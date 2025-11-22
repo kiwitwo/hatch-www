@@ -21,7 +21,7 @@
 <img src="/assets/neon.png" id="home-neon-logo" alt="Hatch logo" />
 <div id="home-info-top">
   <h1 id="big-header" class="home-text">
-    Let's get <span>cracking</span>
+    Welcome to <span>Hatch</span>
   </h1>
   <p>
     Hatch isn't out yet, but when it is, we want you to be the first to know! Join our Discord
@@ -77,60 +77,6 @@
     <a href="https://bsky.app/profile/hatch.lol" class="home-social-btn" aria-label="Bluesky"
       ><i class="fa-brands fa-bluesky"></i></a
     >
-    <a href="https://darflen.com/users/hatch" class="home-social-btn" aria-label="Darflen"
-      ><svg
-        version="1.1"
-        id="Layer_1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        x="0px"
-        y="0px"
-        viewBox="0 0 401.3 292.7"
-        width="30"
-        height="15"
-        style="enable-background: new 0 0 401.3 292.7"
-        xml:space="preserve"
-      >
-        <style type="text/css">
-          .st0 {
-            fill-rule: evenodd;
-            clip-rule: evenodd;
-          }
-        </style>
-        <g>
-          <path
-            class="st0"
-            d="M7.5,134.4c-3.9,3.9-3.9,10.3,0,14.1l29.2,29.2c3.9,
-                                    3.9,10.3,3.9,14.1,0l83.8-83.8c3.9-3.9,3.9-10.3,
-                                    0-14.1l-29.2-29.2c-3.9-3.9-10.3-3.9-14.1,0L7.5,134.4z"
-          />
-        </g>
-        <g>
-          <path
-            class="st0"
-            d="M266.3,198.5c-3.9,3.9-3.9,10.3,0,14.1l29.2,29.2c3.9,
-                                    3.9,10.3,3.9,14.1,0l83.8-83.8c3.9-3.9,3.9-10.3,0-14.1l-29.2-29.2c-3.9
-                                    -3.9-10.3-3.9-14.1,0L266.3,198.5z"
-          />
-        </g>
-        <g>
-          <path
-            class="st0"
-            d="M115.4,242.2c-3.9,3.9-3.9,10.3,0,14.1l29.2,29.2c3.9,
-                                    3.9,10.3,3.9,14.1,0l181.2-181.2c3.9-3.9,3.9-10.3,0-14.1l-29.2-29.2c-
-                                    3.9-3.9-10.3-3.9-14.1,0L115.4,242.2z"
-          />
-        </g>
-        <g>
-          <path
-            class="st0"
-            d="M61.4,188.3c-3.9,3.9-3.9,10.3,0,14.1l29.2,29.2c3.9,
-                                    3.9,10.3,3.9,14.1,0L285.9,50.4c3.9-3.9,3.9-10.3,0-14.1L256.8,7.1c-3.
-                                    9-3.9-10.3-3.9-14.1,0L61.4,188.3z"
-          />
-        </g>
-      </svg></a
-    >
     <a href="https://github.com/hatchdotlol" class="home-social-btn" aria-label="GitHub"
       ><i class="fa-brands fa-github"></i></a
     >
@@ -160,9 +106,7 @@
 <div class="title-box">
   <h2>Featured Projects</h2>
   <!-- svelte-ignore a11y_invalid_attribute -->
-  <a href="#" class="see-all"
-    >See All&ensp;<i class="fa-solid fa-square-up-right"></i></a
-  >
+  <a href="#" class="see-all">See All&ensp;<i class="fa-solid fa-square-up-right"></i></a>
 </div>
 <div class="project-row">
   {#each projects as project}
