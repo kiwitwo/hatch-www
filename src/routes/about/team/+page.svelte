@@ -16,7 +16,7 @@
       position: "CEO, Frontend",
       avatar: "https://avatars.githubusercontent.com/u/118082374",
       scratch: "-gr",
-      username: "jab11n"
+      username: "-gr"
     },
     {
       name: "AJ",
@@ -25,7 +25,7 @@
       position: "Backend",
       avatar: "https://avatars.githubusercontent.com/u/81255936",
       scratch: "ajskateboarder",
-      username: "aj"
+      username: "ajskateboarder"
     },
     {
       name: "Eliza",
@@ -50,7 +50,7 @@
         "I started out with programming in Scratch, then went on to start working in HTML/CSS (No JS) and Godot.",
       position: "Frontend",
       avatar: "https://avatars.githubusercontent.com/u/100965627",
-      scratch: "autofirejm",
+      scratch: "Autofirejm",
       username: "kat"
     },
     {
@@ -58,6 +58,7 @@
       description: "Male, teenager, BOXBOY WIKI! admin, and proud Antarctica Citizen.",
       position: "Proofreading, Waffle Distribution",
       avatar: "https://boxboy.wiki/mw/images/thumb/0/05/Kiwi_logo.png/400px-Kiwi_logo.png",
+      scratch: "minikiwigeek2",
       username: "kiwi"
     },
     {
@@ -69,9 +70,9 @@
       username: "rand"
     },
     {
-      name: "Rayne Cloudy",
+      name: "Rayne",
       description:
-        "i'm a teenage software engineer and high school sophomore who likes the color pink a lot. i'm going to major in computer science when i go to college, but that's not for another few years, haha....",
+        "i'm a teenage software engineer and high school sophomore :]",
       position: "Frontend, Forums",
       avatar: "https://avatars.githubusercontent.com/u/129226914",
       scratch: "breakfast_for_dinner",
@@ -139,8 +140,8 @@
       description: "i really like space and making games on scratch!",
       position: "Tester",
       avatar: "https://uploads.scratch.mit.edu/get_image/user/34018398_500x500.png",
-      scratch: "jeffalo",
-      username: "jeffalo"
+      scratch: "Jeffalo",
+      username: "Jeffalo"
     },
     {
       name: "JustASeaCow",
