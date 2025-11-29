@@ -4,9 +4,9 @@
   import { onMount } from "svelte";
   import { fly } from "svelte/transition";
 
-  let { children } = $props();
+  let { children, data } = $props();
 
-  let loggedIn = $state(false);
+  let currentUser = $state(data.user);
   let popupOpen = $state(false);
 
   onMount(() => {
@@ -84,13 +84,13 @@
     <a class="nav-link" href="https://wiki.hatch.lol">Wiki</a>
     <a class="nav-link" href="https://forums.hatch.lol">Forums</a>
   </div>
-  {#if loggedIn}
+  {#if currentUser}
     <!-- svelte-ignore a11y_invalid_attribute -->
     <button id="nav-user" onclick={() => (popupOpen = !popupOpen)}>
       <div class="h-notifs">
         <i class="fa-solid fa-bell"></i>&nbsp;<span>5</span>
       </div>
-      <img src="/hatchling.webp" alt="Your profile" />
+      <img src="https://api.hatch.lol/users/{currentUser.name}/pfp" alt="Your profile" />
       <!-- i removed the alt text because it messes up the navbar height if the image cannot load -->
       <!-- too bad because alt text it required for accessibility -->
       <!-- what if alt text didnt show when the image didnt load 🤯 that would be convenient -->
@@ -102,11 +102,11 @@
     </div>
   {/if}
 </header>
-{#if loggedIn && popupOpen}
+{#if currentUser && popupOpen}
   <userbox transition:fly={{ duration: 100, y: "-0.5rem" }}>
     <div id="userbox-inner">
       <div>
-        <p id="ub-name">Hello, @username!</p>
+        <p id="ub-name">Hello, {currentUser.displayName}!</p>
         <p id="ub-notifs-top">
           <i class="fa-solid fa-circle fa-xs"></i>&ensp;<span>5 new</span>
         </p>
@@ -147,7 +147,7 @@
         </div>
       </div>
       <div id="ub-links">
-        <a href="/" aria-label="Profile"><i class="fa-solid fa-user"></i></a><a
+        <a href="/users/{currentUser.name}" aria-label="Profile"><i class="fa-solid fa-user"></i></a><a
           href="/"
           aria-label="Settings"><i class="fa-solid fa-gear"></i></a
         ><a href="/" aria-label="Log out"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
