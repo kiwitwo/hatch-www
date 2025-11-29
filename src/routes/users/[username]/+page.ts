@@ -12,7 +12,8 @@ export const load = async ({ params }) => {
   if (!res.ok || !res2.ok) error(404);
   const user = (await res.json()) as User;
   const commentsObject = (await res2.json()) as { [key: string]: Comment };
-  const projects = (await res3.json()) as Project[];
+  const projectsJson = res3.ok ? ((await res3.json()) as Project[] | null) : [];
+  const projects = Array.isArray(projectsJson) ? projectsJson : [];
   let comments: Comment[] = [];
   for (let key of Object.keys(commentsObject)) {
     comments.unshift(commentsObject[key]);

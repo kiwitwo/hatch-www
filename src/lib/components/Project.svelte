@@ -22,7 +22,8 @@
     <div class="stats">
       <i class="fa-solid fa-eye"></i> 2500 |
       <i class="fa-solid fa-up-down"></i>
-      {upvotes}/{downvotes} {#if upvotes > 0 || downvotes > 0}
+      {upvotes}/{downvotes}
+      {#if upvotes > 0 || downvotes > 0}
         ({Math.round((upvotes / (upvotes + downvotes)) * 100)}%)
       {/if}
     </div>
@@ -48,6 +49,7 @@
     background-color: var(--block1);
     border-radius: 0.625rem;
     transition: all 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
+    z-index: 2;
   }
 
   a:has(img) > div {

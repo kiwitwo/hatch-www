@@ -1,17 +1,19 @@
 <script lang="ts">
-    import Project from "$lib/components/Project.svelte";
+  import Project from "$lib/components/Project.svelte";
   import { parse } from "marked";
 
   const { data } = $props();
 </script>
 
 <main>
-  <img id="banner" src={data.bannerImage} alt="{data.displayName}'s banner">
+  <img id="banner" src={data.bannerImage} alt="{data.displayName}'s banner" />
   <info>
-    <img class="pfp" src="https://api.hatch.lol/users/{data.name}/pfp" alt={data.displayName}>
-    <div style:flex-grow=1>
+    <img class="pfp" src="https://api.hatch.lol/users/{data.name}/pfp" alt={data.displayName} />
+    <div style:flex-grow="1">
       <h2>{data.displayName}</h2>
-      <sub>@{data.name} • {#if data.hatchTeam}Hatch Team{:else}Hatchling{/if}</sub>
+      <sub
+        >@{data.name} • {#if data.hatchTeam}Hatch Team{:else}Hatchling{/if}</sub
+      >
     </div>
     <div class="stats">
       <h3>{data.followerCount}</h3>
@@ -27,17 +29,15 @@
     </div>
   </info>
   <div>
-    {#await parse(data.bio)}
-      <p>Please wait</p>
-    {:then content}
-      {@html content}
-    {/await}
+    {@html parse(data.bio ?? "")}
   </div>
 </main>
 
 <div class="title-box">
   <h2>Shared Projects</h2>
-  <a class="see-all" href="/user/{data.name}/projects">See All&ensp;<i class="fa-solid fa-square-up-right"></i></a>
+  <a class="see-all" href="/user/{data.name}/projects"
+    >See All&ensp;<i class="fa-solid fa-square-up-right"></i></a
+  >
 </div>
 <div class="project-row">
   {#each data.projects as project}
@@ -67,11 +67,7 @@
         </div>
       </a>
       <div>
-        {#await parse(comment.content)}
-          <p>Please wait</p>
-        {:then content}
-          {@html content}
-        {/await}
+        {@html parse(comment.content ?? "")}
       </div>
       {#if comment.hasReplies}
         {#await fetch(`https://api.hatch.lol/projects/${data.id}/comments/${comment.id}/replies`)}
@@ -94,11 +90,7 @@
                   </div>
                 </a>
                 <div>
-                  {#await parse(reply.content)}
-                    <p>Please wait</p>
-                  {:then content}
-                    {@html content}
-                  {/await}
+                  {@html parse(reply.content ?? "")}
                 </div>
               </div>
             {/each}
