@@ -27,7 +27,7 @@
   <aside>
     <div>
       <div class="author">
-        <a class="author" href="/user/{data.author.username}">
+        <a class="author" href="/users/{data.author.username}">
           <img
             src="https://api.hatch.lol/users/{data.author.username}/pfp"
             alt={data.author.username}
@@ -66,7 +66,7 @@
 <comments>
   {#each data.comments as comment}
     <div id="comment-{comment.id}" class="comment">
-      <a class="author" href="/user/{comment.author.username}">
+      <a class="author" href="/users/{comment.author.username}">
         <img
           src="https://api.hatch.lol/users/{comment.author.username}/pfp"
           alt={comment.author.username}
@@ -93,7 +93,7 @@
           {:then replies}
             {#each replies as reply}
               <div id="comment-{reply.id}" class="comment reply">
-                <a class="author" href="/user/{reply.author.username}">
+                <a class="author" href="/users/{reply.author.username}">
                   <img
                     src="https://api.hatch.lol/users/{reply.author.username}/pfp"
                     alt={reply.author.username}

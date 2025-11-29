@@ -17,15 +17,15 @@
     </div>
     <div class="stats">
       <h3>{data.followerCount}</h3>
-      <span><a href="/user/{data.name}/followers">Followers</a></span>
+      <span><a href="/users/{data.name}/followers">Followers</a></span>
     </div>
     <div class="stats">
       <h3>{data.followingCount}</h3>
-      <span><a href="/user/{data.name}/following">Following</a></span>
+      <span><a href="/users/{data.name}/following">Following</a></span>
     </div>
     <div class="stats">
       <h3>{data.projectCount}</h3>
-      <span><a href="/user/{data.name}/projects">Projects</a></span>
+      <span><a href="/users/{data.name}/projects">Projects</a></span>
     </div>
   </info>
   <div>
@@ -35,7 +35,7 @@
 
 <div class="title-box">
   <h2>Shared Projects</h2>
-  <a class="see-all" href="/user/{data.name}/projects"
+  <a class="see-all" href="/users/{data.name}/projects"
     >See All&ensp;<i class="fa-solid fa-square-up-right"></i></a
   >
 </div>
@@ -55,7 +55,7 @@
 <comments>
   {#each data.comments as comment}
     <div id="comment-{comment.id}" class="comment">
-      <a class="author" href="/user/{comment.author.username}">
+      <a class="author" href="/users/{comment.author.username}">
         <img
           src="https://api.hatch.lol/users/{comment.author.username}/pfp"
           alt={comment.author.username}
@@ -78,7 +78,7 @@
           {:then replies}
             {#each replies as reply}
               <div id="comment-{reply.id}" class="comment reply">
-                <a class="author" href="/user/{reply.author.username}">
+                <a class="author" href="/users/{reply.author.username}">
                   <img
                     src="https://api.hatch.lol/users/{reply.author.username}/pfp"
                     alt={reply.author.username}

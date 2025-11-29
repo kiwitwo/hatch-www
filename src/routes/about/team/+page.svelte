@@ -187,7 +187,7 @@
           <div>{member.description ?? "No description provided."}</div>
           <p>
             {#if member.username}
-              <a href="/user/{member.username}">Hatch (@{member.username})</a>
+              <a href="/users/{member.username}">Hatch (@{member.username})</a>
             {/if}
             {#if member.scratch}
               <br /><a href="//scratch.mit.edu/users/{member.scratch}"
@@ -215,7 +215,7 @@
           <div>{member.description ?? "No description provided."}</div>
           <p>
             {#if member.username}
-              <a href="/user/{member.username}">Hatch (@{member.username})</a>
+              <a href="/users/{member.username}">Hatch (@{member.username})</a>
             {/if}
             {#if member.scratch}
               <br /><a href="//scratch.mit.edu/users/{member.scratch}"
