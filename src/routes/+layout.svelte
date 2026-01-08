@@ -233,7 +233,7 @@
     </a>
   </div>
   <div class="foot-copyright">
-    <p>&copy; 2024-2025 Hatch.lol</p>
+    <p>&copy; 2024-2026 Hatch.lol</p>
   </div>
 </footer>
 
