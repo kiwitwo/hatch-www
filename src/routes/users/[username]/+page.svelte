@@ -3,6 +3,7 @@
   import { parse } from "marked";
 
   const { data } = $props();
+  console.log(data);
 </script>
 
 <main>
@@ -40,8 +41,9 @@
       <span><a href="/users/{data.name}/projects">Projects</a></span>
     </div>
   </info>
-  <div>
+  <div id="info">
     {@html parse(data.bio ?? "")}
+    <div id="misc-info"></div>
   </div>
 </main>
 
@@ -120,6 +122,12 @@
     border-radius: 0.8rem;
     display: block;
     object-fit: cover;
+  }
+
+  #info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   main info {

@@ -94,6 +94,7 @@
       <!-- i removed the alt text because it messes up the navbar height if the image cannot load -->
       <!-- too bad because alt text it required for accessibility -->
       <!-- what if alt text didnt show when the image didnt load 🤯 that would be convenient -->
+      <!-- hey i think theres a different attribute we can use instead of alt and it doesnt show up on the page i forgot it tho. -->
     </button>
   {:else}
     <div id="nav-login">
@@ -147,10 +148,13 @@
         </div>
       </div>
       <div id="ub-links">
-        <a href="/users/{currentUser.name}" aria-label="Profile"><i class="fa-solid fa-user"></i></a><a
-          href="/"
-          aria-label="Settings"><i class="fa-solid fa-gear"></i></a
-        ><a href="/" aria-label="Log out"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+        <a href="/users/{currentUser.name}" aria-label="Profile" class="ub-profile">
+          <i class="fa-solid fa-user"></i>
+        </a>
+        <a href="/" aria-label="Settings" class="ub-settings"><i class="fa-solid fa-gear"></i></a>
+        <a href="/" aria-label="Log out" class="ub-logout">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </a>
       </div>
     </div>
   </userbox>
@@ -663,6 +667,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.8rem;
   }
 
   #ub-links > * {
@@ -670,10 +675,32 @@
     text-align: center;
     color: #fff;
     transition: all 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
+    border-radius: 0.8rem;
+    padding: 0.5rem;
   }
 
-  #ub-links > *:hover {
-    transform: scale(1.23);
+  .ub-profile {
+    background-color: #ffbd5955;
+    border: 2px solid #ffbd59;
+  }
+  .ub-profile:hover {
+    box-shadow: 0 0 1rem 0 #ffbd59cc;
+  }
+
+  .ub-settings {
+    background-color: #6666ff55;
+    border: 2px solid #6666ff;
+  }
+  .ub-settings:hover {
+    box-shadow: 0 0 1rem 0 #6666ffcc;
+  }
+
+  .ub-logout {
+    background-color: #c9131355;
+    border: 2px solid #c91313;
+  }
+  .ub-logout:hover {
+    box-shadow: 0 0 1rem 0 #c91313cc;
   }
 
   /*footer!*/
