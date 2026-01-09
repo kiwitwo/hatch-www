@@ -6,6 +6,13 @@ export const load: LayoutLoad = async () => {
   if (!browser) return {
     user: null
   };
+
+  const hashParams = new URLSearchParams(window.location.hash.slice(1));
+  const githubToken = hashParams.get("token");
+  if (!localStorage.getItem("token") && githubToken) {
+    localStorage.setItem("token", githubToken)
+  }
+
   const token = localStorage.getItem("token");
   if (!token) return {
     user: null
