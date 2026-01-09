@@ -317,15 +317,6 @@
     height: auto;
     border-radius: 0.5rem;
   }
-  .home-news-small h3,
-  .home-news-small p {
-    margin: 0;
-  }
-  .home-news-small img {
-    width: 100%;
-    height: auto;
-    border-radius: 0.5rem;
-  }
   .home-news-big-bottom {
     display: flex;
     flex-direction: row;
