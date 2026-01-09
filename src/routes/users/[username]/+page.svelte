@@ -6,7 +6,19 @@
 </script>
 
 <main>
-  <img id="banner" src={data.bannerImage} alt="{data.displayName}'s banner" />
+  {#if data.bannerImage}
+    <div
+      id="banner"
+      style="background-image: url({data.bannerImage})"
+      aria-label="{data.displayName}'s banner"
+    ></div>
+  {:else}
+    <div
+      id="banner"
+      style="background-color: {data.theme}"
+      aria-label="{data.displayName}'s banner"
+    ></div>
+  {/if}
   <info>
     <img class="pfp" src="https://api.hatch.lol/users/{data.name}/pfp" alt={data.displayName} />
     <div style:flex-grow="1">
