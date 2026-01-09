@@ -186,43 +186,6 @@
         <p class="home-news-big-info">December 5, 2024 by <a href="/user?u=hatch">@hatch</a></p>
       </div>
     </div>
-    <div class="home-news-side">
-      <div class="home-news-small">
-        <img src="https://placehold.co/1280x720" />
-        <div class="home-news-stack">
-          <h3>Hatch News</h3>
-          <p>Hatch News Article to read and things.</p>
-        </div>
-      </div>
-      <div class="home-news-small">
-        <img src="https://placehold.co/1280x720" />
-        <div class="home-news-stack">
-          <h3>Hatch News</h3>
-          <p>Hatch News Article to read and things.</p>
-        </div>
-      </div>
-      <div class="home-news-small">
-        <img src="https://placehold.co/1280x720" />
-        <div class="home-news-stack">
-          <h3>Hatch News</h3>
-          <p>Hatch News Article to read and things.</p>
-        </div>
-      </div>
-      <div class="home-news-small">
-        <img src="https://placehold.co/1280x720" />
-        <div class="home-news-stack">
-          <h3>Hatch News</h3>
-          <p>Hatch News Article to read and things.</p>
-        </div>
-      </div>
-      <div class="home-news-small">
-        <img src="https://placehold.co/1280x720" />
-        <div class="home-news-stack">
-          <h3>Hatch News</h3>
-          <p>Hatch News Article to read and things.</p>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -332,7 +295,7 @@
   }
   .home-news-contents {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 1rem;
     flex: 1;
   }
@@ -353,32 +316,6 @@
     width: 100%;
     height: auto;
     border-radius: 0.5rem;
-  }
-  .home-news-side {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    overflow-y: auto;
-    width: 80rem;
-    padding: 1rem;
-  }
-  .home-news-small {
-    display: flex;
-    flex-direction: column;
-    background-color: #14141488;
-    border-radius: 0.625rem;
-    transition: all 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
-    padding: 0.75rem;
-    gap: 0.75rem;
-  }
-  .home-news-small:hover {
-    background-color: var(--block1);
-    box-shadow: 0 0 1rem 0 #ffbd59cc;
-  }
-  .home-news-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
   }
   .home-news-small h3,
   .home-news-small p {
