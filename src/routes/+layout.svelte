@@ -10,8 +10,6 @@
   let popupOpen = $state(false);
 
   onMount(() => {
-    window.history.replaceState(null, "", url.pathname + url.search);
-
     const navLinks = document.getElementById("nav-links");
     const bubble = document.getElementById("nav-bubble");
     const links = navLinks?.querySelectorAll("a");

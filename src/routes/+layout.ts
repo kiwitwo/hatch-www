@@ -7,11 +7,14 @@ export const load: LayoutLoad = async () => {
     user: null
   };
 
-  const hashParams = new URLSearchParams(window.location.hash.slice(1));
+  const url = window.location;
+  const hashParams = new URLSearchParams(url.hash.slice(1));
   const githubToken = hashParams.get("token");
   if (!localStorage.getItem("token") && githubToken) {
-    localStorage.setItem("token", githubToken)
+    localStorage.setItem("token", githubToken);
   }
+  window.history.replaceState(null, "", url.pathname + url.search);
+
 
   const token = localStorage.getItem("token");
   if (!token) return {
