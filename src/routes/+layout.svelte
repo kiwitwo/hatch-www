@@ -152,9 +152,27 @@
           <i class="fa-solid fa-user"></i>
         </a>
         <a href="/" aria-label="Settings" class="ub-settings"><i class="fa-solid fa-gear"></i></a>
-        <a href="/" aria-label="Log out" class="ub-logout">
+        <button
+          aria-label="Log out"
+          id="ub-logout"
+          class="ub-logout"
+          onclick={async () => {
+            const logoutToken = localStorage.getItem("token");
+            const res = await fetch("https://api.hatch.lol/auth/logout", {
+              headers: logoutToken ? { Token: logoutToken } : undefined
+            });
+            localStorage.removeItem("token");
+            if (res.ok) {
+              window.location.pathname = "/";
+            } else {
+              console.log(
+                "an error occurred while signing out, your token was probably invalid. you're logged out anyway and your stored token has been cleared. i just put this message here in case. i really don't know."
+              );
+            }
+          }}
+        >
           <i class="fa-solid fa-arrow-right-from-bracket"></i>
-        </a>
+        </button>
       </div>
     </div>
   </userbox>
@@ -698,6 +716,7 @@
   .ub-logout {
     background-color: #c9131355;
     border: 2px solid #c91313;
+    cursor: pointer;
   }
   .ub-logout:hover {
     box-shadow: 0 0 1rem 0 #c91313cc;
