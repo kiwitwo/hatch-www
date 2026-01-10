@@ -91,10 +91,6 @@
         <i class="fa-solid fa-bell"></i>&nbsp;<span>5</span>
       </div>
       <img src="https://api.hatch.lol/users/{currentUser.name}/pfp" alt="Your profile" />
-      <!-- i removed the alt text because it messes up the navbar height if the image cannot load -->
-      <!-- too bad because alt text it required for accessibility -->
-      <!-- what if alt text didnt show when the image didnt load 🤯 that would be convenient -->
-      <!-- hey i think theres a different attribute we can use instead of alt and it doesnt show up on the page i forgot it tho. -->
     </button>
   {:else}
     <div id="nav-login">
