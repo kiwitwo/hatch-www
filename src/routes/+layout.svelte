@@ -623,6 +623,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    max-height: 28rem;
   }
 
   .ub-notif-short i {
