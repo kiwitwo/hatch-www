@@ -15,3 +15,6 @@ Finally, run the dev server.
 npm run dev
 ```
 Now, make some changes and you'll be able to view and test them at the URL given by the dev server.
+## Related stuff
+For the backend repository, see [hatchdotlol/hatch-api](https://github.com/hatchdotlol/hatch-api)  
+For the forums, see [hatchdotlol/forums](https://github.com/hatchdotlol/forums)
