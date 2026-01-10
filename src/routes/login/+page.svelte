@@ -12,6 +12,7 @@
     href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@87.5,700&display=swap"
     rel="stylesheet"
   />
+  <!-- this is the github font, but it only imports the bold (700) weight and the 87.5 semicondensed width. it is used in the <span> of the github button -->
 </svelte:head>
 
 <div id="login">
