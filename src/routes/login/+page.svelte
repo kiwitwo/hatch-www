@@ -7,6 +7,13 @@
   let thinking = $state(false);
 </script>
 
+<svelte:head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@87.5,700&display=swap"
+    rel="stylesheet"
+  />
+</svelte:head>
+
 <div id="login">
   <h1>Welcome back</h1>
   {#if error}
@@ -19,7 +26,7 @@
     aria-label="Log in with GitHub"
     onclick={() => {
       window.open("https://api.hatch.lol/auth/github/login", "_blank", "width=600,height=700");
-    }}><i class="fa-brands fa-github"></i>&ensp;Continue with GitHub</button
+    }}><i class="fa-brands fa-github"></i>&ensp;Continue with <span>GitHub</span></button
   >
   <form
     onsubmit={async (event) => {
@@ -101,10 +108,13 @@
     width: 16rem;
     padding: 0.5rem 0.75rem;
     border-radius: 2rem;
-    background-color: #0d1117;
+    background-color: #101411;
     color: #fff;
     border: 2px solid #fff;
     cursor: pointer;
+  }
+  #github span {
+    font-family: "Mona Sans";
   }
   form > p {
     margin: 0.75rem 0;
