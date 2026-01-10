@@ -3,9 +3,16 @@
   import { parse } from "marked";
 
   const { data } = $props();
-  console.log(data);
+  //console.log(data); i needed this for a thing
 </script>
 
+<svelte:head>
+  <title
+    >{data.displayName
+      ? `${data.displayName} (@${data.name}) - Hatch`
+      : `@${data.name} - Hatch`}</title
+  >
+</svelte:head>
 <main>
   {#if data.bannerImage}
     <div
