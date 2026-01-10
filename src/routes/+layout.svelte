@@ -625,6 +625,13 @@
     gap: 8px;
   }
 
+  .ub-notif-short i {
+    min-width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .ub-notif {
     display: flex;
     flex-direction: row;
