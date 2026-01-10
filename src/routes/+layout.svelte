@@ -159,7 +159,7 @@
             });
             localStorage.removeItem("token");
             if (res.ok) {
-              window.location.pathname = "/";
+              window.location.reload();
             } else {
               console.log(
                 "an error occurred while signing out, your token was probably invalid. you're logged out anyway and your stored token has been cleared. i just put this message here in case. i really don't know."
