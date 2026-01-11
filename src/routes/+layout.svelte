@@ -327,7 +327,7 @@
   main {
     padding-left: 0.625rem;
     padding-right: 0.625rem;
-    max-width: 49.375rem;
+    max-width: 52rem;
     margin-left: auto;
     margin-right: auto;
   }
