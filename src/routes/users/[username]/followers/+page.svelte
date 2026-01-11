@@ -1,10 +1,10 @@
 <script lang="ts">
   const { data } = $props();
-  console.log(data); //asdfghjkl delete me once the page is made
+  console.log(data); //delete me once the page is made
 </script>
 
 <svelte:head>
-  <title>Following - Hatch</title>
+  <title>Followers - Hatch</title>
 </svelte:head>
 
 <main>hello world</main>
