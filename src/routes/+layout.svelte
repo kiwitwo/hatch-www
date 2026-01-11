@@ -144,10 +144,24 @@
         </div>
       </div>
       <div id="ub-links">
-        <a href="/users/{currentUser.name}" aria-label="Profile" class="ub-profile">
+        <a
+          href="/users/{currentUser.name}"
+          aria-label="Profile"
+          class="ub-profile"
+          onclick={() => {
+            popupOpen = !popupOpen;
+          }}
+        >
           <i class="fa-solid fa-user"></i>
         </a>
-        <a href="/" aria-label="Settings" class="ub-settings"><i class="fa-solid fa-gear"></i></a>
+        <a
+          href="/"
+          aria-label="Settings"
+          class="ub-settings"
+          onclick={() => {
+            popupOpen = !popupOpen;
+          }}><i class="fa-solid fa-gear"></i></a
+        >
         <button
           aria-label="Log out"
           id="ub-logout"
