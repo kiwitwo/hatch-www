@@ -143,6 +143,30 @@
           </p>
         </div>
       </div>
+      <div id="ub-uploads">
+        <a
+          href="/mystuff/upload"
+          aria-label="upload"
+          class="ub-upload"
+          onclick={() => {
+            popupOpen = !popupOpen;
+          }}
+        >
+          <i class="fa-solid fa-plus"></i>
+          &ensp;Upload Project
+        </a>
+        <a
+          href="/mystuff"
+          aria-label="my stuff"
+          class="ub-mystuff"
+          onclick={() => {
+            popupOpen = !popupOpen;
+          }}
+        >
+          <i class="fa-solid fa-folder"></i>
+          &ensp;My Stuff
+        </a>
+      </div>
       <div id="ub-links">
         <a
           href="/users/{currentUser.name}"
@@ -637,7 +661,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    max-height: 28rem;
+    max-height: 22rem;
   }
 
   .ub-notif-short i {
@@ -738,6 +762,39 @@
   }
   .ub-logout:hover {
     box-shadow: 0 0 1rem 0 #c91313cc;
+  }
+
+  #ub-uploads {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  #ub-uploads > * {
+    flex: 1;
+    text-align: center;
+    color: #fff;
+    transition: all 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
+    border-radius: 0.8rem;
+    padding: 0.5rem;
+    text-decoration: none;
+  }
+
+  .ub-upload {
+    background-color: #ffffff33;
+    border: 2px solid #ffffff;
+  }
+  .ub-upload:hover {
+    box-shadow: 0 0 1rem 0 #ffffffcc;
+  }
+
+  .ub-mystuff {
+    background-color: #ddddaa55;
+    border: 2px solid #ddddaa;
+  }
+  .ub-mystuff:hover {
+    box-shadow: 0 0 1rem 0 #ddddaacc;
   }
 
   /*footer!*/
