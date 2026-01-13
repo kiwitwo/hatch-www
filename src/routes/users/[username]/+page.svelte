@@ -129,6 +129,8 @@
     border-radius: 0.8rem;
     display: block;
     object-fit: cover;
+    background-size: cover;
+    background-position: center;
   }
 
   #info {
