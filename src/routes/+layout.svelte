@@ -3,6 +3,7 @@
   import favicon from "$lib/assets/favicon.svg";
   import { onMount } from "svelte";
   import { fly } from "svelte/transition";
+  import "@fortawesome/fontawesome-free/css/all.min.css";
 
   let { children, data } = $props();
 
@@ -59,13 +60,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
     rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
   />
 </svelte:head>
 
