@@ -52,9 +52,18 @@
     </div>
     <div class="action-row">
       <button class="pill-btn"><i class="fa-solid fa-thumbs-up"></i>&nbsp;{data.upvotes}</button>
-      <button class="pill-btn"><i class="fa-solid fa-thumbs-down"></i>&nbsp;{data.downvotes}</button>
-      <button class="pill-btn" aria-label="Report" title="Report"><i class="fa-solid fa-flag"></i></button>
-      <a class="pill-btn" aria-label="Download" title="Download" href="https://api.hatch.lol/projects/{data.id}/content"><i class="fa-solid fa-download"></i></a>
+      <button class="pill-btn"><i class="fa-solid fa-thumbs-down"></i>&nbsp;{data.downvotes}</button
+      >
+      <button class="pill-btn" aria-label="Report" title="Report"
+        ><i class="fa-solid fa-flag"></i></button
+      >
+      <a
+        class="pill-btn"
+        aria-label="Download"
+        title="Download"
+        href="https://api.hatch.lol/projects/{data.id}/content"
+        ><i class="fa-solid fa-download"></i></a
+      >
     </div>
   </aside>
 </section>
@@ -124,6 +133,7 @@
   section {
     display: flex;
     gap: 2rem;
+    margin-bottom: 1rem;
   }
 
   section:has(iframe) {
@@ -183,5 +193,9 @@
 
   .reply {
     padding-left: 2rem;
+  }
+
+  .action-row {
+    margin-top: 0.5rem;
   }
 </style>
