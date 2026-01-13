@@ -296,6 +296,7 @@
 <style>
   :root {
     --block1: #29272555;
+    --block2: #8d857e55; /* for lighter foreground elements on top of --block1 or something */
     --bodyText: #fff;
     --links: #889aff;
     --primary: #ffbd59;
