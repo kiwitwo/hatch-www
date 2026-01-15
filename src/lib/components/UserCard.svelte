@@ -47,4 +47,14 @@
   .user-name {
     color: var(--bodyText);
   }
+  @media (max-width: 768px) {
+    .user-card {
+      width: 5rem;
+      height: 6rem;
+    }
+    .avatar {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
 </style>

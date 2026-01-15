@@ -518,13 +518,16 @@
       order: 4;
       flex-basis: 100%;
       padding: 0.25rem;
-      justify-content: flex-start;
+      justify-content: space-between;
       overflow-x: auto;
       overflow-y: hidden;
     }
     #nav-links a {
       font-size: 0.9em;
       padding: 0.25rem 0.5rem;
+    }
+    #nav-bubble {
+      display: none;
     }
   }
 
@@ -591,8 +594,7 @@
     #nav-login {
       order: 2;
       height: 2rem;
-      outline: none;
-      gap: 0.25rem;
+      margin-left: auto;
     }
     #nav-signup-btn,
     #nav-login-btn {
@@ -1190,11 +1192,6 @@
   }
 
   @media (max-width: 768px) {
-    :global(.title-box) {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
-    }
     :global(.see-all) {
       font-size: 1em;
     }

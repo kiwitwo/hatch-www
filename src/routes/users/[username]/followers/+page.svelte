@@ -63,4 +63,11 @@
     color: var(--primary) !important;
     font-weight: bold;
   }
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(auto-fill, 5rem);
+      gap: 1rem;
+      justify-content: space-between;
+    }
+  }
 </style>
