@@ -169,7 +169,10 @@
   </div>
   <div class="home-news-contents">
     <div class="home-news-big">
-      <img src="https://placehold.co/1280x720" />
+      <img
+        src="https://placehold.co/1280x720"
+        alt="PLACEHOLDER but it needs alt text anyway bleh"
+      />
       <h3>News Title</h3>
       <p>
         Porta vehicula magna a porttitor hendrerit scelerisque nulla bibendum fringilla adipiscing
@@ -219,6 +222,22 @@
     pointer-events: none;
   }
 
+  @media (max-width: 768px) {
+    #home-info-top {
+      width: 100%;
+    }
+    #home-neon-logo {
+      position: relative;
+      width: 100%;
+      max-width: 15rem;
+      top: auto;
+      right: auto;
+      rotate: 0deg;
+      margin: 1rem auto;
+      display: block;
+    }
+  }
+
   .home-social-btn {
     display: inline-flex;
     align-items: center;
@@ -231,7 +250,7 @@
     color: #000;
     font-weight: bold;
     text-decoration: none;
-    border-radius: 50%;
+    border-radius: 1000px;
     margin-right: 0.375rem;
     transition: all 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
   }
@@ -240,10 +259,26 @@
     box-shadow: 0 0 1rem 0 #ffbd59cc;
   }
 
+  @media (max-width: 768px) {
+    .home-social-btn {
+      width: 2rem;
+      height: 2rem;
+      font-size: 0.9em;
+      margin-right: 0.25rem;
+    }
+  }
+
   .home-why-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .home-why-section {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
   }
 
   .why-reason {
@@ -317,10 +352,38 @@
     height: auto;
     border-radius: 0.5rem;
   }
+  .home-text-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
   .home-news-big-bottom {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .home-text-btns {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .home-text-btns a {
+      width: 100%;
+      text-align: center;
+    }
+
+    .home-news-big-bottom {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .home-news-big-info {
+      font-size: 0.85em;
+    }
   }
 </style>

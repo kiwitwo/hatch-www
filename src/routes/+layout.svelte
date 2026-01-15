@@ -136,6 +136,66 @@
             There are new posts in your forum topic "<a href="/">Forum Topic</a>".
           </p>
         </div>
+        <div class="ub-notif ub-notif-short">
+          <i class="fa-solid fa-envelope"></i>
+          <p>
+            There are new posts in your forum topic "<a href="/">Forum Topic</a>".
+          </p>
+        </div>
+        <div class="ub-notif ub-notif-short">
+          <i class="fa-solid fa-envelope"></i>
+          <p>
+            There are new posts in your forum topic "<a href="/">Forum Topic</a>".
+          </p>
+        </div>
+        <div class="ub-notif ub-notif-short">
+          <i class="fa-solid fa-envelope"></i>
+          <p>
+            There are new posts in your forum topic "<a href="/">Forum Topic</a>".
+          </p>
+        </div>
+        <div class="ub-notif ub-notif-short">
+          <i class="fa-solid fa-envelope"></i>
+          <p>
+            There are new posts in your forum topic "<a href="/">Forum Topic</a>".
+          </p>
+        </div>
+        <div class="ub-notif ub-notif-short">
+          <i class="fa-solid fa-envelope"></i>
+          <p>
+            There are new posts in your forum topic "<a href="/">Forum Topic</a>".
+          </p>
+        </div>
+        <div class="ub-notif ub-notif-short">
+          <i class="fa-solid fa-envelope"></i>
+          <p>
+            There are new posts in your forum topic "<a href="/">Forum Topic</a>".
+          </p>
+        </div>
+        <div class="ub-notif ub-notif-short">
+          <i class="fa-solid fa-envelope"></i>
+          <p>
+            There are new posts in your forum topic "<a href="/">Forum Topic</a>".
+          </p>
+        </div>
+        <div class="ub-notif ub-notif-short">
+          <i class="fa-solid fa-envelope"></i>
+          <p>
+            There are new posts in your forum topic "<a href="/">Forum Topic</a>".
+          </p>
+        </div>
+        <div class="ub-notif ub-notif-short">
+          <i class="fa-solid fa-envelope"></i>
+          <p>
+            There are new posts in your forum topic "<a href="/">Forum Topic</a>".
+          </p>
+        </div>
+        <div class="ub-notif ub-notif-short">
+          <i class="fa-solid fa-envelope"></i>
+          <p>
+            There are new posts in your forum topic "<a href="/">Forum Topic</a>".
+          </p>
+        </div>
       </div>
       <div id="ub-uploads">
         <a
@@ -326,6 +386,12 @@
     margin: 0;
   }
 
+  @media (max-width: 768px) {
+    :global(body) {
+      padding-top: 0;
+    }
+  }
+
   :global(body::before) {
     content: "";
     position: absolute;
@@ -371,6 +437,24 @@
     padding: 0.25rem 1rem;
   }
 
+  @media (max-width: 768px) {
+    header {
+      max-width: 100%;
+      border-radius: 0;
+      top: 0 !important;
+      margin-bottom: 1rem;
+      height: auto;
+      flex-wrap: wrap;
+      padding: 0.5rem;
+      gap: 0.5rem;
+    }
+    main {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      max-width: 100%;
+    }
+  }
+
   :global(a) {
     color: var(--links);
     text-decoration: underline;
@@ -395,6 +479,19 @@
     text-decoration: none;
   }
 
+  @media (max-width: 768px) {
+    .nav-logo {
+      order: 1;
+      height: 2rem;
+    }
+    .nav-logo img {
+      height: 2rem;
+    }
+    .nav-logo a {
+      font-size: 1.4em;
+    }
+  }
+
   #nav-links {
     position: relative;
     align-items: center;
@@ -413,15 +510,34 @@
     flex-shrink: 0;
   }
 
+  @media (max-width: 768px) {
+    #nav-links {
+      width: auto;
+      gap: 0.5rem;
+      order: 3;
+      flex-basis: 100%;
+      padding: 0.25rem;
+      justify-content: flex-start;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+    #nav-links a {
+      font-size: 0.9em;
+      padding: 0.25rem 0.5rem;
+    }
+  }
+
   #nav-links a:focus-visible {
     outline: none;
     text-decoration: underline;
   }
 
-  :has(#nav-searchbar:focus) #nav-links {
-    opacity: 0;
-    pointer-events: none;
-    width: 0;
+  @media (min-width: 768px) {
+    :has(#nav-searchbar:focus) #nav-links {
+      opacity: 0;
+      pointer-events: none;
+      width: 0;
+    }
   }
 
   #nav-bubble {
@@ -470,6 +586,21 @@
     color: #fff;
   }
 
+  @media (max-width: 768px) {
+    #nav-login {
+      order: 4;
+      height: 2rem;
+      outline: none;
+      gap: 0.25rem;
+    }
+    #nav-signup-btn,
+    #nav-login-btn {
+      height: 2rem;
+      padding: 0.35rem 0.5rem;
+      font-size: 0.85em;
+    }
+  }
+
   #nav-user {
     display: flex;
     flex-direction: row;
@@ -501,6 +632,22 @@
     aspect-ratio: 1 / 1;
   }
 
+  @media (max-width: 768px) {
+    #nav-user {
+      order: 4;
+      height: 2rem;
+      padding-left: 0.25rem;
+      gap: 0.25rem;
+      font-size: 0.85em;
+    }
+    #nav-user img {
+      width: 1.5rem;
+    }
+    .h-notifs {
+      display: none;
+    }
+  }
+
   #nav-searchbar {
     font-family: "Outfit", sans-serif;
     height: 2.4em;
@@ -514,6 +661,16 @@
     transition: all 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
   }
 
+  @media (max-width: 768px) {
+    #nav-searchbar {
+      order: 2;
+      flex-basis: 100%;
+      margin: 0 0.5rem;
+      height: 2.2rem;
+      font-size: 0.9em;
+    }
+  }
+
   :global(h1:not(.comment h1)) {
     padding: 0;
     margin: 0;
@@ -524,6 +681,15 @@
   :global(h2) {
     font-size: 2em;
     font-weight: normal;
+  }
+
+  @media (max-width: 768px) {
+    :global(h1:not(.comment h1)) {
+      font-size: 2.5em;
+    }
+    :global(h2) {
+      font-size: 1.5em;
+    }
   }
 
   :global(.pill-btn) {
@@ -549,6 +715,15 @@
 
   :global(.pill-btn:hover) {
     box-shadow: 0 0 1rem 0 #ffbd59cc;
+  }
+
+  @media (max-width: 768px) {
+    :global(.pill-btn) {
+      height: 2rem;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.9em;
+      margin-right: 0.25rem;
+    }
   }
 
   .nav-link {
@@ -621,6 +796,18 @@
     pointer-events: none;
   }
 
+  @media (max-width: 768px) {
+    userbox {
+      width: 100%;
+      padding-left: 0;
+      top: auto;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
   #userbox-inner {
     pointer-events: all;
     position: absolute;
@@ -633,6 +820,19 @@
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    #userbox-inner {
+      position: fixed;
+      width: 100%;
+      max-height: 70vh;
+      border-radius: 1.5rem 1.5rem 0 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+    }
   }
 
   #ub-name,
@@ -657,6 +857,12 @@
     flex-direction: column;
     gap: 8px;
     max-height: 22rem;
+  }
+
+  @media (max-width: 768px) {
+    #ub-notifs {
+      max-height: 60dvh;
+    }
   }
 
   .ub-notif-short i {
@@ -805,6 +1011,13 @@
     background-image: linear-gradient(0deg, #ffbd5955 0%, rgba(0, 0, 0, 0) 60%);
   }
 
+  @media (max-width: 768px) {
+    footer {
+      margin-top: 2rem;
+      gap: 1.5rem;
+    }
+  }
+
   .foot-top {
     display: flex;
     gap: 0;
@@ -824,6 +1037,18 @@
     text-decoration: none;
   }
 
+  @media (max-width: 768px) {
+    .foot-top {
+      height: 2rem;
+    }
+    .foot-top img {
+      height: 2.5rem;
+    }
+    .foot-top a {
+      font-size: 1.8rem;
+    }
+  }
+
   .foot-links {
     display: flex;
     flex-direction: row;
@@ -839,6 +1064,26 @@
   .foot-link-cat h4 {
     margin: 0.35rem 0;
     font-size: 1.2rem;
+  }
+
+  @media (max-width: 768px) {
+    .foot-links {
+      flex-direction: row;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .foot-link-cat {
+      flex: 1 1 calc(50% - 0.75rem);
+      min-width: 150px;
+    }
+    .foot-link-cat h4 {
+      font-size: 1rem;
+      margin: 0.25rem 0;
+    }
+    .foot-link-cat a {
+      font-size: 0.9em;
+    }
   }
 
   .foot-link-cat a {
@@ -861,6 +1106,19 @@
   }
   .foot-social a {
     color: var(--primary);
+  }
+
+  @media (max-width: 768px) {
+    .foot-social {
+      gap: 1rem;
+    }
+    .foot-social a {
+      font-size: 1.3em;
+    }
+    .foot-social svg {
+      width: 1.3em;
+      height: 1.3em;
+    }
   }
 
   .foot-copyright {
@@ -930,6 +1188,17 @@
       0 0 1rem #ffbd5955;
   }
 
+  @media (max-width: 768px) {
+    :global(.title-box) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    :global(.see-all) {
+      font-size: 1em;
+    }
+  }
+
   :global(.project-row) {
     width: 100%;
     height: 12.5rem;
@@ -942,5 +1211,13 @@
     flex-direction: row;
     align-items: center;
     gap: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    :global(.project-row) {
+      height: auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 </style>

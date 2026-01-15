@@ -89,4 +89,24 @@
     font-size: 0.72em;
     color: #888;
   }
+
+  @media (max-width: 768px) {
+    img {
+      height: 5rem;
+      width: 8.89rem;
+    }
+
+    a:has(img) {
+      width: 8.89rem;
+    }
+
+    p {
+      font-size: 0.9em;
+    }
+
+    .author,
+    .stats {
+      font-size: 0.75em;
+    }
+  }
 </style>
