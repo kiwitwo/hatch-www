@@ -481,8 +481,9 @@
 
   @media (max-width: 768px) {
     .nav-logo {
-      order: 1;
       height: 2rem;
+      order: 1;
+      float: left;
     }
     .nav-logo img {
       height: 2rem;
@@ -514,7 +515,7 @@
     #nav-links {
       width: auto;
       gap: 0.5rem;
-      order: 3;
+      order: 4;
       flex-basis: 100%;
       padding: 0.25rem;
       justify-content: flex-start;
@@ -588,7 +589,7 @@
 
   @media (max-width: 768px) {
     #nav-login {
-      order: 4;
+      order: 2;
       height: 2rem;
       outline: none;
       gap: 0.25rem;
@@ -634,7 +635,8 @@
 
   @media (max-width: 768px) {
     #nav-user {
-      order: 4;
+      order: 2;
+      margin-left: auto;
       height: 2rem;
       padding-left: 0.25rem;
       gap: 0.25rem;
@@ -663,9 +665,8 @@
 
   @media (max-width: 768px) {
     #nav-searchbar {
-      order: 2;
+      order: 3;
       flex-basis: 100%;
-      margin: 0 0.5rem;
       height: 2.2rem;
       font-size: 0.9em;
     }
